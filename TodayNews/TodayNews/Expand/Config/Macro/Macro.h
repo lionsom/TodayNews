@@ -25,6 +25,8 @@
 #define LXRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define LXRGBAColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(r)/255.0 blue:(r)/255.0 alpha:a]
 
+#define LXRandNum(i) arc4random()%i   // [0,i) 范围内随机数
+#define LXRandNum_FromTo(i,j) (from + (arc4random() % (to – from +1)))
 
 
 #endif /* Macro_h */

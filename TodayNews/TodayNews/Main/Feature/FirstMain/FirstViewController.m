@@ -8,21 +8,59 @@
 
 #import "FirstViewController.h"
 
-@interface FirstViewController ()
+#import "YBPopupMenu.h"
+
+#import "LXQRCode_VC.h"
+
+#import <PYSearch/PYSearch.h>
+
+#import "A_VC.h"
+
+@interface FirstViewController ()<YBPopupMenuDelegate,LXQRCodeControllerDelegate>
 
 @end
 
 @implementation FirstViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillAppear:animated];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+
     [self.view setBackgroundColor:[UIColor orangeColor]];
-   
-    self.navigationController.navigationBar.translucent = NO;
+ 
     
-    self.navigationController.navigationBar.hidden = YES;
+    UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [barButton setFrame:CGRectMake(0, 0, 30, 30)];
+    [barButton setImage:[UIImage imageNamed:@"button_home"] forState:UIControlStateNormal];
+    [barButton addTarget:self action:@selector(left_btnCallBack) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:barButton];
+    
+    UIButton *rightBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightBarButton setFrame:CGRectMake(0, 0, 30, 30)];
+    [rightBarButton setImage:[UIImage imageNamed:@"button_home"] forState:UIControlStateNormal];
+    [rightBarButton addTarget:self action:@selector(right_btnCallBack:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * rightBarButtonitem = [[UIBarButtonItem alloc] initWithCustomView:rightBarButton];
+    
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                                                                   target:nil
+                                                                                   action:nil];
+    negativeSpacer.width = -10;
+
+    self.navigationItem.leftBarButtonItems = @[negativeSpacer,item];
+    self.navigationItem.rightBarButtonItems = @[negativeSpacer,rightBarButtonitem];
+    
+    
+    UIButton * searchBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 7, 100, 30)];
+    [searchBtn setBackgroundColor:[UIColor redColor]];
+    [searchBtn addTarget:self action:@selector(searchBtnCallBack) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:searchBtn];
+    // 设置中间搜索按钮
+    self.navigationItem.titleView = searchBtn;
     
     
     UIButton * A = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
@@ -37,9 +75,101 @@
     
 }
 
+#pragma mark - YBPopupMenuDelegate
+- (void)ybPopupMenu:(YBPopupMenu *)ybPopupMenu didSelectedAtIndex:(NSInteger)index
+{
+    LXLog(@"点击了 %@ 选项",ybPopupMenu.titles[index]);
+    
+    if (index == 2) {
+        [self QRCode_Result];
+    }
+    
+}
+
+/**
+ 使用LXQRCode扫码的三种方式
+ */
+-(void)QRCode_Result{
+    
+    int randNum = 3; // LXRandNum(3);
+    
+    if(randNum == 0) {
+        // 后向传值
+        LXQRCode_VC * QRCodeVC = [[LXQRCode_VC alloc]init];
+        QRCodeVC.LXQRCodeReturnResultType = LXQRCodeReturnResultType_Common;
+        UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:QRCodeVC];
+        
+        [self presentViewController:navVC animated:YES completion:^{
+        }];
+    } else if(randNum ==1) {
+        // 反向传值 - delegate
+        LXQRCode_VC * QRCodeVC = [[LXQRCode_VC alloc]init];
+        QRCodeVC.LXQRCodeReturnResultType = LXQRCodeReturnResultType_Delegate;
+        QRCodeVC.delegate = self;
+        UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:QRCodeVC];
+        
+        [self presentViewController:navVC animated:YES completion:^{
+        }];
+    } else if(randNum == 2) {
+        // 反向传值 - Block
+        LXQRCode_VC * QRCodeVC = [[LXQRCode_VC alloc]init];
+        QRCodeVC.LXQRCodeReturnResultType = LXQRCodeReturnResultType_block;
+        UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:QRCodeVC];
+        
+        QRCodeVC.callBackBlock = ^(NSString * QRCode_Result){   // 1
+            LXLog(@"Block Get is %@",QRCode_Result);
+        };
+        
+        [self presentViewController:navVC animated:YES completion:^{
+        }];
+    }
+}
+
+
+#pragma mark -- LXQRCode Delegate
+- (void)qrcodeController:(LXQRCode_VC *)qrcodeController readerScanResult:(NSString *)readerScanResult type:(LXQRCodeResultType)resultType
+{
+    if (resultType == LXQRCodeResultTypeSuccess) {
+        LXLog(@"Delegate  Success == %@",readerScanResult);
+    }else {
+        LXLog(@"Delegate  fail == %@",readerScanResult);
+    }
+}
+
+
+
+#pragma mark - CallBack
+-(void)left_btnCallBack {
+    LXLog(@"");
+    
+    [SVProgressHUD showSuccess:@"加载成功sdfaf"];
+}
+
+-(void)right_btnCallBack:(UIButton *)sender {
+    NSArray * TITLES = @[@"修改", @"删除", @"扫一扫",@"付款"];
+    NSArray * ICONS = @[@"button_home",@"button_home",@"button_home",@"button_home"];
+    [YBPopupMenu showRelyOnView:sender titles:TITLES icons:ICONS menuWidth:120 delegate:self];
+}
+
+-(void)searchBtnCallBack {
+    // 1. Create hotSearches array
+    NSArray *hotSeaches = @[@"Java", @"Python", @"Objective-C", @"Swift", @"C", @"C++", @"PHP", @"C#", @"Perl", @"Go", @"JavaScript", @"R", @"Ruby", @"MATLAB"];
+    // 2. Create searchViewController
+    PYSearchViewController *searchViewController = [PYSearchViewController searchViewControllerWithHotSearches:hotSeaches searchBarPlaceholder:@"Search programming language" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
+        // Call this Block when completion search automatically
+        // Such as: Push to a view controller
+        A_VC * vc = [[A_VC alloc]init];
+        
+        [searchViewController.navigationController pushViewController:vc animated:YES];
+    }];
+    // 3. present the searchViewController
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchViewController];
+    [self presentViewController:nav  animated:NO completion:nil];
+}
+
 
 -(void)AA{
-//    [self goto_A];
+    [self goto_A];
     LXLog(@"CCCCC");
 }
 

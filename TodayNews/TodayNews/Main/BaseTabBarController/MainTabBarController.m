@@ -20,7 +20,7 @@
 #import "LXTabBar.h"
 
 
-@interface MainTabBarController ()<UITabBarControllerDelegate>
+@interface MainTabBarController ()<UITabBarControllerDelegate,MainTabbarViewDelegate>
 {
     LXTabBar * _lxTabbar;
 }
@@ -93,7 +93,7 @@
     }
     // 将弧度转换为角度
     CGFloat degree = rotate/M_PI * 180;
-    LXLog(@"%f",degree);
+//    LXLog(@"%f",degree);
     
     if (degree == 0) {
         // 旋转按钮90度
@@ -105,7 +105,6 @@
 }
 
 -(void)CenterBtn_TransBegain {
-
     // 获取当前的显示的主页面
     LXBaseNavigationController * f = self.selectedViewController;
     [f.view addSubview:self.mainTabbarView];
@@ -117,20 +116,24 @@
 }
 
 -(void)CenterBtn_TransBack {
-    
-    [_mainTabbarView removeFromSuperview];
-    
-    // 按钮旋转动画
-    [UIView animateWithDuration:0.5f animations:^{
-        _lxTabbar.centerBtn.transform = CGAffineTransformMakeRotation(0);
-    }];
+    // 如果存在则进行还原操作
+    if (_mainTabbarView) {
+        [_mainTabbarView removeFromSuperview];
+        
+        // 按钮旋转动画
+        [UIView animateWithDuration:0.5f animations:^{
+            _lxTabbar.centerBtn.transform = CGAffineTransformMakeRotation(0);
+        }];
+    }
 }
 
 
 #pragma mark - TabBar Delegate
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     // 重要：这里可以进行二次点击时候的刷新使用
-    //LXLog(@"didSelectItem = %lu",(unsigned long)self.selectedIndex);
+    // LXLog(@"didSelectItem = %lu",(unsigned long)self.selectedIndex);
+    
+    [self CenterBtn_TransBack];
 }
 
 #pragma mark - UITabBarController Delegate
@@ -141,13 +144,23 @@
     
     if (viewController == [tabBarController.viewControllers objectAtIndex:2])
     {
-        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"我是空白区域" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil];
-        [alert show];
+        LXLog(@"我是空白区域");
         
         return NO;
     }
     
     return YES;
+}
+
+#pragma mark - MainTabbarView Delegate
+-(void)TouchEvent:(NSInteger)index {
+    if (index == 10000) {
+        [self CenterBtn_TransBack];
+    }else if (index == 10001){
+        LXLog(@"低啊几啊散列技术独立开发");
+        [self CenterBtn_TransBack];
+    }
+    
 }
 
 #pragma mark - Push Pop
@@ -164,6 +177,7 @@
 -(MainTabbarView *)mainTabbarView {
     if (!_mainTabbarView) {
         _mainTabbarView = [[MainTabbarView alloc]init];
+        _mainTabbarView.delegate = self;
         _mainTabbarView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREENH_HEIGHT - TABBAR_HEIGHT);
     }
     return _mainTabbarView;

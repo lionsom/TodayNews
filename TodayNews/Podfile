@@ -17,5 +17,10 @@ platform :ios, '8.0'
 	pod 'MJRefresh'
 
 	pod 'SDWebImage', '~> 4.0'
+
+	pod 'SVProgressHUD'
+
+	pod 'PYSearch'	
+
 end
 

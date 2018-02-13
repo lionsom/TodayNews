@@ -27,22 +27,22 @@
 //- (void)loadView {
 //    [super loadView];
 //    // bg.png为自己ps出来的想要的背景颜色。
-//    [self.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor greenColor] size:CGSizeMake(self.navigationBar.frame.size.width, self.navigationBar.frame.size.height + 20)]
+//    [self.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor redColor] size:CGSizeMake(self.navigationBar.frame.size.width, self.navigationBar.frame.size.height + 20)]
 //                            forBarPosition:UIBarPositionAny
 //                                barMetrics:UIBarMetricsDefault];
 //    [self.navigationBar setShadowImage:[UIImage new]];
-//    
+//
 //    //状态栏颜色
 //    [[UIApplication sharedApplication] setStatusBarStyle:kStatusBarStyle];
 //    //title颜色和字体
 //    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor redColor],
 //                                               NSFontAttributeName:[UIFont systemFontOfSize:18]};
-//    
+//
 //    if ([UIDevice currentDevice].systemVersion.floatValue > 7.0) {
 //        //导航背景颜色
 //        self.navigationBar.barTintColor = [UIColor blueColor];
 //    }
-//    
+//
 //    //系统返回按钮图片设置
 //    NSString *imageName = @"back_more1";
 //    if (kStatusBarStyle == UIStatusBarStyleLightContent) {
@@ -141,6 +141,13 @@
     }
     
     [super pushViewController:viewController animated:animated];
+    
+    // 设置全局返回文字
+    viewController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:(UIBarButtonItemStylePlain) target:nil action:nil];
+    
+    // 不透明 Y起点从NavBar底部开始
+    viewController.navigationController.navigationBar.translucent = NO;
+
 }
 
 - (void)didReceiveMemoryWarning {

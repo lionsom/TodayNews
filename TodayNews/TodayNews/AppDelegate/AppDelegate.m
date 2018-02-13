@@ -10,6 +10,8 @@
 
 #import "MainTabBarController.h"
 
+#import <AFNetworking/AFNetworking.h>
+
 @interface AppDelegate ()
 
 @end
@@ -34,6 +36,9 @@
     LXLog(@"AAA = %d",112);
     AALog(@"BBB = %@",@"asdf");
     BBLog(@"CCC = %d",23333);
+    
+//------ 开启网络监测 ------
+    [self startReachability];
     
 //------ 设置主页面 ------
     self.window = [[UIWindow alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREENH_HEIGHT)];
@@ -73,6 +78,36 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+/**
+ 开启网络监测
+ */
+-(void)startReachability {
+    AFNetworkReachabilityManager * manager = [AFNetworkReachabilityManager sharedManager];
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+                [SVProgressHUD showWarning:@"未知网络"];
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                [SVProgressHUD showWarning:@"请检测网络状态"];
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                [SVProgressHUD showWarning:@"3G/4G"];
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                [SVProgressHUD showWarning:@"WiFi"];
+                break;
+            default:
+                break;
+        }
+    }];
+    //开启监测
+    [manager startMonitoring];
+}
+
+
 
 
 @end
