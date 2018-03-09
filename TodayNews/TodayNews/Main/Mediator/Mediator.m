@@ -14,6 +14,8 @@
 
 #import "FourMainComponent.h"
 
+#import "PersonalCenterComponent.h"
+
 
 // 解决警告
 #define SuppressPerformSelectorLeakWarning(Stuff) \
@@ -79,7 +81,13 @@ _Pragma("clang diagnostic pop") \
 
 
 
-
+#pragma mark - 个人中心
++ (UIViewController *)PersonalCenterComponent_PYTempCollectionViewController {
+    Class cls = NSClassFromString(@"PersonalCenterComponent");
+    SuppressPerformSelectorLeakWarning(
+                                       return [cls performSelector:NSSelectorFromString(@"PYTempCollectionViewController")];
+                                       );
+}
 
 
 

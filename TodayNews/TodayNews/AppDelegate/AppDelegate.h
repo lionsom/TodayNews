@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 #import "MainTabBarController.h"
-//@class MainTabBarController;
+
+#import "LXLaunchMovieVC.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

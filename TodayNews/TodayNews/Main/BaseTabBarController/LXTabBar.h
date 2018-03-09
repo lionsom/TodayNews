@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+// 自定义圆形按钮
+#import "LXCircleButton.h"
+
 @interface LXTabBar : UITabBar
 
-@property (nonatomic, strong) UIButton *centerBtn; //中间按钮
+@property (nonatomic, strong) LXCircleButton *centerBtn; //中间按钮
 
 @end

@@ -15,8 +15,11 @@
 @implementation LXBaseViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:animated];
+//    [super viewWillAppear:animated];
+
     [super viewWillAppear:animated];
+//    self.view.backgroundColor = [[ThemeManager defaultManager].currentThemeName isEqualToString:@"Dark"] ? [UIColor darkGrayColor] : [UIColor whiteColor];
 }
 
 - (void)viewDidLoad {
@@ -37,21 +40,8 @@
     } else {
 //        self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    
-    
-    // 没有NavigationBar 设置返回按钮
-    UIButton * BackBtn = [[UIButton alloc]initWithFrame:CGRectMake(5, STATUS_HEIGHT, 30, 30)];
-    [BackBtn setBackgroundImage:[UIImage imageNamed:@"back_more1"] forState:UIControlStateNormal];
-    [BackBtn addTarget:self action:@selector(BackBtnCallBack) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:BackBtn];
 
 }
-
-#pragma mark - 返回按钮的点击事件
-- (void)BackBtnCallBack {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 
 
 - (void)didReceiveMemoryWarning {

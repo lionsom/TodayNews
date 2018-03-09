@@ -18,4 +18,8 @@
 + (UIViewController *)FourMainComponent_SecondViewController;
 
 
+// 个人中心
++ (UIViewController *)PersonalCenterComponent_PYTempCollectionViewController;
+
+
 @end

@@ -14,7 +14,13 @@
 
 #import <PYSearch/PYSearch.h>
 
+#import "NSObject+PYThemeExtension.h"
+
 #import "A_VC.h"
+
+#import "E_Night_VC.h"
+
+#import "LXNightThemeManager.h"
 
 @interface FirstViewController ()<YBPopupMenuDelegate,LXQRCodeControllerDelegate>
 
@@ -70,7 +76,7 @@
     
     UIButton * B = [[UIButton alloc]initWithFrame:CGRectMake(0, 100, 100, 100)];
     [B setBackgroundColor:[UIColor redColor]];
-    [B addTarget:self action:@selector(AA) forControlEvents:UIControlEventTouchUpInside];
+    [B addTarget:self action:@selector(BB) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:B];
     
 }
@@ -80,8 +86,19 @@
 {
     LXLog(@"点击了 %@ 选项",ybPopupMenu.titles[index]);
     
-    if (index == 2) {
+    if (index == 0) {
         [self QRCode_Result];
+    }
+    
+    if (index == 1) {
+        // 设置主题色        
+        UIViewController * controller = [Mediator PersonalCenterComponent_PYTempCollectionViewController];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    
+    if (index == 2) {
+        // 切换 夜间模式
+        [LXNightThemeManager ExchangeTheme];
     }
     
 }
@@ -146,8 +163,8 @@
 }
 
 -(void)right_btnCallBack:(UIButton *)sender {
-    NSArray * TITLES = @[@"修改", @"删除", @"扫一扫",@"付款"];
-    NSArray * ICONS = @[@"button_home",@"button_home",@"button_home",@"button_home"];
+    NSArray * TITLES = @[@"扫一扫",@"PY主题",@"夜间"];
+    NSArray * ICONS = @[@"button_home",@"button_home",@"button_home"];
     [YBPopupMenu showRelyOnView:sender titles:TITLES icons:ICONS menuWidth:120 delegate:self];
 }
 
@@ -171,6 +188,11 @@
 -(void)AA{
     [self goto_A];
     LXLog(@"CCCCC");
+}
+
+-(void)BB {
+    E_Night_VC * controller = [[E_Night_VC alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 -(void)goto_A {

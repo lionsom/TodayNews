@@ -7,15 +7,15 @@
 //
 
 #import "LXBaseNavigationController.h"
-#import "UIImage+Extension.h"
+//#import "UIImage+Extension.h"
 
-#define UIColorFromHex(hexValue)        UIColorFromHexA(hexValue, 1.0f)
+// 主题的扩展类 - 修改navigation和Tabbar主题的扩展类
+#import "NSObject+PYThemeExtension.h"
 
-//UI颜色控制
-#define kUIToneBackgroundColor UIColorFromHex(0x00bd8c) //UI整体背景色调 与文字颜色一一对应
-#define kUIToneTextColor UIColorFromHex(0xffffff) //UI整体文字色调 与背景颜色对应
-#define kStatusBarStyle UIStatusBarStyleLightContent //状态栏样式
-#define kViewBackgroundColor UIColorFromHex(0xf5f5f5) //界面View背景颜色
+#import "UIImage+Helpers.h"
+
+#import "LXNightThemeManager.h"
+
 
 
 @interface LXBaseNavigationController ()<UIGestureRecognizerDelegate>
@@ -55,12 +55,117 @@
 //                                                         forBarMetrics:UIBarMetricsDefault];
 //}
 
+
+
+
+
+#pragma mark - PY主题 初始化。主题扩展相关
+/*
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController
+{
+    if (self = [super initWithRootViewController:rootViewController]) {
+
+// PY主题与夜间主题冲突，故此处先注释
+        // 设置主题颜色
+        UINavigationBar *navBar = [[UINavigationBar alloc] init];
+
+        // 设置背景颜色
+        if ([LXUDCache lx_loadCache:UD_KEY_PYCOLOR]) {
+            navBar.barTintColor = [LXUDCache lx_loadCache:UD_KEY_PYCOLOR];
+        }else{
+            navBar.barTintColor = [UIColor whiteColor];
+        }
+        // PY主题设置参数
+        [navBar py_addToThemeColorPool:@"barTintColor"];
+
+
+        navBar.tintColor = [UIColor redColor];
+        // 设置字体颜色
+        NSDictionary *attr = @{ NSForegroundColorAttributeName : [UIColor orangeColor],
+                                NSFontAttributeName : [UIFont boldSystemFontOfSize:20]
+                                };
+        navBar.titleTextAttributes = attr;
+
+        // 不透明 Y起点从NavBar底部开始
+        navBar.translucent = NO;
+
+        [self setValue:navBar forKey:@"navigationBar"];
+ 
+    }
+
+    return self;
+}
+ */
+
+#pragma mark - 状态栏样式设定
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    BOOL isNightModel = [[LXNightThemeManager defaultManager].currentThemeName isEqualToString:LXNightThemeManager_NightModel];
+    
+    return isNightModel ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // 设置全局Navigation从Bar以下开始
+    self.navigationBar.translucent = NO;
+    
+    // 根据夜间模式刷新主题
+    [self applyTheme];
+    
+    // 添加夜间模式切换通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applyTheme) name:LXThemeManagerDidChangeThemeNotification object:nil];
+    
     [self addGestureRecognizer];
 }
+
+
+#pragma mark - 主题切换应用
+- (void)applyTheme {
+    // 判断当前是否是夜间模式
+    BOOL isNightModel = [[LXNightThemeManager defaultManager].currentThemeName isEqualToString:LXNightThemeManager_NightModel];
+    
+    if (isNightModel) {
+        // LXNight_Night.plist文件读取
+        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"LXNight_Night" ofType:@"plist"];
+        NSMutableDictionary *NightDic = [[NSDictionary dictionaryWithContentsOfFile:plistPath] mutableCopy];
+      
+        // title字体设置
+        NSDictionary *attr = @{ NSForegroundColorAttributeName : [UIColor colorWithHexString:NightDic[@"NavigationBar.titleTextColor"]],
+                                NSFontAttributeName : [UIFont boldSystemFontOfSize:20]
+                                };
+        self.navigationBar.titleTextAttributes = attr;
+        // 返回按钮字体颜色
+        self.navigationBar.tintColor = [UIColor colorWithHexString:NightDic[@"NavigationBar.tintColor"]];
+        // 导航栏背景
+        self.navigationBar.barTintColor =[UIColor colorWithHexString:NightDic[@"NavigationBar.barTintColor"]];
+        
+        // 刷新状态栏
+        [self setNeedsStatusBarAppearanceUpdate];
+        
+    } else {
+        // LXNight_Default.plist文件读取
+        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"LXNight_Default" ofType:@"plist"];
+        NSMutableDictionary *DefaultDic = [[NSDictionary dictionaryWithContentsOfFile:plistPath] mutableCopy];
+        
+        // 设置字体颜色
+        NSDictionary *attr = @{ NSForegroundColorAttributeName : [UIColor colorWithHexString:DefaultDic[@"NavigationBar.titleTextColor"]],
+                                NSFontAttributeName : [UIFont boldSystemFontOfSize:20]
+                                };
+        self.navigationBar.titleTextAttributes = attr;
+        // 返回按钮字体颜色
+        self.navigationBar.tintColor = [UIColor colorWithHexString:DefaultDic[@"NavigationBar.tintColor"]];
+        // 导航栏背景
+        self.navigationBar.barTintColor = [UIColor colorWithHexString:DefaultDic[@"NavigationBar.barTintColor"]];
+        
+        // 刷新状态栏
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+}
+
 
 #pragma mark - 侧滑手势
 
@@ -134,9 +239,8 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
     LXLog(@"%@ %lu",viewController,(unsigned long)self.viewControllers.count);
-    //如果现在push的不是栈底控制器（最先push进来的那个控制器）
+    //如果现在push的不是栈底控制器（最先push进来的那个控制器）  隐藏Tabbar
     if (self.viewControllers.count > 0) {
-        
         viewController.hidesBottomBarWhenPushed = YES;
     }
     
@@ -144,10 +248,10 @@
     
     // 设置全局返回文字
     viewController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:(UIBarButtonItemStylePlain) target:nil action:nil];
-    
-    // 不透明 Y起点从NavBar底部开始
-    viewController.navigationController.navigationBar.translucent = NO;
+}
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {

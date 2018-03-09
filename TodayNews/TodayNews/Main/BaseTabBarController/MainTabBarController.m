@@ -13,11 +13,16 @@
 
 //View
 #import "MainTabbarView.h"
+#import "LXLaunchGuideView.h"
 
 //Category
 #import "UIImage+Extension.h"
 
 #import "LXTabBar.h"
+
+
+#import "LXNightThemeManager.h"
+
 
 
 @interface MainTabBarController ()<UITabBarControllerDelegate,MainTabbarViewDelegate>
@@ -37,10 +42,16 @@
     // 设置背景颜色
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
+    
     _lxTabbar = [[LXTabBar alloc] init];
     [_lxTabbar.centerBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     //选中时的颜色
-    _lxTabbar.tintColor = [UIColor colorWithRed:27.0/255.0 green:118.0/255.0 blue:208/255.0 alpha:1];
+    if ([LXUDCache lx_loadCache:UD_KEY_PYCOLOR]) {
+        _lxTabbar.tintColor = [LXUDCache lx_loadCache:UD_KEY_PYCOLOR];
+    }else{
+        _lxTabbar.tintColor = [UIColor colorWithRed:27.0/255.0 green:118.0/255.0 blue:208/255.0 alpha:1];
+    }
+
     //透明设置为NO，显示白色，view的高度到tabbar顶部截止，YES的话到底部
     _lxTabbar.translucent = NO;
     //利用KVC 将自己的tabbar赋给系统tabBar
@@ -48,20 +59,43 @@
     
     //设置 UITabBarController Delegate
     self.delegate = self;
-    
+
     
     // 添加子视图
     [self addChildViewControllers];
+    
+    // 夜间模式
+    [self applyTheme];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applyTheme) name:LXThemeManagerDidChangeThemeNotification object:nil];
+    
+
+    // 设置APP引导页
+    
+    // 第一次为NO，是否应该关闭启动引导，默认为不关闭NO
+    BOOL closelaunchGUIDE = [LXUDCache lx_loadCache_Bool:UD_KEY_ISCLOSELAUNCH_GUIDE];
+    
+    if (!closelaunchGUIDE)
+    {
+        // 静态引导图 动态引导图
+        NSArray *imageNameArray = @[@"GuidePageHUD_Gif01.gif",@"GuidePageHUD_Gif02.gif",@"GuidePageHUD_guideImage1.png",@"GuidePageHUD_guideImage2.png",@"GuidePageHUD_guideImage3.png",@"GuidePageHUD_guideImage4.png"];
+        
+        LXLaunchGuideView *launchGuideView = [[LXLaunchGuideView alloc] my_initWithFrame:self.view.frame imageNameArray:imageNameArray isHideBtn:NO];
+        launchGuideView.isSlideEnter = NO;
+        [self.view addSubview:launchGuideView];
+    }
+    
+    
+    
 }
 
 //添加子控制器
 - (void)addChildViewControllers{
     //图片大小建议32*32
     [self addChildrenViewController:@"FirstViewController" andTitle:@"首页" andImageName:@"tab1_n" andSelectImage:@"tab1_p"];
-    [self addChildrenViewController:@"SecondViewController" andTitle:@"扩展" andImageName:@"tab2_n" andSelectImage:@"tab2_p"];
+    [self addChildrenViewController:@"SecondViewController" andTitle:@"视频" andImageName:@"tab2_n" andSelectImage:@"tab2_p"];
     //中间这个不设置东西，只占位
     [self addChildrenViewController:@"ThirdViewController" andTitle:@"探索" andImageName:@"1" andSelectImage:@"1"];
-    [self addChildrenViewController:@"ForthViewController" andTitle:@"发现" andImageName:@"tab3_n" andSelectImage:@"tab3_p"];
+    [self addChildrenViewController:@"ForthViewController" andTitle:@"功能" andImageName:@"tab3_n" andSelectImage:@"tab3_p"];
     [self addChildrenViewController:@"FifthViewController" andTitle:@"我" andImageName:@"tab4_n" andSelectImage:@"tab4_p"];
 }
 
@@ -71,11 +105,10 @@
     UIViewController *childVC = [classs new];
     
     childVC.tabBarItem.image = [UIImage imageNamed:imageName];
-    childVC.tabBarItem.selectedImage =  [UIImage imageNamed:selectedImage];
+    childVC.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
     childVC.title = title;
     
     LXBaseNavigationController *baseNav = [[LXBaseNavigationController alloc] initWithRootViewController:childVC];
-
     [self addChildViewController:baseNav];
 }
 
@@ -163,6 +196,19 @@
     
 }
 
+#pragma mark - 主题切换应用
+- (void)applyTheme {
+    BOOL isNightModel = [[LXNightThemeManager defaultManager].currentThemeName isEqualToString:LXNightThemeManager_NightModel];
+    
+    if (isNightModel) {
+        //修改Tabbar背景色 即可
+        _lxTabbar.barTintColor = [UIColor darkGrayColor];
+    } else {
+        _lxTabbar.barTintColor = [UIColor whiteColor];
+    }
+}
+
+
 #pragma mark - Push Pop
 
 -(void)goto_A {
@@ -187,7 +233,9 @@
 
 
 
-
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 - (void)didReceiveMemoryWarning {
