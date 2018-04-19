@@ -57,6 +57,13 @@ typedef NS_OPTIONS(NSUInteger, LXTimeZoneType) {
 
 
 /**
+ 获取当天日期
+
+ @return @"2018-03-09"
+ */
++ (NSString *)getTodayDate;
+
+/**
  根据『时间戳』计算时间差（几小时前、几天前）
 
  @param timeStamp 时间戳（单位毫秒）

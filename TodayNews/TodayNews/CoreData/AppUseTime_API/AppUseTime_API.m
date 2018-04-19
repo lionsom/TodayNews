@@ -61,12 +61,12 @@ static NSString * const entityName = @"AppUseTime";
 }
 
 #pragma mark - -- 插入上传记录
-- (void)insertModel:(AppUseTime *)model success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
+- (void)insertModel:(NSDictionary *)dic success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
 {
-    NSString * date = model.date;
-    NSString * starttime = model.date;
-    NSString * endtime = model.date;
-    NSString * timediff = model.date; 
+    NSString * date = dic[@"date"];
+    NSString * starttime = dic[@"starttime"];
+    NSString * endtime = dic[@"endtime"];
+    NSString * timediff = dic[@"timediff"];
     
     NSDictionary *dict = NSDictionaryOfVariableBindings(date,starttime,endtime,timediff);
     

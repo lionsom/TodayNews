@@ -19,7 +19,13 @@
 // 获取时间扩展
 #import "NSString+DisplayTime.h"
 
-@interface AppDelegate ()
+// 异常处理
+#import "AvoidCrash.h"
+#import <Bugly/Bugly.h>
+static NSString * const KBuglyAppId = @"e58b6a4d80";
+
+
+@interface AppDelegate ()<BuglyDelegate>
 
 @end
 
@@ -28,6 +34,53 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    /**
+     *  相比于becomeEffective，增加
+     *  对”unrecognized selector sent to instance”防止崩溃的处理
+     *
+     *  但是必须配合:
+     *            setupClassStringsArr:和
+     *            setupNoneSelClassStringPrefixsArr
+     *            这两个方法可以同时使用
+     */
+     [AvoidCrash makeAllEffective];
+    
+    
+    
+    /**
+     *  初始化一个需要防止”unrecognized selector sent to instance”的崩溃的类名数组
+     *  ⚠️不可将@"NSObject"加入classStrings数组中
+     *  ⚠️不可将UI前缀的字符串加入classStrings数组中
+     */
+    
+    NSArray *noneSelClassStrings = @[
+                                     @"NSNull",
+                                     @"NSNumber",
+                                     @"NSString",
+                                     @"NSDictionary",
+                                     @"NSArray"
+                                     ];
+    [AvoidCrash setupNoneSelClassStringsArr:noneSelClassStrings];
+    
+    
+    /**
+     *  初始化一个需要防止”unrecognized selector sent to instance”的崩溃的类名前缀的数组
+     *  ⚠️不可将UI前缀的字符串(包括@"UI")加入classStringPrefixs数组中
+     *  ⚠️不可将NS前缀的字符串(包括@"NS")加入classStringPrefixs数组中
+     */
+//    + (void)setupNoneSelClassStringPrefixsArr:(NSArray<NSString *> *)classStringPrefixs;
+    NSArray *noneSelClassPrefixs = @[
+                                     @"Login"
+                                     ];
+    [AvoidCrash setupNoneSelClassStringPrefixsArr:noneSelClassPrefixs];
+    
+    //监听通知:AvoidCrashNotification, 获取AvoidCrash捕获的崩溃日志的详细信息
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealwithCrashMessage:) name:AvoidCrashNotification object:nil];
+    
+    
+    
     
 //------ 设置按钮互斥 ----- 同一时间只能点击一个按钮
     [[UIButton appearance] setExclusiveTouch:YES];
@@ -79,29 +132,27 @@
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     
     NSLog(@"%s",__func__);
-    // 保存到数据库
-    
+//---- 保存到数据库 ----
     //记录离开APP时间点
+    NSString * starttime = [LXUDCache lx_loadCache:UD_KEY_APPDIDACTIVETIME];
     NSString * endtime = [NSString getCurrentTime];
-    NSString * starttime = [LXUDCache lx_loadCache:UD_KEY_APPRESIGNACTIVETIME];
     
     // 计算时间间隔
     NSString * starttimeSP = [NSString timeToTimeStamp:starttime];
     NSString * endtimeSP = [NSString timeToTimeStamp:endtime];
     long long diff = [endtimeSP longLongValue] - [starttimeSP longLongValue];
     
-    // 创建对象
-    AppUseTime * model = [[AppUseTime alloc]init];
-    model.date = @"2018-03-09";
-    model.starttime = starttime;
-    model.endtime = endtime;
-    model.timediff = [NSString stringWithFormat:@"%lld",diff];
+    //获取当天日期 1、函数getTodayDate 2、根据endtime截取前十位
+    NSString * date = [endtime substringToIndex:10];
     
+    NSDictionary * dic = [[NSDictionary alloc]initWithObjectsAndKeys:date,@"date",starttime,@"starttime",endtime,@"endtime",[NSString stringWithFormat:@"%lld",diff],@"timediff", nil];
+    
+    // CoreData 数据写入
     AppUseTime_API * A = [AppUseTime_API sharedInstance];
-    [A insertModel:model success:^{
-        
+    [A insertModel:dic success:^{
+        LXLog(@"写入成功");
     } fail:^(NSError *error) {
-        
+        LXLog(@"写入失败");
     }];
     
 }
@@ -174,7 +225,35 @@
     [manager startMonitoring];
 }
 
+#pragma mark - Bugly
+- (void)configureForBugly {
+    BuglyConfig *config = [[BuglyConfig alloc] init];
+    config.channel = @"App Store";
+    config.blockMonitorEnable = YES; // 卡顿监控开关，默认关闭
+    config.blockMonitorTimeout = 5;
+
+    config.unexpectedTerminatingDetectionEnable = YES; // 非正常退出事件记录开关，默认关闭
+    config.delegate = self;
+    
+#ifdef DEBUG
+    config.debugMode = YES; // debug 模式下，开启调试模式
+    config.reportLogLevel = BuglyLogLevelVerbose; // 设置自定义日志上报的级别，默认不上报自定义日志
+#else
+    config.debugMode = NO; // release 模式下，关闭调试模式
+    config.reportLogLevel = BuglyLogLevelWarn;
+#endif
+    
+    [Bugly startWithAppId:KBuglyAppId config:config];
+    
+    //
+    [Bugly setUserIdentifier:@"12345"];  // 记录登录名
+    
+}
 
 
 
+
+
+
+    
 @end

@@ -88,6 +88,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = @"自定义NSDate";
     self.view.backgroundColor = [UIColor whiteColor];
     
     
@@ -124,6 +125,7 @@
     
     NSString * str3 = [NSString getCurrentTime];
     
+    NSString * str4 = [NSString getTodayDate];
     
     LXLog(@"");
 }

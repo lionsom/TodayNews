@@ -10,8 +10,9 @@
 
 // Controller
 #import "Study_NSDate_VC.h"
-
-
+#import "Study_CatchCrash_VC.h"
+#import "Study_SDWebImageVC.h"
+#import "Study_SandboxFilePathVC.h"
 
 
 
@@ -52,9 +53,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    static NSString *ID = @"cell";
     if (indexPath.section == 0 && indexPath.row == 0) {
-        static NSString *ID = @"cell";
         // 根据标识去缓存池找cell
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
         // 不写这句直接崩掉，找不到循环引用的cell
@@ -72,7 +72,43 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
         return cell;
-    }else {
+    }else if (indexPath.section == 0 && indexPath.row == 1){
+        // 根据标识去缓存池找cell
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        // 不写这句直接崩掉，找不到循环引用的cell
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        }
+        
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"SDWebImage";
+        cell.detailTextLabel.text = @"进入";
+        
+        //（这种是没有点击后的阴影效果)
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        // 右侧小图标 - 箭头
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        return cell;
+    } else if (indexPath.section == 1 && indexPath.row == 0){
+        // 根据标识去缓存池找cell
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        // 不写这句直接崩掉，找不到循环引用的cell
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        }
+        
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"寻找沙盒文件路径";
+        cell.detailTextLabel.text = @"进入";
+        
+        //（这种是没有点击后的阴影效果)
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        // 右侧小图标 - 箭头
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        return cell;
+    } else {
         static NSString *ID = @"cell";
         // 根据标识去缓存池找cell
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
@@ -117,7 +153,9 @@
     [headView addSubview:titleLabel];
     
     if (section == 0) {
-        titleLabel.text = @"测试";
+        titleLabel.text = @"  测试";
+    }else if (section == 0) {
+        titleLabel.text = @"  SandBox相关";
     }else {
         titleLabel.text = @"AAA";
     }
@@ -125,9 +163,16 @@
     return headView;
 }
 
+// 点击事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0 && indexPath.row == 0) {
         Study_NSDate_VC * vc = [[Study_NSDate_VC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 0 && indexPath.row == 1){
+        Study_SDWebImageVC * vc = [[Study_SDWebImageVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 1 && indexPath.row == 0){
+        Study_SandboxFilePathVC * vc = [[Study_SandboxFilePathVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

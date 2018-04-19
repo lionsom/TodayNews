@@ -14,7 +14,7 @@
 
 + (instancetype)sharedInstance;
 
-- (void)insertModel:(AppUseTime *)model success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
+- (void)insertModel:(NSDictionary *)dic success:(void(^)(void))success fail:(void(^)(NSError *error))fail;
 
 - (void)readAllUploadModel:(void(^)(NSArray *finishArray))success fail:(void(^)(NSError *error))fail;
 

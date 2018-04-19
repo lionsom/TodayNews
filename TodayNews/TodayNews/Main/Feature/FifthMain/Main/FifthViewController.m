@@ -21,6 +21,10 @@
 #import "AppUseTime_API.h"
 #import "AppUseTime+CoreDataClass.h"
 
+#import "NSString+DisplayTime.h"
+
+#import "LXNineBoxVC.h"
+
 #define HeadView_H SCREEN_WIDTH/2
 
 @interface FifthViewController ()<UITableViewDelegate,UITableViewDataSource,FifthMain_FirstTypeCellDelegate,FifthMain_SecondTypeCellDelegate>
@@ -31,6 +35,8 @@
 
 @property (nonatomic, strong) UIImageView * myheadImageView;
 
+@property (nonatomic, strong) UIButton * UsetimeBtn;
+
 @end
 
 @implementation FifthViewController
@@ -38,6 +44,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
+    
+    if (self.UsetimeBtn) {
+        [self.UsetimeBtn setTitle:[self getUseTime] forState:UIControlStateNormal];
+    }
 }
 
 - (void)viewDidLoad {
@@ -48,8 +58,44 @@
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
 //    self.navigationController.navigationBar.shadowImage = [UIImage new];   // 下方的细线
     
+    
+
+    
+    
     [self.view addSubview:self.tableView];
 }
+
+#pragma mark - GetUseTime
+- (NSString *)getUseTime {
+    __block long long UseTime = 0;
+    AppUseTime_API * A = [AppUseTime_API sharedInstance];
+    [A readAllUploadModel:^(NSArray *finishArray) {
+        for (AppUseTime * obj in finishArray) {
+            // LXLog(@"DDDDD == %@ == %@ == %@ == %@",obj.date, obj.starttime, obj.endtime, obj.timediff);
+            UseTime += [obj.timediff longLongValue];
+        }
+    } fail:^(NSError *error) {
+        LXLog(@"");
+    }];
+    
+    // 本次使用的时长
+    NSString * starttime = [LXUDCache lx_loadCache:UD_KEY_APPDIDACTIVETIME];
+    NSString * nowtime = [NSString getCurrentTime];
+    
+    // 计算时间间隔
+    NSString * starttimeSP = [NSString timeToTimeStamp:starttime];
+    NSString * endtimeSP = [NSString timeToTimeStamp:nowtime];
+    long long diff = [endtimeSP longLongValue] - [starttimeSP longLongValue];
+    
+    UseTime += diff;
+    
+    // 除以60秒 获取分钟
+    UseTime /= 60;
+    NSString * usetimestr = [NSString stringWithFormat:@"%lld分钟",UseTime];
+    
+    return usetimestr;
+}
+
 
 
 #pragma mark - TableView Delegate
@@ -161,7 +207,22 @@
         
         return cell;
         
-    }else {
+    } else if(indexPath.section == 2 && indexPath.row == 0) {
+        static NSString *ID = @"cell_type_2";
+        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
+        }
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"手势密码&&指纹密码";
+        cell.detailTextLabel.text = @"进入";
+        
+        //（这种是没有点击后的阴影效果)
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        return cell;
+    } else {
         static NSString *ID = @"cell";
         // 根据标识去缓存池找cell
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
@@ -218,12 +279,13 @@
         self.myheadImageView.clipsToBounds = YES;
         [self.myheadView addSubview:self.myheadImageView];
         
-        UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 50, 100, 50)];
-        btn.backgroundColor = [UIColor greenColor];
-        [btn setBackgroundImage:[UIImage imageNamed:@"home_list2"] forState:UIControlStateNormal];
-        [btn setBackgroundImage:[UIImage imageNamed:@"home_list1"] forState:UIControlStateHighlighted];
-        [self.myheadView addSubview:btn];
-        
+
+        // 阅读时长
+        self.UsetimeBtn = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/5*4, HeadView_H/2, SCREEN_WIDTH/5, 40)];
+        self.UsetimeBtn.backgroundColor = [UIColor darkGrayColor];
+        [self.UsetimeBtn setTitle:[self getUseTime] forState:UIControlStateNormal];
+        [self.UsetimeBtn addTarget:self action:@selector(UseTimeBtnCallBack) forControlEvents:UIControlEventTouchUpInside];
+        [self.myheadView addSubview:self.UsetimeBtn];
         
         return self.myheadView;
     }
@@ -242,48 +304,18 @@
     }
     
     if (indexPath.section == 2 && indexPath.row == 0) {
-        //
-        AppUseTime_API * A = [AppUseTime_API sharedInstance];
-        [A insertModel:@"" success:^{
-            LXLog(@"");
-        } fail:^(NSError *error) {
-            LXLog(@"");
-        }];
+        LXNineBoxVC * v = [[LXNineBoxVC alloc]init];
+//        [self presentViewController:v animated:YES completion:nil];
+        [self.navigationController pushViewController:v animated:YES];
     }
     if (indexPath.section == 2 && indexPath.row == 1) {
-        AppUseTime_API * A = [AppUseTime_API sharedInstance];
-        [A readAllUploadModel:^(NSArray *finishArray) {
-            for (AppUseTime * obj in finishArray) {
-                LXLog(@"DDDDD == %@",obj.date);
-            }
-        } fail:^(NSError *error) {
-            LXLog(@"");
-        }];
+        
     }
     if (indexPath.section == 2 && indexPath.row == 2) {
-        AppUseTime_API * A = [AppUseTime_API sharedInstance];
-        
-//        AppUseTime * model = [[AppUseTime alloc]init];
-//        model.date = @"2018-03-06";
-//        model.starttime = @"";
-//        model.endtime = @"";
-//        model.timediff = @"";
-        
-        [A deleteUploadModel:nil success:^{
-            LXLog(@"AAA");
-        } fail:^(NSError *error) {
-            LXLog(@"BBB");
-        }];
+       
     }
-    
     if (indexPath.section == 2 && indexPath.row == 3) {
-        AppUseTime_API * A = [AppUseTime_API sharedInstance];
-        
-        [A deleteAllUploadModel:^{
-            LXLog(@"AAA");
-        } fail:^(NSError *error) {
-            LXLog(@"BBB");
-        }];
+      
     }
     
     
@@ -351,6 +383,12 @@
             [LXUDCache lx_setCache_Bool:YES forKey:UD_KEY_ISFIRSTUSEAPP];
         }
     }
+}
+
+#pragma mark - CallBack
+
+-(void)UseTimeBtnCallBack {
+    [self.UsetimeBtn setTitle:[self getUseTime] forState:UIControlStateNormal];
 }
 
 

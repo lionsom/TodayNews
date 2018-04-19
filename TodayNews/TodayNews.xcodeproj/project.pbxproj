@@ -60,7 +60,6 @@
 		467DE1D520318DD800D26EFD /* LXQRCodeResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 467DE1D120318DD800D26EFD /* LXQRCodeResources.bundle */; };
 		467DE1D620318DD800D26EFD /* ShowQRCodeResult_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE1D320318DD800D26EFD /* ShowQRCodeResult_VC.m */; };
 		467DE1DA20319B7B00D26EFD /* NSURL+url.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE1D820319B7B00D26EFD /* NSURL+url.m */; };
-		467DE1DD20319C4700D26EFD /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE1DC20319C4700D26EFD /* NullSafe.m */; };
 		468134CC20415BB2009E2DF8 /* NSObject+PYThemeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 468134CB20415BB2009E2DF8 /* NSObject+PYThemeExtension.m */; };
 		468134D1204170DD009E2DF8 /* LXCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 468134D0204170DD009E2DF8 /* LXCircleButton.m */; };
 		4682853C2044F9EC00A0C720 /* LXNight_Default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4682853B2044F9EC00A0C720 /* LXNight_Default.plist */; };
@@ -110,6 +109,13 @@
 		46BB547C2030370100DC30DD /* LXLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB547B2030370100DC30DD /* LXLog.m */; };
 		46BB5480203043DA00DC30DD /* MainTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB547F203043DA00DC30DD /* MainTabbarView.m */; };
 		6274A78B8418A2AF9FB3E220 /* Pods_TodayNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE6EE84554C349F4582E4CB /* Pods_TodayNews.framework */; };
+		8A423B8F206201D8009312A8 /* Study_CatchCrash_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A423B8E206201D8009312A8 /* Study_CatchCrash_VC.m */; };
+		8A46A1472073AE8000123D00 /* Study_SDWebImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A46A1462073AE8000123D00 /* Study_SDWebImageVC.m */; };
+		8AAF8D1D2084EF8C0033DC82 /* Study_SandboxFilePathVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF8D1C2084EF8C0033DC82 /* Study_SandboxFilePathVC.m */; };
+		8ADFCF7420554E4E00CC38DD /* KMNineBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFCF6D20554E4D00CC38DD /* KMNineBoxView.m */; };
+		8ADFCF7520554E4E00CC38DD /* CheckTraceRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFCF7020554E4E00CC38DD /* CheckTraceRecognizer.m */; };
+		8ADFCF7620554E4E00CC38DD /* KMMathHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFCF7320554E4E00CC38DD /* KMMathHelper.m */; };
+		8ADFCF7920554ED800CC38DD /* LXNineBoxVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFCF7820554ED800CC38DD /* LXNineBoxVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,7 +242,6 @@
 		467DE1D320318DD800D26EFD /* ShowQRCodeResult_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowQRCodeResult_VC.m; sourceTree = "<group>"; };
 		467DE1D820319B7B00D26EFD /* NSURL+url.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+url.m"; sourceTree = "<group>"; };
 		467DE1D920319B7B00D26EFD /* NSURL+url.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+url.h"; sourceTree = "<group>"; };
-		467DE1DC20319C4700D26EFD /* NullSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
 		468134CA20415BB2009E2DF8 /* NSObject+PYThemeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PYThemeExtension.h"; sourceTree = "<group>"; };
 		468134CB20415BB2009E2DF8 /* NSObject+PYThemeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PYThemeExtension.m"; sourceTree = "<group>"; };
 		468134CF204170DD009E2DF8 /* LXCircleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXCircleButton.h; sourceTree = "<group>"; };
@@ -318,6 +323,21 @@
 		46BB547B2030370100DC30DD /* LXLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLog.m; sourceTree = "<group>"; };
 		46BB547E203043DA00DC30DD /* MainTabbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabbarView.h; sourceTree = "<group>"; };
 		46BB547F203043DA00DC30DD /* MainTabbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabbarView.m; sourceTree = "<group>"; };
+		8A423B8D206201D8009312A8 /* Study_CatchCrash_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_CatchCrash_VC.h; sourceTree = "<group>"; };
+		8A423B8E206201D8009312A8 /* Study_CatchCrash_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_CatchCrash_VC.m; sourceTree = "<group>"; };
+		8A46A1452073AE8000123D00 /* Study_SDWebImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_SDWebImageVC.h; sourceTree = "<group>"; };
+		8A46A1462073AE8000123D00 /* Study_SDWebImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_SDWebImageVC.m; sourceTree = "<group>"; };
+		8AAF8D1B2084EF8C0033DC82 /* Study_SandboxFilePathVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_SandboxFilePathVC.h; sourceTree = "<group>"; };
+		8AAF8D1C2084EF8C0033DC82 /* Study_SandboxFilePathVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_SandboxFilePathVC.m; sourceTree = "<group>"; };
+		8ADFCF6D20554E4D00CC38DD /* KMNineBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMNineBoxView.m; sourceTree = "<group>"; };
+		8ADFCF6E20554E4D00CC38DD /* KMMathHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMathHelper.h; sourceTree = "<group>"; };
+		8ADFCF6F20554E4D00CC38DD /* KMUIKitMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMUIKitMacro.h; sourceTree = "<group>"; };
+		8ADFCF7020554E4E00CC38DD /* CheckTraceRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckTraceRecognizer.m; sourceTree = "<group>"; };
+		8ADFCF7120554E4E00CC38DD /* KMNineBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMNineBoxView.h; sourceTree = "<group>"; };
+		8ADFCF7220554E4E00CC38DD /* CheckTraceRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckTraceRecognizer.h; sourceTree = "<group>"; };
+		8ADFCF7320554E4E00CC38DD /* KMMathHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMMathHelper.m; sourceTree = "<group>"; };
+		8ADFCF7720554ED800CC38DD /* LXNineBoxVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXNineBoxVC.h; sourceTree = "<group>"; };
+		8ADFCF7820554ED800CC38DD /* LXNineBoxVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXNineBoxVC.m; sourceTree = "<group>"; };
 		93649570BADE73F269C4330F /* Pods-TodayNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayNews/Pods-TodayNews.debug.xcconfig"; sourceTree = "<group>"; };
 		AD68C2814344A988D6648385 /* Pods-TodayNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayNews/Pods-TodayNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -397,6 +417,9 @@
 		466C72CF20521EF40008BAF7 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				8AAF8D1A2084EF550033DC82 /* Study_Sandbox */,
+				8A46A1402073A71100123D00 /* Study_SDWebImage */,
+				8A423B8C20620172009312A8 /* Study_CatchCrash */,
 				466C72D020521F0C0008BAF7 /* Study_NSDate */,
 				466C72D720522F8D0008BAF7 /* Study_Enum */,
 			);
@@ -610,7 +633,6 @@
 				46AD50E32044191B001066FE /* UITabBar */,
 				46AD50E2204417CE001066FE /* UIImage */,
 				4687DD4A20327CCF0041CC06 /* SVProgressHUD */,
-				467DE1DB20319C4700D26EFD /* NullSafe */,
 				467DE1D720319B5900D26EFD /* NSURL */,
 				467DE1AE203137F900D26EFD /* UIControl+RepeatClick.h */,
 				467DE1AF203137F900D26EFD /* UIControl+RepeatClick.m */,
@@ -859,14 +881,6 @@
 			path = NSURL;
 			sourceTree = "<group>";
 		};
-		467DE1DB20319C4700D26EFD /* NullSafe */ = {
-			isa = PBXGroup;
-			children = (
-				467DE1DC20319C4700D26EFD /* NullSafe.m */,
-			);
-			path = NullSafe;
-			sourceTree = "<group>";
-		};
 		468134C820415B7D009E2DF8 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -892,6 +906,7 @@
 		468134CD20417045009E2DF8 /* Custom（自定义控件） */ = {
 			isa = PBXGroup;
 			children = (
+				8ADFCF6C20554E1D00CC38DD /* NineBox(九宫格手势密码) */,
 				468134CE20417085009E2DF8 /* CircleButton */,
 			);
 			path = "Custom（自定义控件）";
@@ -1151,6 +1166,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8A423B8C20620172009312A8 /* Study_CatchCrash */ = {
+			isa = PBXGroup;
+			children = (
+				8A423B8D206201D8009312A8 /* Study_CatchCrash_VC.h */,
+				8A423B8E206201D8009312A8 /* Study_CatchCrash_VC.m */,
+			);
+			path = Study_CatchCrash;
+			sourceTree = "<group>";
+		};
+		8A46A1402073A71100123D00 /* Study_SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				8A46A1452073AE8000123D00 /* Study_SDWebImageVC.h */,
+				8A46A1462073AE8000123D00 /* Study_SDWebImageVC.m */,
+			);
+			path = Study_SDWebImage;
+			sourceTree = "<group>";
+		};
+		8AAF8D1A2084EF550033DC82 /* Study_Sandbox */ = {
+			isa = PBXGroup;
+			children = (
+				8AAF8D1B2084EF8C0033DC82 /* Study_SandboxFilePathVC.h */,
+				8AAF8D1C2084EF8C0033DC82 /* Study_SandboxFilePathVC.m */,
+			);
+			path = Study_Sandbox;
+			sourceTree = "<group>";
+		};
+		8ADFCF6C20554E1D00CC38DD /* NineBox(九宫格手势密码) */ = {
+			isa = PBXGroup;
+			children = (
+				8ADFCF7720554ED800CC38DD /* LXNineBoxVC.h */,
+				8ADFCF7820554ED800CC38DD /* LXNineBoxVC.m */,
+				8ADFCF7220554E4E00CC38DD /* CheckTraceRecognizer.h */,
+				8ADFCF7020554E4E00CC38DD /* CheckTraceRecognizer.m */,
+				8ADFCF6E20554E4D00CC38DD /* KMMathHelper.h */,
+				8ADFCF7320554E4E00CC38DD /* KMMathHelper.m */,
+				8ADFCF7120554E4E00CC38DD /* KMNineBoxView.h */,
+				8ADFCF6D20554E4D00CC38DD /* KMNineBoxView.m */,
+				8ADFCF6F20554E4D00CC38DD /* KMUIKitMacro.h */,
+			);
+			path = "NineBox(九宫格手势密码)";
+			sourceTree = "<group>";
+		};
 		AD63F4BFF4F3E9FCFC8FAFF8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1316,9 +1374,30 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TodayNews/Pods-TodayNews-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework",
+				"${BUILT_PRODUCTS_DIR}/DateTools/DateTools.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/PYSearch/PYSearch.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AvoidCrash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTools.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PYSearch.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1331,13 +1410,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TodayNews-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E229A3C10E01D1CFAE1982F7 /* [CP] Copy Pods Resources */ = {
@@ -1369,8 +1451,8 @@
 				46AD50E120441327001066FE /* LXNightBaseImageView.m in Sources */,
 				46AD50CF204404E3001066FE /* LXNightBaseViewController.m in Sources */,
 				467DE1B0203137F900D26EFD /* UIControl+RepeatClick.m in Sources */,
+				8ADFCF7620554E4E00CC38DD /* KMMathHelper.m in Sources */,
 				46AD50B52043B445001066FE /* PersonalCenterComponent.m in Sources */,
-				467DE1DD20319C4700D26EFD /* NullSafe.m in Sources */,
 				46BB5473203029E000DC30DD /* ThirdViewController.m in Sources */,
 				46AD50E6204419F1001066FE /* UIImage+Helpers.m in Sources */,
 				4679C28D204900070082D0C3 /* UIButton+ImageTitleSpacing.m in Sources */,
@@ -1390,6 +1472,8 @@
 				467DE1C720318AFF00D26EFD /* YBPopupMenuPath.m in Sources */,
 				468134D1204170DD009E2DF8 /* LXCircleButton.m in Sources */,
 				46AD50DB204405BB001066FE /* LXNightBaseLabel.m in Sources */,
+				8AAF8D1D2084EF8C0033DC82 /* Study_SandboxFilePathVC.m in Sources */,
+				8ADFCF7920554ED800CC38DD /* LXNineBoxVC.m in Sources */,
 				4619AC53204009DA00BC07D0 /* TYPagerView.m in Sources */,
 				4619AC50204009DA00BC07D0 /* TYTabPagerController.m in Sources */,
 				467BD0A0202BEB6000F9334A /* AppDelegate.m in Sources */,
@@ -1412,9 +1496,12 @@
 				4619AC4E204009DA00BC07D0 /* TYTabPagerBarCell.m in Sources */,
 				4687DD502032BA1A0041CC06 /* D_Base_VC.m in Sources */,
 				467BD0F7202C3F7F00F9334A /* GlobalConst.m in Sources */,
+				8A423B8F206201D8009312A8 /* Study_CatchCrash_VC.m in Sources */,
+				8ADFCF7520554E4E00CC38DD /* CheckTraceRecognizer.m in Sources */,
 				467DE1BA2031710300D26EFD /* C_VC.m in Sources */,
 				467DE1D620318DD800D26EFD /* ShowQRCodeResult_VC.m in Sources */,
 				468134CC20415BB2009E2DF8 /* NSObject+PYThemeExtension.m in Sources */,
+				8A46A1472073AE8000123D00 /* Study_SDWebImageVC.m in Sources */,
 				46AD50DE20441272001066FE /* LXNightBaseButton.m in Sources */,
 				46AD50BA2043ECB5001066FE /* LXUDCache.m in Sources */,
 				467BD0EF202C37DE00F9334A /* LXBaseTableViewController.m in Sources */,
@@ -1426,6 +1513,7 @@
 				467BD0B1202BEB6000F9334A /* main.m in Sources */,
 				4699BB7B204CCBD700E8F445 /* AppUseTime+CoreDataProperties.m in Sources */,
 				4619AC5E20400B0F00BC07D0 /* Location_SEC_VC.m in Sources */,
+				8ADFCF7420554E4E00CC38DD /* KMNineBoxView.m in Sources */,
 				467BD0DA202BF35300F9334A /* LXBaseViewController.m in Sources */,
 				4679C29A204950D20082D0C3 /* Model.xcdatamodeld in Sources */,
 				466C72D320521F550008BAF7 /* Study_NSDate_VC.m in Sources */,
@@ -1605,7 +1693,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2STZ5AM32F;
+				DEVELOPMENT_TEAM = FL2VP3W5B3;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TodayNews/Support/PrefixHeader.pch";
 				INFOPLIST_FILE = TodayNews/Support/Info.plist;
@@ -1623,7 +1711,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2STZ5AM32F;
+				DEVELOPMENT_TEAM = FL2VP3W5B3;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TodayNews/Support/PrefixHeader.pch";
 				INFOPLIST_FILE = TodayNews/Support/Info.plist;
