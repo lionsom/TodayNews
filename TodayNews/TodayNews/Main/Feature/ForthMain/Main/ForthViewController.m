@@ -13,7 +13,7 @@
 #import "Study_CatchCrash_VC.h"
 #import "Study_SDWebImageVC.h"
 #import "Study_SandboxFilePathVC.h"
-
+#import "Study_AFNetworkingVC.h"
 
 
 @interface ForthViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -45,9 +45,9 @@
     if (section == 0) {
         return 2;
     }else if (section == 1) {
-        return 3;
+        return 1;
     }else if (section == 2) {
-        return 10;
+        return 1;
     }
     return 0;
 }
@@ -108,6 +108,24 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
         return cell;
+    } else if (indexPath.section == 2 && indexPath.row == 0){
+        // 根据标识去缓存池找cell
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        // 不写这句直接崩掉，找不到循环引用的cell
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        }
+        
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"AFNetworking测试";
+        cell.detailTextLabel.text = @"进入";
+        
+        //（这种是没有点击后的阴影效果)
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        // 右侧小图标 - 箭头
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        return cell;
     } else {
         static NSString *ID = @"cell";
         // 根据标识去缓存池找cell
@@ -154,8 +172,10 @@
     
     if (section == 0) {
         titleLabel.text = @"  测试";
-    }else if (section == 0) {
+    }else if (section == 1) {
         titleLabel.text = @"  SandBox相关";
+    }else if (section == 2) {
+        titleLabel.text = @"  网络";
     }else {
         titleLabel.text = @"AAA";
     }
@@ -173,6 +193,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 1 && indexPath.row == 0){
         Study_SandboxFilePathVC * vc = [[Study_SandboxFilePathVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 2 && indexPath.row == 0){
+        Study_AFNetworkingVC * vc = [[Study_AFNetworkingVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

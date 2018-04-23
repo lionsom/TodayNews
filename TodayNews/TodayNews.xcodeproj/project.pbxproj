@@ -20,6 +20,7 @@
 		4619AC5E20400B0F00BC07D0 /* Location_SEC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619AC5D20400B0F00BC07D0 /* Location_SEC_VC.m */; };
 		466C72D320521F550008BAF7 /* Study_NSDate_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 466C72D220521F550008BAF7 /* Study_NSDate_VC.m */; };
 		466C72D620522F8A0008BAF7 /* Study_Enum_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 466C72D520522F8A0008BAF7 /* Study_Enum_VC.m */; };
+		4670079E2089CE3000A93BC8 /* Study_AFNetworkingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4670079D2089CE3000A93BC8 /* Study_AFNetworkingVC.m */; };
 		4679C2892048EE590082D0C3 /* FifthMain_FirstTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4679C2882048EE590082D0C3 /* FifthMain_FirstTypeCell.m */; };
 		4679C28D204900070082D0C3 /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 4679C28C204900070082D0C3 /* UIButton+ImageTitleSpacing.m */; };
 		4679C291204926650082D0C3 /* LocalPushCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4679C290204926650082D0C3 /* LocalPushCenter.m */; };
@@ -108,6 +109,8 @@
 		46BB5479203029FD00DC30DD /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB5478203029FD00DC30DD /* FifthViewController.m */; };
 		46BB547C2030370100DC30DD /* LXLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB547B2030370100DC30DD /* LXLog.m */; };
 		46BB5480203043DA00DC30DD /* MainTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB547F203043DA00DC30DD /* MainTabbarView.m */; };
+		46F2F7C0208DC3A800D32377 /* LXAFNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2F7BF208DC3A700D32377 /* LXAFNetwork.m */; };
+		46F2F7C3208DC58000D32377 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2F7C2208DC58000D32377 /* AFAppDotNetAPIClient.m */; };
 		6274A78B8418A2AF9FB3E220 /* Pods_TodayNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE6EE84554C349F4582E4CB /* Pods_TodayNews.framework */; };
 		8A423B8F206201D8009312A8 /* Study_CatchCrash_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A423B8E206201D8009312A8 /* Study_CatchCrash_VC.m */; };
 		8A46A1472073AE8000123D00 /* Study_SDWebImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A46A1462073AE8000123D00 /* Study_SDWebImageVC.m */; };
@@ -163,6 +166,8 @@
 		466C72D220521F550008BAF7 /* Study_NSDate_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_NSDate_VC.m; sourceTree = "<group>"; };
 		466C72D420522F8A0008BAF7 /* Study_Enum_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_Enum_VC.h; sourceTree = "<group>"; };
 		466C72D520522F8A0008BAF7 /* Study_Enum_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_Enum_VC.m; sourceTree = "<group>"; };
+		4670079C2089CE3000A93BC8 /* Study_AFNetworkingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_AFNetworkingVC.h; sourceTree = "<group>"; };
+		4670079D2089CE3000A93BC8 /* Study_AFNetworkingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_AFNetworkingVC.m; sourceTree = "<group>"; };
 		4679C2872048EE590082D0C3 /* FifthMain_FirstTypeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FifthMain_FirstTypeCell.h; sourceTree = "<group>"; };
 		4679C2882048EE590082D0C3 /* FifthMain_FirstTypeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FifthMain_FirstTypeCell.m; sourceTree = "<group>"; };
 		4679C28B204900060082D0C3 /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
@@ -323,6 +328,10 @@
 		46BB547B2030370100DC30DD /* LXLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLog.m; sourceTree = "<group>"; };
 		46BB547E203043DA00DC30DD /* MainTabbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabbarView.h; sourceTree = "<group>"; };
 		46BB547F203043DA00DC30DD /* MainTabbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabbarView.m; sourceTree = "<group>"; };
+		46F2F7BE208DC3A700D32377 /* LXAFNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXAFNetwork.h; sourceTree = "<group>"; };
+		46F2F7BF208DC3A700D32377 /* LXAFNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXAFNetwork.m; sourceTree = "<group>"; };
+		46F2F7C1208DC58000D32377 /* AFAppDotNetAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFAppDotNetAPIClient.h; sourceTree = "<group>"; };
+		46F2F7C2208DC58000D32377 /* AFAppDotNetAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFAppDotNetAPIClient.m; sourceTree = "<group>"; };
 		8A423B8D206201D8009312A8 /* Study_CatchCrash_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_CatchCrash_VC.h; sourceTree = "<group>"; };
 		8A423B8E206201D8009312A8 /* Study_CatchCrash_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_CatchCrash_VC.m; sourceTree = "<group>"; };
 		8A46A1452073AE8000123D00 /* Study_SDWebImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_SDWebImageVC.h; sourceTree = "<group>"; };
@@ -417,6 +426,7 @@
 		466C72CF20521EF40008BAF7 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				467007982089CD3E00A93BC8 /* Study_AFN */,
 				8AAF8D1A2084EF550033DC82 /* Study_Sandbox */,
 				8A46A1402073A71100123D00 /* Study_SDWebImage */,
 				8A423B8C20620172009312A8 /* Study_CatchCrash */,
@@ -442,6 +452,16 @@
 				466C72D520522F8A0008BAF7 /* Study_Enum_VC.m */,
 			);
 			path = Study_Enum;
+			sourceTree = "<group>";
+		};
+		467007982089CD3E00A93BC8 /* Study_AFN */ = {
+			isa = PBXGroup;
+			children = (
+				4670079C2089CE3000A93BC8 /* Study_AFNetworkingVC.h */,
+				4670079D2089CE3000A93BC8 /* Study_AFNetworkingVC.m */,
+				46F2F7BA208D85A200D32377 /* LXAFNetwork */,
+			);
+			path = Study_AFN;
 			sourceTree = "<group>";
 		};
 		4679C2852048ED650082D0C3 /* Main */ = {
@@ -818,16 +838,8 @@
 			children = (
 				46BB5474203029EF00DC30DD /* ForthViewController.h */,
 				46BB5475203029EF00DC30DD /* ForthViewController.m */,
-				467C6BD620513D7200736D6D /* View */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		467C6BD620513D7200736D6D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		467DE1B1203170C100D26EFD /* TESTController */ = {
@@ -1158,6 +1170,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		46F2F7BA208D85A200D32377 /* LXAFNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				46F2F7C1208DC58000D32377 /* AFAppDotNetAPIClient.h */,
+				46F2F7C2208DC58000D32377 /* AFAppDotNetAPIClient.m */,
+				46F2F7BE208DC3A700D32377 /* LXAFNetwork.h */,
+				46F2F7BF208DC3A700D32377 /* LXAFNetwork.m */,
+			);
+			path = LXAFNetwork;
+			sourceTree = "<group>";
+		};
 		5E97324B7F0AABDAC3A0E29E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1457,6 +1480,7 @@
 				46AD50E6204419F1001066FE /* UIImage+Helpers.m in Sources */,
 				4679C28D204900070082D0C3 /* UIButton+ImageTitleSpacing.m in Sources */,
 				4619AC4F204009DA00BC07D0 /* TYTabPagerBarLayout.m in Sources */,
+				4670079E2089CE3000A93BC8 /* Study_AFNetworkingVC.m in Sources */,
 				4686899F202D513A009E9098 /* LXBaseNavigationController.m in Sources */,
 				4699BBD0204D165800E8F445 /* LXCoreDataAPI.m in Sources */,
 				46828549204537AD00A0C720 /* LXNightBaseTableView.m in Sources */,
@@ -1471,6 +1495,7 @@
 				467BD101202C51D900F9334A /* LoginVC.m in Sources */,
 				467DE1C720318AFF00D26EFD /* YBPopupMenuPath.m in Sources */,
 				468134D1204170DD009E2DF8 /* LXCircleButton.m in Sources */,
+				46F2F7C0208DC3A800D32377 /* LXAFNetwork.m in Sources */,
 				46AD50DB204405BB001066FE /* LXNightBaseLabel.m in Sources */,
 				8AAF8D1D2084EF8C0033DC82 /* Study_SandboxFilePathVC.m in Sources */,
 				8ADFCF7920554ED800CC38DD /* LXNineBoxVC.m in Sources */,
@@ -1498,6 +1523,7 @@
 				467BD0F7202C3F7F00F9334A /* GlobalConst.m in Sources */,
 				8A423B8F206201D8009312A8 /* Study_CatchCrash_VC.m in Sources */,
 				8ADFCF7520554E4E00CC38DD /* CheckTraceRecognizer.m in Sources */,
+				46F2F7C3208DC58000D32377 /* AFAppDotNetAPIClient.m in Sources */,
 				467DE1BA2031710300D26EFD /* C_VC.m in Sources */,
 				467DE1D620318DD800D26EFD /* ShowQRCodeResult_VC.m in Sources */,
 				468134CC20415BB2009E2DF8 /* NSObject+PYThemeExtension.m in Sources */,
