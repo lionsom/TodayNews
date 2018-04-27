@@ -14,6 +14,10 @@
 #import "Study_SDWebImageVC.h"
 #import "Study_SandboxFilePathVC.h"
 #import "Study_AFNetworkingVC.h"
+#import "Study_AccuracyMissingVC.h"
+#import "Study_RuntimeVC.h"
+#import "Study_NSThreadVC.h"
+#import "Study_PassValue_A_VC.h"
 
 
 @interface ForthViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -32,12 +36,13 @@
     
     [self.view addSubview:self.tableView];
     
+    
 }
 
 #pragma mark - TableView DataSource
 // Section Number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 7;
 }
 
 // Rows Number
@@ -47,6 +52,14 @@
     }else if (section == 1) {
         return 1;
     }else if (section == 2) {
+        return 1;
+    }else if (section == 3) {
+        return 1;
+    }else if (section == 4) {
+        return 1;
+    }else if (section == 5) {
+        return 3;
+    }else if (section == 6) {
         return 1;
     }
     return 0;
@@ -126,6 +139,78 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
         return cell;
+    } else if (indexPath.section == 3 && indexPath.row == 0){
+        // 根据标识去缓存池找cell
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        // 不写这句直接崩掉，找不到循环引用的cell
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        }
+        
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"小数精度丢失";
+        cell.detailTextLabel.text = @"进入";
+        
+        //（这种是没有点击后的阴影效果)
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        // 右侧小图标 - 箭头
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        return cell;
+    } else if (indexPath.section == 4 && indexPath.row == 0){
+        // 根据标识去缓存池找cell
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        // 不写这句直接崩掉，找不到循环引用的cell
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        }
+        
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"Runtime关联对象";
+        cell.detailTextLabel.text = @"进入";
+        
+        //（这种是没有点击后的阴影效果)
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        // 右侧小图标 - 箭头
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        return cell;
+    }else if (indexPath.section == 5 && indexPath.row == 0){
+        // 根据标识去缓存池找cell
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        // 不写这句直接崩掉，找不到循环引用的cell
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        }
+        
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"NSThread";
+        cell.detailTextLabel.text = @"进入";
+        
+        //（这种是没有点击后的阴影效果)
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        // 右侧小图标 - 箭头
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        return cell;
+    } else if (indexPath.section == 6 && indexPath.row == 0){
+        // 根据标识去缓存池找cell
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        // 不写这句直接崩掉，找不到循环引用的cell
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        }
+        
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"页面传值 - Block";
+        cell.detailTextLabel.text = @"进入";
+        
+        //（这种是没有点击后的阴影效果)
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        // 右侧小图标 - 箭头
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        return cell;
     } else {
         static NSString *ID = @"cell";
         // 根据标识去缓存池找cell
@@ -176,6 +261,14 @@
         titleLabel.text = @"  SandBox相关";
     }else if (section == 2) {
         titleLabel.text = @"  网络";
+    }else if (section == 3) {
+        titleLabel.text = @"  基本数据类型";
+    }else if (section == 4) {
+        titleLabel.text = @"  Runtime";
+    }else if (section == 5) {
+        titleLabel.text = @"  多线程";
+    }else if (section == 6) {
+        titleLabel.text = @"  页面传值";
     }else {
         titleLabel.text = @"AAA";
     }
@@ -197,7 +290,21 @@
     }else if (indexPath.section == 2 && indexPath.row == 0){
         Study_AFNetworkingVC * vc = [[Study_AFNetworkingVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 3 && indexPath.row == 0){
+        Study_AccuracyMissingVC * vc = [[Study_AccuracyMissingVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 4 && indexPath.row == 0){
+        Study_RuntimeVC * vc = [[Study_RuntimeVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 5 && indexPath.row == 0){
+        Study_NSThreadVC * vc = [[Study_NSThreadVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 6 && indexPath.row == 0){
+        Study_PassValue_A_VC * vc = [[Study_PassValue_A_VC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
+
+    
 }
 
 

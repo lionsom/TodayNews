@@ -8,6 +8,9 @@
 
 #import "Study_SDWebImageVC.h"
 
+// MD5 加密头文件
+#import <CommonCrypto/CommonDigest.h>
+
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface Study_SDWebImageVC (){
@@ -29,13 +32,29 @@
     [self.view addSubview:imageV];
     
     
-    
-    
+    [self cachedFileNameForKey:@"123"];
+
 }
 
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [imageV sd_setImageWithURL:[NSURL URLWithString:@"https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1331072331,4134051125&fm=85&s=08A2DD172EF73A820C2CE82F0300E060"] placeholderImage:[UIImage imageNamed:@"camera2"] options:SDWebImageRetryFailed];
+}
+
+
+#pragma mark - SD_MD5
+- (nullable NSString *)cachedFileNameForKey:(nullable NSString *)key {
+    const char *str = key.UTF8String;
+    if (str == NULL) {
+        str = "";
+    }
+    unsigned char r[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(str, (CC_LONG)strlen(str), r);
+    NSString *filename = [NSString stringWithFormat:@"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%@",
+                          r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7], r[8], r[9], r[10],
+                          r[11], r[12], r[13], r[14], r[15], [key.pathExtension isEqualToString:@""] ? @"" : [NSString stringWithFormat:@".%@", key.pathExtension]];
+    
+    return filename;
 }
 
 
