@@ -26,6 +26,14 @@
     if (_ISPOP) {
         //执行POP的方法，比如你POP回来后需要刷新表格。
         NSLog(@"POP");
+        NSUserDefaults * defaultA = [NSUserDefaults standardUserDefaults];
+        NSDictionary * dict = [defaultA valueForKey:@"Value2"];
+        
+        if ([dict[@"value"] isEqualToString:@"123"]) {
+            Study_PassValue_B_VC * vc = [Study_PassValue_B_VC new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        
     }else{
         //执行PUSH进来时的方法。
         NSLog(@"PUSH");

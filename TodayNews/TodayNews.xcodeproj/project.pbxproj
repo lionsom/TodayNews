@@ -115,6 +115,7 @@
 		46BB5479203029FD00DC30DD /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB5478203029FD00DC30DD /* FifthViewController.m */; };
 		46BB547C2030370100DC30DD /* LXLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB547B2030370100DC30DD /* LXLog.m */; };
 		46BB5480203043DA00DC30DD /* MainTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB547F203043DA00DC30DD /* MainTabbarView.m */; };
+		46BE85D820A03CB5002B8E1F /* Study_AdaptVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BE85D720A03CB5002B8E1F /* Study_AdaptVC.m */; };
 		46F2F7C0208DC3A800D32377 /* LXAFNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2F7BF208DC3A700D32377 /* LXAFNetwork.m */; };
 		46F2F7C3208DC58000D32377 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2F7C2208DC58000D32377 /* AFAppDotNetAPIClient.m */; };
 		6274A78B8418A2AF9FB3E220 /* Pods_TodayNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE6EE84554C349F4582E4CB /* Pods_TodayNews.framework */; };
@@ -346,6 +347,8 @@
 		46BB547B2030370100DC30DD /* LXLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLog.m; sourceTree = "<group>"; };
 		46BB547E203043DA00DC30DD /* MainTabbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabbarView.h; sourceTree = "<group>"; };
 		46BB547F203043DA00DC30DD /* MainTabbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabbarView.m; sourceTree = "<group>"; };
+		46BE85D620A03CB5002B8E1F /* Study_AdaptVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_AdaptVC.h; sourceTree = "<group>"; };
+		46BE85D720A03CB5002B8E1F /* Study_AdaptVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_AdaptVC.m; sourceTree = "<group>"; };
 		46F2F7BE208DC3A700D32377 /* LXAFNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXAFNetwork.h; sourceTree = "<group>"; };
 		46F2F7BF208DC3A700D32377 /* LXAFNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXAFNetwork.m; sourceTree = "<group>"; };
 		46F2F7C1208DC58000D32377 /* AFAppDotNetAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFAppDotNetAPIClient.h; sourceTree = "<group>"; };
@@ -444,6 +447,7 @@
 		466C72CF20521EF40008BAF7 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				46BE85D520A03C4E002B8E1F /* Study_Adapt */,
 				4695DE6D20931FCA00E892C4 /* Study_PassValue */,
 				4695DE692092F63B00E892C4 /* Study_Thread */,
 				4671EC702091BFC20075C6E0 /* Study_Runtime */,
@@ -1240,6 +1244,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		46BE85D520A03C4E002B8E1F /* Study_Adapt */ = {
+			isa = PBXGroup;
+			children = (
+				46BE85D620A03CB5002B8E1F /* Study_AdaptVC.h */,
+				46BE85D720A03CB5002B8E1F /* Study_AdaptVC.m */,
+			);
+			path = Study_Adapt;
+			sourceTree = "<group>";
+		};
 		46F2F7BA208D85A200D32377 /* LXAFNetwork */ = {
 			isa = PBXGroup;
 			children = (
@@ -1557,6 +1570,7 @@
 				4699BBD0204D165800E8F445 /* LXCoreDataAPI.m in Sources */,
 				46828549204537AD00A0C720 /* LXNightBaseTableView.m in Sources */,
 				4671EC732091BFEA0075C6E0 /* Study_RuntimeVC.m in Sources */,
+				46BE85D820A03CB5002B8E1F /* Study_AdaptVC.m in Sources */,
 				4687DD4D20327D380041CC06 /* SVProgressHUD+LX.m in Sources */,
 				4699BB83204CD34800E8F445 /* AppUseTime_API.m in Sources */,
 				467BD104202C524200F9334A /* Mediator.m in Sources */,

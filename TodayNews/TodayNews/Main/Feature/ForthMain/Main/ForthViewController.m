@@ -18,6 +18,7 @@
 #import "Study_RuntimeVC.h"
 #import "Study_NSThreadVC.h"
 #import "Study_PassValue_A_VC.h"
+#import "Study_AdaptVC.h"
 
 
 @interface ForthViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -48,7 +49,7 @@
 // Rows Number
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return 2;
+        return 3;
     }else if (section == 1) {
         return 1;
     }else if (section == 2) {
@@ -95,6 +96,24 @@
         
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"SDWebImage";
+        cell.detailTextLabel.text = @"进入";
+        
+        //（这种是没有点击后的阴影效果)
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        // 右侧小图标 - 箭头
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        return cell;
+    } else if (indexPath.section == 0 && indexPath.row == 2){
+        // 根据标识去缓存池找cell
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        // 不写这句直接崩掉，找不到循环引用的cell
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        }
+        
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"适配相关";
         cell.detailTextLabel.text = @"进入";
         
         //（这种是没有点击后的阴影效果)
@@ -283,6 +302,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 0 && indexPath.row == 1){
         Study_SDWebImageVC * vc = [[Study_SDWebImageVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 0 && indexPath.row == 2){
+        Study_AdaptVC * vc = [[Study_AdaptVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 1 && indexPath.row == 0){
         Study_SandboxFilePathVC * vc = [[Study_SandboxFilePathVC alloc]init];

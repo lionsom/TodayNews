@@ -35,7 +35,6 @@ static NSString * const KBuglyAppId = @"e58b6a4d80";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
     /**
      *  相比于becomeEffective，增加
      *  对”unrecognized selector sent to instance”防止崩溃的处理
