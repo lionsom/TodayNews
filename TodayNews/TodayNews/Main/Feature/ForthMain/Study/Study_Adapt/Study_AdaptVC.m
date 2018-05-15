@@ -33,7 +33,6 @@
 -(void)getSize {
 //    1.app尺寸，去掉状态栏
     CGRect r = [ UIScreen mainScreen ].applicationFrame;
-    LXLog(@"%@",r);
 //    r=0，20，320，460
 //    2.屏幕尺寸
     CGRect rx = [ UIScreen mainScreen ].bounds;

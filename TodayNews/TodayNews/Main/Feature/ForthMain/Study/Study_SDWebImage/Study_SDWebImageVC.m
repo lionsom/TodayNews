@@ -38,6 +38,9 @@
 
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    SDImageCacheConfig *conf = [[SDImageCacheConfig alloc]init];
+    
     [imageV sd_setImageWithURL:[NSURL URLWithString:@"https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1331072331,4134051125&fm=85&s=08A2DD172EF73A820C2CE82F0300E060"] placeholderImage:[UIImage imageNamed:@"camera2"] options:SDWebImageRetryFailed];
 }
 

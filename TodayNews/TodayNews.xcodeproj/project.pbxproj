@@ -91,6 +91,8 @@
 		468689E6202DAD72009E9098 /* LXTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 468689E5202DAD72009E9098 /* LXTabBar.m */; };
 		4687DD4D20327D380041CC06 /* SVProgressHUD+LX.m in Sources */ = {isa = PBXBuildFile; fileRef = 4687DD4C20327D380041CC06 /* SVProgressHUD+LX.m */; };
 		4687DD502032BA1A0041CC06 /* D_Base_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4687DD4F2032BA1A0041CC06 /* D_Base_VC.m */; };
+		468EB92F20AAB855003195DE /* Study_GCDBaseUseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 468EB92E20AAB855003195DE /* Study_GCDBaseUseVC.m */; };
+		468EB93220AAE56C003195DE /* Study_GCDUsefulVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 468EB93120AAE56C003195DE /* Study_GCDUsefulVC.m */; };
 		4695DE6C2092FB1200E892C4 /* Study_NSThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695DE6B2092FB1200E892C4 /* Study_NSThreadVC.m */; };
 		4695DE702093201400E892C4 /* Study_PassValue_A_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695DE6F2093201400E892C4 /* Study_PassValue_A_VC.m */; };
 		4695DE732093202F00E892C4 /* Study_PassValue_B_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695DE722093202F00E892C4 /* Study_PassValue_B_VC.m */; };
@@ -299,6 +301,10 @@
 		4687DD4C20327D380041CC06 /* SVProgressHUD+LX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD+LX.m"; sourceTree = "<group>"; };
 		4687DD4E2032BA1A0041CC06 /* D_Base_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D_Base_VC.h; sourceTree = "<group>"; };
 		4687DD4F2032BA1A0041CC06 /* D_Base_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D_Base_VC.m; sourceTree = "<group>"; };
+		468EB92D20AAB855003195DE /* Study_GCDBaseUseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_GCDBaseUseVC.h; sourceTree = "<group>"; };
+		468EB92E20AAB855003195DE /* Study_GCDBaseUseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_GCDBaseUseVC.m; sourceTree = "<group>"; };
+		468EB93020AAE56C003195DE /* Study_GCDUsefulVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_GCDUsefulVC.h; sourceTree = "<group>"; };
+		468EB93120AAE56C003195DE /* Study_GCDUsefulVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_GCDUsefulVC.m; sourceTree = "<group>"; };
 		4695DE6A2092FB1200E892C4 /* Study_NSThreadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_NSThreadVC.h; sourceTree = "<group>"; };
 		4695DE6B2092FB1200E892C4 /* Study_NSThreadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_NSThreadVC.m; sourceTree = "<group>"; };
 		4695DE6E2093201400E892C4 /* Study_PassValue_A_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_PassValue_A_VC.h; sourceTree = "<group>"; };
@@ -1074,6 +1080,10 @@
 			children = (
 				4695DE6A2092FB1200E892C4 /* Study_NSThreadVC.h */,
 				4695DE6B2092FB1200E892C4 /* Study_NSThreadVC.m */,
+				468EB92D20AAB855003195DE /* Study_GCDBaseUseVC.h */,
+				468EB92E20AAB855003195DE /* Study_GCDBaseUseVC.m */,
+				468EB93020AAE56C003195DE /* Study_GCDUsefulVC.h */,
+				468EB93120AAE56C003195DE /* Study_GCDUsefulVC.m */,
 			);
 			path = Study_Thread;
 			sourceTree = "<group>";
@@ -1600,10 +1610,12 @@
 				4619AC4D204009DA00BC07D0 /* TYTabPagerBar.m in Sources */,
 				467DE1DA20319B7B00D26EFD /* NSURL+url.m in Sources */,
 				4619AC54204009DA00BC07D0 /* TYPagerViewLayout.m in Sources */,
+				468EB93220AAE56C003195DE /* Study_GCDUsefulVC.m in Sources */,
 				467A80E72046ACA100258EFA /* LXLaunchMovieVC.m in Sources */,
 				4682854620450B2800A0C720 /* UIColor+Extension.m in Sources */,
 				467DE1B4203170EA00D26EFD /* A_VC.m in Sources */,
 				467C6BD4205133E500736D6D /* NSString+DisplayTime.m in Sources */,
+				468EB92F20AAB855003195DE /* Study_GCDBaseUseVC.m in Sources */,
 				468689A2202D73C6009E9098 /* UIImage+Extension.m in Sources */,
 				46AD50D520440579001066FE /* E_Night_VC.m in Sources */,
 				46BB5480203043DA00DC30DD /* MainTabbarView.m in Sources */,

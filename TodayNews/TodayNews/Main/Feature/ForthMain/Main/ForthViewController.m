@@ -17,6 +17,8 @@
 #import "Study_AccuracyMissingVC.h"
 #import "Study_RuntimeVC.h"
 #import "Study_NSThreadVC.h"
+#import "Study_GCDBaseUseVC.h"
+#import "Study_GCDUsefulVC.h"
 #import "Study_PassValue_A_VC.h"
 #import "Study_AdaptVC.h"
 
@@ -68,181 +70,75 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *ID = @"cell";
+    // 根据标识去缓存池找cell
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    // 不写这句直接崩掉，找不到循环引用的cell
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    //（这种是没有点击后的阴影效果)
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    // 右侧小图标 - 箭头
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+    
     if (indexPath.section == 0 && indexPath.row == 0) {
-        // 根据标识去缓存池找cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        // 不写这句直接崩掉，找不到循环引用的cell
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        }
-        
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"NSDate";
         cell.detailTextLabel.text = @"进入";
-        
-        //（这种是没有点击后的阴影效果)
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        // 右侧小图标 - 箭头
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
         return cell;
     }else if (indexPath.section == 0 && indexPath.row == 1){
-        // 根据标识去缓存池找cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        // 不写这句直接崩掉，找不到循环引用的cell
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        }
-        
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"SDWebImage";
         cell.detailTextLabel.text = @"进入";
-        
-        //（这种是没有点击后的阴影效果)
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        // 右侧小图标 - 箭头
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
         return cell;
     } else if (indexPath.section == 0 && indexPath.row == 2){
-        // 根据标识去缓存池找cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        // 不写这句直接崩掉，找不到循环引用的cell
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        }
-        
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"适配相关";
         cell.detailTextLabel.text = @"进入";
-        
-        //（这种是没有点击后的阴影效果)
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        // 右侧小图标 - 箭头
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
         return cell;
     } else if (indexPath.section == 1 && indexPath.row == 0){
-        // 根据标识去缓存池找cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        // 不写这句直接崩掉，找不到循环引用的cell
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        }
-        
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"寻找沙盒文件路径";
         cell.detailTextLabel.text = @"进入";
-        
-        //（这种是没有点击后的阴影效果)
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        // 右侧小图标 - 箭头
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
         return cell;
     } else if (indexPath.section == 2 && indexPath.row == 0){
-        // 根据标识去缓存池找cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        // 不写这句直接崩掉，找不到循环引用的cell
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        }
-        
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"AFNetworking测试";
         cell.detailTextLabel.text = @"进入";
-        
-        //（这种是没有点击后的阴影效果)
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        // 右侧小图标 - 箭头
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
         return cell;
     } else if (indexPath.section == 3 && indexPath.row == 0){
-        // 根据标识去缓存池找cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        // 不写这句直接崩掉，找不到循环引用的cell
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        }
-        
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"小数精度丢失";
         cell.detailTextLabel.text = @"进入";
-        
-        //（这种是没有点击后的阴影效果)
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        // 右侧小图标 - 箭头
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
         return cell;
     } else if (indexPath.section == 4 && indexPath.row == 0){
-        // 根据标识去缓存池找cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        // 不写这句直接崩掉，找不到循环引用的cell
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        }
-        
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"Runtime关联对象";
         cell.detailTextLabel.text = @"进入";
-        
-        //（这种是没有点击后的阴影效果)
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        // 右侧小图标 - 箭头
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
         return cell;
-    }else if (indexPath.section == 5 && indexPath.row == 0){
-        // 根据标识去缓存池找cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        // 不写这句直接崩掉，找不到循环引用的cell
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        }
-        
+    } else if (indexPath.section == 5 && indexPath.row == 0){
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"NSThread";
         cell.detailTextLabel.text = @"进入";
-        
-        //（这种是没有点击后的阴影效果)
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        // 右侧小图标 - 箭头
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
         return cell;
-    } else if (indexPath.section == 6 && indexPath.row == 0){
-        // 根据标识去缓存池找cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        // 不写这句直接崩掉，找不到循环引用的cell
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        }
-        
+    } else if (indexPath.section == 5 && indexPath.row == 1){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"GCD基本使用场景";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    } else if (indexPath.section == 5 && indexPath.row == 2){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"GCD高级的用法";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    }else if (indexPath.section == 6 && indexPath.row == 0){
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"页面传值 - Block";
         cell.detailTextLabel.text = @"进入";
-        
-        //（这种是没有点击后的阴影效果)
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        // 右侧小图标 - 箭头
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
         return cell;
     } else {
-        static NSString *ID = @"cell";
-        // 根据标识去缓存池找cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        // 不写这句直接崩掉，找不到循环引用的cell
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        }
         cell.textLabel.text = @"123";
-        
-        //（这种是没有点击后的阴影效果)
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
         return cell;
     }
 
@@ -320,6 +216,12 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 5 && indexPath.row == 0){
         Study_NSThreadVC * vc = [[Study_NSThreadVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 5 && indexPath.row == 1){
+        Study_GCDBaseUseVC * vc = [[Study_GCDBaseUseVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 5 && indexPath.row == 2){
+        Study_GCDUsefulVC * vc = [[Study_GCDUsefulVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 6 && indexPath.row == 0){
         Study_PassValue_A_VC * vc = [[Study_PassValue_A_VC alloc]init];
