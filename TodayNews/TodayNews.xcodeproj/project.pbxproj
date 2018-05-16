@@ -66,6 +66,8 @@
 		467DE1DA20319B7B00D26EFD /* NSURL+url.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE1D820319B7B00D26EFD /* NSURL+url.m */; };
 		468134CC20415BB2009E2DF8 /* NSObject+PYThemeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 468134CB20415BB2009E2DF8 /* NSObject+PYThemeExtension.m */; };
 		468134D1204170DD009E2DF8 /* LXCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 468134D0204170DD009E2DF8 /* LXCircleButton.m */; };
+		46814B9A20AC24D700F572AB /* study_threadSyncVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46814B9920AC24D700F572AB /* study_threadSyncVC.m */; };
+		46814B9D20AC268C00F572AB /* study_threadSecureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46814B9C20AC268C00F572AB /* study_threadSecureVC.m */; };
 		4682853C2044F9EC00A0C720 /* LXNight_Default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4682853B2044F9EC00A0C720 /* LXNight_Default.plist */; };
 		4682853E2044FA1F00A0C720 /* LXNight_Night.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4682853D2044FA1F00A0C720 /* LXNight_Night.plist */; };
 		4682854620450B2800A0C720 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4682854520450B2800A0C720 /* UIColor+Extension.m */; };
@@ -266,6 +268,10 @@
 		468134CB20415BB2009E2DF8 /* NSObject+PYThemeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PYThemeExtension.m"; sourceTree = "<group>"; };
 		468134CF204170DD009E2DF8 /* LXCircleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXCircleButton.h; sourceTree = "<group>"; };
 		468134D0204170DD009E2DF8 /* LXCircleButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXCircleButton.m; sourceTree = "<group>"; };
+		46814B9820AC24D700F572AB /* study_threadSyncVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = study_threadSyncVC.h; sourceTree = "<group>"; };
+		46814B9920AC24D700F572AB /* study_threadSyncVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = study_threadSyncVC.m; sourceTree = "<group>"; };
+		46814B9B20AC268C00F572AB /* study_threadSecureVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = study_threadSecureVC.h; sourceTree = "<group>"; };
+		46814B9C20AC268C00F572AB /* study_threadSecureVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = study_threadSecureVC.m; sourceTree = "<group>"; };
 		4682853B2044F9EC00A0C720 /* LXNight_Default.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LXNight_Default.plist; sourceTree = "<group>"; };
 		4682853D2044FA1F00A0C720 /* LXNight_Night.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LXNight_Night.plist; sourceTree = "<group>"; };
 		4682853F2044FF5600A0C720 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -1084,6 +1090,10 @@
 				468EB92E20AAB855003195DE /* Study_GCDBaseUseVC.m */,
 				468EB93020AAE56C003195DE /* Study_GCDUsefulVC.h */,
 				468EB93120AAE56C003195DE /* Study_GCDUsefulVC.m */,
+				46814B9820AC24D700F572AB /* study_threadSyncVC.h */,
+				46814B9920AC24D700F572AB /* study_threadSyncVC.m */,
+				46814B9B20AC268C00F572AB /* study_threadSecureVC.h */,
+				46814B9C20AC268C00F572AB /* study_threadSecureVC.m */,
 			);
 			path = Study_Thread;
 			sourceTree = "<group>";
@@ -1575,6 +1585,8 @@
 				46AD50E6204419F1001066FE /* UIImage+Helpers.m in Sources */,
 				4679C28D204900070082D0C3 /* UIButton+ImageTitleSpacing.m in Sources */,
 				4619AC4F204009DA00BC07D0 /* TYTabPagerBarLayout.m in Sources */,
+				46814B9D20AC268C00F572AB /* study_threadSecureVC.m in Sources */,
+				46814B9A20AC24D700F572AB /* study_threadSyncVC.m in Sources */,
 				4670079E2089CE3000A93BC8 /* Study_AFNetworkingVC.m in Sources */,
 				4686899F202D513A009E9098 /* LXBaseNavigationController.m in Sources */,
 				4699BBD0204D165800E8F445 /* LXCoreDataAPI.m in Sources */,

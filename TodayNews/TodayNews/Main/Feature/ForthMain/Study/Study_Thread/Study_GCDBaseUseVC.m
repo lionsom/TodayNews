@@ -24,9 +24,9 @@
     self.title = @"GCD基本使用";
     
     float W = SCREEN_WIDTH;
-    float H = 50;
-    [self createBtn:CGRectMake(0, 0, W, H) :1 :@"NSThread创建队列方式,请查看代码"];
-    [self createBtn:CGRectMake(0, H*1, W, H) :2 :@"NSThread创建任务方式,请查看代码"];
+    float H = 40;
+    [self createBtn:CGRectMake(0, 0, W, H) :1 :@"GCD创建队列方式,请查看代码"];
+    [self createBtn:CGRectMake(0, H*1, W, H) :2 :@"GCD创建任务方式,请查看代码"];
     
     [self createBtn:CGRectMake(0, H*2, W, H) :3 :@"同步执行 + 并发队列"];
     [self createBtn:CGRectMake(0, H*3, W, H) :4 :@"异步执行 + 并发队列"];
@@ -37,8 +37,10 @@
     [self createBtn:CGRectMake(0, H*8, W, H) :9 :@"主线程执行『主队列 + 同步执行』"];
     [self createBtn:CGRectMake(0, H*9, W, H) :10 :@"其他线程执行『主队列 + 同步执行』"];
     [self createBtn:CGRectMake(0, H*10, W, H) :11 :@"主队列 + 异步执行"];
+    [self createBtn:CGRectMake(0, H*11, W, H) :12 :@"GCD线程通讯+同步执行主队列操作"];
+    [self createBtn:CGRectMake(0, H*12, W, H) :13 :@"GCD线程通讯+异步执行主队列操作"];
     
-    _detailTV = [[UITextView alloc]initWithFrame:CGRectMake(0, H*11, W, 100)];
+    _detailTV = [[UITextView alloc]initWithFrame:CGRectMake(0, H*13, W, 100)];
     _detailTV.text = @"细节";
     [self.view addSubview:_detailTV];
 }
@@ -78,6 +80,12 @@
     }
     if (btn.tag == 11) {
         [self mainASync];
+    }
+    if (btn.tag == 12) {
+        [self thread_communicate:YES];
+    }
+    if (btn.tag == 13) {
+        [self thread_communicate:NO];
     }
 }
 
@@ -407,6 +415,47 @@
         }
     });
 }
+
+/**
+ 线程之间通信
+ */
+-(void)thread_communicate:(BOOL)isSync {
+    //异步操作
+    /*获取全局并发队列 dispatch_get_global_queue（0，0）
+     第一个参数：优先级 默认为0
+     第二个参数：预留 无用
+     */
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //耗时操作
+        NSURL * url = [NSURL URLWithString:@"https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3482280360,3588972096&fm=173&app=25&f=JPEG?w=218&h=146&s=C81252964AD178C2280B08400300A0F8"];
+        NSData * data = [NSData dataWithContentsOfURL:url];
+        UIImage * image = [UIImage imageWithData:data];
+        [NSThread sleepForTimeInterval:1];    // 模拟耗时操作
+        NSLog(@" --4-- %@",[NSThread currentThread]);
+        
+        if (isSync) {
+            //回到主队列，进行图片加载
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [NSThread sleepForTimeInterval:1];    // 模拟耗时操作
+                NSLog(@" --5-- %@",[NSThread currentThread]);
+                // ... 加载
+            });
+        } else {
+            //回到主队列，进行图片加载
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [NSThread sleepForTimeInterval:1];    // 模拟耗时操作
+                NSLog(@" --5-- %@",[NSThread currentThread]);
+                // ... 加载
+            });
+        }
+
+        NSLog(@" --6-- %@",[NSThread currentThread]);
+        
+        //回到主队列，执行同步、异步的操作的差异，同下面这个函数最后一个的 “waitUntilDone”
+//        [self performSelectorOnMainThread:nil withObject:nil waitUntilDone:YES];
+    });
+}
+
 
 #pragma mark -- CraeteView
 -(void)createBtn:(CGRect)frame :(NSInteger)tag :(NSString *)title {

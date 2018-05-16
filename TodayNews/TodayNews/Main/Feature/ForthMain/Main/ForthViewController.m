@@ -19,6 +19,8 @@
 #import "Study_NSThreadVC.h"
 #import "Study_GCDBaseUseVC.h"
 #import "Study_GCDUsefulVC.h"
+#import "study_threadSyncVC.h"
+#import "study_threadSecureVC.h"
 #import "Study_PassValue_A_VC.h"
 #import "Study_AdaptVC.h"
 
@@ -61,7 +63,7 @@
     }else if (section == 4) {
         return 1;
     }else if (section == 5) {
-        return 3;
+        return 5;
     }else if (section == 6) {
         return 1;
     }
@@ -132,7 +134,17 @@
         cell.textLabel.text = @"GCD高级的用法";
         cell.detailTextLabel.text = @"进入";
         return cell;
-    }else if (indexPath.section == 6 && indexPath.row == 0){
+    } else if (indexPath.section == 5 && indexPath.row == 3){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"线程同步";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    } else if (indexPath.section == 5 && indexPath.row == 4){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"线程安全";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    } else if (indexPath.section == 6 && indexPath.row == 0){
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"页面传值 - Block";
         cell.detailTextLabel.text = @"进入";
@@ -222,6 +234,12 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 5 && indexPath.row == 2){
         Study_GCDUsefulVC * vc = [[Study_GCDUsefulVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 5 && indexPath.row == 3){
+        study_threadSyncVC * vc = [[study_threadSyncVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 5 && indexPath.row == 4){
+        study_threadSecureVC * vc = [[study_threadSecureVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 6 && indexPath.row == 0){
         Study_PassValue_A_VC * vc = [[Study_PassValue_A_VC alloc]init];
