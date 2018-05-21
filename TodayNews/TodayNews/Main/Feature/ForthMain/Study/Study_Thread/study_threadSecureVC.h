@@ -10,4 +10,9 @@
 
 @interface study_threadSecureVC : UIViewController
 
+// 测试原子性属性
+@property (atomic, strong) NSString * atomic_str;
+
+@property (nonatomic, strong) NSString * nonatomic_str;
+
 @end

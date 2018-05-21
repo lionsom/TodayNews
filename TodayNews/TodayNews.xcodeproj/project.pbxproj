@@ -459,6 +459,7 @@
 		466C72CF20521EF40008BAF7 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				468AB4A420AD0AEB009B7ADF /* Study_架构设计 */,
 				46BE85D520A03C4E002B8E1F /* Study_Adapt */,
 				4695DE6D20931FCA00E892C4 /* Study_PassValue */,
 				4695DE692092F63B00E892C4 /* Study_Thread */,
@@ -1079,6 +1080,29 @@
 				4687DD4C20327D380041CC06 /* SVProgressHUD+LX.m */,
 			);
 			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		468AB4A420AD0AEB009B7ADF /* Study_架构设计 */ = {
+			isa = PBXGroup;
+			children = (
+				468AB4A620AD0BDA009B7ADF /* Study_MMVM */,
+				468AB4A520AD0BD0009B7ADF /* Study_MVP */,
+			);
+			path = "Study_架构设计";
+			sourceTree = "<group>";
+		};
+		468AB4A520AD0BD0009B7ADF /* Study_MVP */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Study_MVP;
+			sourceTree = "<group>";
+		};
+		468AB4A620AD0BDA009B7ADF /* Study_MMVM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Study_MMVM;
 			sourceTree = "<group>";
 		};
 		4695DE692092F63B00E892C4 /* Study_Thread */ = {
