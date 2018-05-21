@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) WKWebView * wkWebView;
 
+@property (nonatomic, strong) GCDWebUploader * webUploader;
+
 @end
 
 @implementation Study_SandboxShowVC
@@ -26,50 +28,61 @@
     
     self.title = @"真机查看沙盒文件";
     self.view.backgroundColor = LXRandomColor;
+
     
-    
-    
-    _wkWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, SCREENH_HEIGHT - 20)];//self.view.bounds
-    
+    _wkWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREENH_HEIGHT - STATUS_HEIGHT - 44)];//self.view.bounds
     //新特性，解决偏移的问题
     if (@available(iOS 11.0, *)) {
-        _wkWebView.scrollView.contentInsetAdjustmentBehavior =UIScrollViewContentInsetAdjustmentNever;
+        _wkWebView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    
+    // delegate
     [_wkWebView setUIDelegate:self];
     _wkWebView.navigationDelegate = self;
-    
-    //关闭 滚动弹簧功能
+    // 关闭 滚动弹簧功能
     _wkWebView.scrollView.bounces = NO;
-    
-    NSURLRequest *request =[NSURLRequest requestWithURL:[self startGCDWebUploader]];
     [self.view addSubview: _wkWebView];
     
     
+    // WK加载页面  开启GCDWebUploader
+    NSURLRequest *request =[NSURLRequest requestWithURL:[self startGCDWebUploader]];
     [_wkWebView loadRequest:request];
 }
 
 
+/**
+ 在退出页面时，关闭GCDWebUploader网页
+ */
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    // 关闭GCDWebUploader
+    [self stopGCDWebUploader];
+}
+
 
 /**
  使用GCDWebUploader开启APP为服务器
+ 
+ 参考文章：iOS 开发技巧 - 实时访问真机沙盒文件
+         https://eliyar.biz/iOS_access_device_sandbox_realtime/
  */
--(NSURL *)startGCDWebUploader{
+-(NSURL *)startGCDWebUploader {
     NSString *homeDir = NSHomeDirectory();
-    GCDWebUploader * _webUploader = [[GCDWebUploader alloc] initWithUploadDirectory:homeDir];
+    _webUploader = [[GCDWebUploader alloc] initWithUploadDirectory:homeDir];
     [_webUploader start];
-//    LXLog(@"Visit %@ in your web browser", _webUploader.serverURL);
+    LXLog(@"Visit %@ in your web browser", _webUploader.serverURL);
     
     return _webUploader.serverURL;
 }
 
--(void)webview {
-    
+/**
+ 关闭WebUploader服务器
+ */
+-(void)stopGCDWebUploader {
+    [_webUploader stop];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
