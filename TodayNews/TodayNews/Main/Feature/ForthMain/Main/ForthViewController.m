@@ -13,6 +13,7 @@
 #import "Study_CatchCrash_VC.h"
 #import "Study_SDWebImageVC.h"
 #import "Study_SandboxFilePathVC.h"
+#import "Study_SandboxShowVC.h"
 #import "Study_AFNetworkingVC.h"
 #import "Study_AccuracyMissingVC.h"
 #import "Study_RuntimeVC.h"
@@ -55,7 +56,7 @@
     if (section == 0) {
         return 3;
     }else if (section == 1) {
-        return 1;
+        return 2;
     }else if (section == 2) {
         return 1;
     }else if (section == 3) {
@@ -102,6 +103,11 @@
     } else if (indexPath.section == 1 && indexPath.row == 0){
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"寻找沙盒文件路径";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    }else if (indexPath.section == 1 && indexPath.row == 1){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"查看沙盒文件";
         cell.detailTextLabel.text = @"进入";
         return cell;
     } else if (indexPath.section == 2 && indexPath.row == 0){
@@ -216,6 +222,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 1 && indexPath.row == 0){
         Study_SandboxFilePathVC * vc = [[Study_SandboxFilePathVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 1 && indexPath.row == 1){
+        Study_SandboxShowVC * vc = [[Study_SandboxShowVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 2 && indexPath.row == 0){
         Study_AFNetworkingVC * vc = [[Study_AFNetworkingVC alloc]init];

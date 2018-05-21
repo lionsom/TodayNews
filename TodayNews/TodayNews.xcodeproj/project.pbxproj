@@ -98,6 +98,7 @@
 		4695DE6C2092FB1200E892C4 /* Study_NSThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695DE6B2092FB1200E892C4 /* Study_NSThreadVC.m */; };
 		4695DE702093201400E892C4 /* Study_PassValue_A_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695DE6F2093201400E892C4 /* Study_PassValue_A_VC.m */; };
 		4695DE732093202F00E892C4 /* Study_PassValue_B_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695DE722093202F00E892C4 /* Study_PassValue_B_VC.m */; };
+		4697897D20B2A3D6006DE6CB /* Study_SandboxShowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4697897C20B2A3D6006DE6CB /* Study_SandboxShowVC.m */; };
 		4699BB7A204CCBD700E8F445 /* AppUseTime+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4699BB77204CCBD700E8F445 /* AppUseTime+CoreDataClass.m */; };
 		4699BB7B204CCBD700E8F445 /* AppUseTime+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4699BB79204CCBD700E8F445 /* AppUseTime+CoreDataProperties.m */; };
 		4699BB83204CD34800E8F445 /* AppUseTime_API.m in Sources */ = {isa = PBXBuildFile; fileRef = 4699BB82204CD34800E8F445 /* AppUseTime_API.m */; };
@@ -317,6 +318,8 @@
 		4695DE6F2093201400E892C4 /* Study_PassValue_A_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_PassValue_A_VC.m; sourceTree = "<group>"; };
 		4695DE712093202F00E892C4 /* Study_PassValue_B_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_PassValue_B_VC.h; sourceTree = "<group>"; };
 		4695DE722093202F00E892C4 /* Study_PassValue_B_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_PassValue_B_VC.m; sourceTree = "<group>"; };
+		4697897B20B2A3D6006DE6CB /* Study_SandboxShowVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_SandboxShowVC.h; sourceTree = "<group>"; };
+		4697897C20B2A3D6006DE6CB /* Study_SandboxShowVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_SandboxShowVC.m; sourceTree = "<group>"; };
 		4699BB76204CCBD700E8F445 /* AppUseTime+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppUseTime+CoreDataClass.h"; sourceTree = "<group>"; };
 		4699BB77204CCBD700E8F445 /* AppUseTime+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppUseTime+CoreDataClass.m"; sourceTree = "<group>"; };
 		4699BB78204CCBD700E8F445 /* AppUseTime+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppUseTime+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -467,7 +470,6 @@
 				467CB55C208EFEB8000E3F96 /* Study_小数精度丢失 */,
 				467007982089CD3E00A93BC8 /* Study_AFN */,
 				8AAF8D1A2084EF550033DC82 /* Study_Sandbox */,
-				8A46A1402073A71100123D00 /* Study_SDWebImage */,
 				8A423B8C20620172009312A8 /* Study_CatchCrash */,
 				466C72D020521F0C0008BAF7 /* Study_NSDate */,
 				466C72D720522F8D0008BAF7 /* Study_Enum */,
@@ -1339,6 +1341,9 @@
 			children = (
 				8AAF8D1B2084EF8C0033DC82 /* Study_SandboxFilePathVC.h */,
 				8AAF8D1C2084EF8C0033DC82 /* Study_SandboxFilePathVC.m */,
+				4697897B20B2A3D6006DE6CB /* Study_SandboxShowVC.h */,
+				4697897C20B2A3D6006DE6CB /* Study_SandboxShowVC.m */,
+				8A46A1402073A71100123D00 /* Study_SDWebImage */,
 			);
 			path = Study_Sandbox;
 			sourceTree = "<group>";
@@ -1569,7 +1574,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E229A3C10E01D1CFAE1982F7 /* [CP] Copy Pods Resources */ = {
@@ -1611,6 +1616,7 @@
 				4619AC4F204009DA00BC07D0 /* TYTabPagerBarLayout.m in Sources */,
 				46814B9D20AC268C00F572AB /* study_threadSecureVC.m in Sources */,
 				46814B9A20AC24D700F572AB /* study_threadSyncVC.m in Sources */,
+				4697897D20B2A3D6006DE6CB /* Study_SandboxShowVC.m in Sources */,
 				4670079E2089CE3000A93BC8 /* Study_AFNetworkingVC.m in Sources */,
 				4686899F202D513A009E9098 /* LXBaseNavigationController.m in Sources */,
 				4699BBD0204D165800E8F445 /* LXCoreDataAPI.m in Sources */,

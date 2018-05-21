@@ -120,8 +120,7 @@ static NSString * const KBuglyAppId = @"e58b6a4d80";
         [self.window makeKeyAndVisible];
     }
     
-    NSLog(@"%s",__func__);
-    
+
     return YES;
 }
 

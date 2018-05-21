@@ -18,9 +18,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0];
-
-    LXLog(@"AA = %@",path);
+    self.title = @"沙盒路径";
+    self.view.backgroundColor = LXRandomColor;
+    
+    
+    
+    
+    // 沙盒目录
+    LXLog(@"Home == %@",NSHomeDirectory());
+    
+    // MyApp.app
+    LXLog(@"MyApp.app == %@",[[NSBundle mainBundle] bundlePath]);
+    
+    // Documents
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docPath = [paths objectAtIndex:0];
+    LXLog(@"Documents == %@",docPath);
+    
+    // NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0];
+    // LXLog(@"Documents == %@",path);
+    
+    // Library
+    NSArray *paths_1 = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *libPath = [paths_1 objectAtIndex:0];
+    LXLog(@"Library == %@",libPath);
+    
+    // tmp
+    NSString * paths_2 = NSTemporaryDirectory();
+    LXLog(@"tmp == %@",paths_2);
 }
 
 - (void)didReceiveMemoryWarning {
