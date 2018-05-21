@@ -28,5 +28,7 @@ platform :ios, '8.0'
 
 	pod 'AvoidCrash', '~> 2.5.2'
 
+	pod "GCDWebServer/WebUploader", "~> 3.0"
+
 end
 

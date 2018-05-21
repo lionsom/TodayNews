@@ -32,21 +32,29 @@
     
     float W = SCREEN_WIDTH/2;
     float H = 50;
-    [self createBtn:CGRectMake(0, H, W, H) :1 :@"POP跳转页面"];
+    [self createBtn:CGRectMake(0, H*3, W, H) :1 :@"POP跳转页面"];
 }
 
 -(void)btnCallBack:(id)sender {
     UIButton * btn = (UIButton *)sender;
     
     if (btn.tag == 1) {
+        NSDictionary * dict1 = @{@"参数1":@"AAA",
+                                @"参数2":@"BBB",
+                                @"value":_myTF.text
+                                };
+        NSUserDefaults * defaultA = [NSUserDefaults standardUserDefaults];
+        [defaultA setObject:dict1 forKey:@"Value2"];
+        [defaultA synchronize];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
         
         if (self.myblock != nil) {
             NSDictionary * dict = @{@"参数1":@"AAA",
                                     @"参数2":@"BBB",
                                     @"value":_myTF.text
                                     };
-            
-            [self.navigationController popViewControllerAnimated:YES];
             
             self.myblock(dict);
         }
