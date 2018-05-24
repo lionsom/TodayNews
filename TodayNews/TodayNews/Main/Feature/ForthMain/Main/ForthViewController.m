@@ -25,7 +25,6 @@
 #import "Study_PassValue_A_VC.h"
 #import "Study_AdaptVC.h"
 
-
 @interface ForthViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView * tableView;
@@ -83,7 +82,6 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // 右侧小图标 - 箭头
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
     
     if (indexPath.section == 0 && indexPath.row == 0) {
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];

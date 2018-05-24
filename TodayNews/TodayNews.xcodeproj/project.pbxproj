@@ -64,6 +64,7 @@
 		467DE1D520318DD800D26EFD /* LXQRCodeResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 467DE1D120318DD800D26EFD /* LXQRCodeResources.bundle */; };
 		467DE1D620318DD800D26EFD /* ShowQRCodeResult_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE1D320318DD800D26EFD /* ShowQRCodeResult_VC.m */; };
 		467DE1DA20319B7B00D26EFD /* NSURL+url.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DE1D820319B7B00D26EFD /* NSURL+url.m */; };
+		467F0CF220B65DDB00BDF33A /* Study_NSURLVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0CF120B65DDB00BDF33A /* Study_NSURLVC.m */; };
 		468134CC20415BB2009E2DF8 /* NSObject+PYThemeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 468134CB20415BB2009E2DF8 /* NSObject+PYThemeExtension.m */; };
 		468134D1204170DD009E2DF8 /* LXCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 468134D0204170DD009E2DF8 /* LXCircleButton.m */; };
 		46814B9A20AC24D700F572AB /* study_threadSyncVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46814B9920AC24D700F572AB /* study_threadSyncVC.m */; };
@@ -265,6 +266,8 @@
 		467DE1D320318DD800D26EFD /* ShowQRCodeResult_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowQRCodeResult_VC.m; sourceTree = "<group>"; };
 		467DE1D820319B7B00D26EFD /* NSURL+url.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+url.m"; sourceTree = "<group>"; };
 		467DE1D920319B7B00D26EFD /* NSURL+url.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+url.h"; sourceTree = "<group>"; };
+		467F0CF020B65DDB00BDF33A /* Study_NSURLVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_NSURLVC.h; sourceTree = "<group>"; };
+		467F0CF120B65DDB00BDF33A /* Study_NSURLVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_NSURLVC.m; sourceTree = "<group>"; };
 		468134CA20415BB2009E2DF8 /* NSObject+PYThemeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PYThemeExtension.h"; sourceTree = "<group>"; };
 		468134CB20415BB2009E2DF8 /* NSObject+PYThemeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PYThemeExtension.m"; sourceTree = "<group>"; };
 		468134CF204170DD009E2DF8 /* LXCircleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXCircleButton.h; sourceTree = "<group>"; };
@@ -464,7 +467,6 @@
 			children = (
 				468AB4A420AD0AEB009B7ADF /* Study_架构设计 */,
 				46BE85D520A03C4E002B8E1F /* Study_Adapt */,
-				4695DE6D20931FCA00E892C4 /* Study_PassValue */,
 				4695DE692092F63B00E892C4 /* Study_Thread */,
 				4671EC702091BFC20075C6E0 /* Study_Runtime */,
 				467CB55C208EFEB8000E3F96 /* Study_小数精度丢失 */,
@@ -472,6 +474,8 @@
 				8AAF8D1A2084EF550033DC82 /* Study_Sandbox */,
 				8A423B8C20620172009312A8 /* Study_CatchCrash */,
 				466C72D020521F0C0008BAF7 /* Study_NSDate */,
+				467F0CEF20B65BE600BDF33A /* Study_NSURL */,
+				4695DE6D20931FCA00E892C4 /* Study_PassValue */,
 				466C72D720522F8D0008BAF7 /* Study_Enum */,
 			);
 			path = Study;
@@ -960,6 +964,15 @@
 				467DE1D820319B7B00D26EFD /* NSURL+url.m */,
 			);
 			path = NSURL;
+			sourceTree = "<group>";
+		};
+		467F0CEF20B65BE600BDF33A /* Study_NSURL */ = {
+			isa = PBXGroup;
+			children = (
+				467F0CF020B65DDB00BDF33A /* Study_NSURLVC.h */,
+				467F0CF120B65DDB00BDF33A /* Study_NSURLVC.m */,
+			);
+			path = Study_NSURL;
 			sourceTree = "<group>";
 		};
 		468134C820415B7D009E2DF8 /* Theme */ = {
@@ -1599,6 +1612,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				467F0CF220B65DDB00BDF33A /* Study_NSURLVC.m in Sources */,
 				467BD0EC202C20DE00F9334A /* LXBaseModel.m in Sources */,
 				467A80E420468D8600258EFA /* NSString+FileType.m in Sources */,
 				467A80E0204687C900258EFA /* UIImage+LXGif.m in Sources */,
