@@ -25,6 +25,10 @@
 		4670079E2089CE3000A93BC8 /* Study_AFNetworkingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4670079D2089CE3000A93BC8 /* Study_AFNetworkingVC.m */; };
 		4671EC732091BFEA0075C6E0 /* Study_RuntimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4671EC722091BFEA0075C6E0 /* Study_RuntimeVC.m */; };
 		4671EC772091C0D30075C6E0 /* NSArray+AssociateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4671EC762091C0D30075C6E0 /* NSArray+AssociateObject.m */; };
+		4673CA4F20F8A1C10084E297 /* Study_EncapsulationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4673CA4E20F8A1C10084E297 /* Study_EncapsulationVC.m */; };
+		4673CA5B20F8A77A0084E297 /* Study_Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 4673CA5A20F8A77A0084E297 /* Study_Car.m */; };
+		4673CA5E20F8A79C0084E297 /* Study_Taxi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4673CA5D20F8A79C0084E297 /* Study_Taxi.m */; };
+		4673CA6120F8A82E0084E297 /* Study_InheritVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4673CA6020F8A82E0084E297 /* Study_InheritVC.m */; };
 		4679C2892048EE590082D0C3 /* FifthMain_FirstTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4679C2882048EE590082D0C3 /* FifthMain_FirstTypeCell.m */; };
 		4679C28D204900070082D0C3 /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 4679C28C204900070082D0C3 /* UIButton+ImageTitleSpacing.m */; };
 		4679C291204926650082D0C3 /* LocalPushCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4679C290204926650082D0C3 /* LocalPushCenter.m */; };
@@ -190,6 +194,14 @@
 		4671EC722091BFEA0075C6E0 /* Study_RuntimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_RuntimeVC.m; sourceTree = "<group>"; };
 		4671EC752091C0D30075C6E0 /* NSArray+AssociateObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+AssociateObject.h"; sourceTree = "<group>"; };
 		4671EC762091C0D30075C6E0 /* NSArray+AssociateObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AssociateObject.m"; sourceTree = "<group>"; };
+		4673CA4D20F8A1C10084E297 /* Study_EncapsulationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_EncapsulationVC.h; sourceTree = "<group>"; };
+		4673CA4E20F8A1C10084E297 /* Study_EncapsulationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_EncapsulationVC.m; sourceTree = "<group>"; };
+		4673CA5920F8A77A0084E297 /* Study_Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_Car.h; sourceTree = "<group>"; };
+		4673CA5A20F8A77A0084E297 /* Study_Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_Car.m; sourceTree = "<group>"; };
+		4673CA5C20F8A79C0084E297 /* Study_Taxi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_Taxi.h; sourceTree = "<group>"; };
+		4673CA5D20F8A79C0084E297 /* Study_Taxi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_Taxi.m; sourceTree = "<group>"; };
+		4673CA5F20F8A82E0084E297 /* Study_InheritVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_InheritVC.h; sourceTree = "<group>"; };
+		4673CA6020F8A82E0084E297 /* Study_InheritVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_InheritVC.m; sourceTree = "<group>"; };
 		4679C2872048EE590082D0C3 /* FifthMain_FirstTypeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FifthMain_FirstTypeCell.h; sourceTree = "<group>"; };
 		4679C2882048EE590082D0C3 /* FifthMain_FirstTypeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FifthMain_FirstTypeCell.m; sourceTree = "<group>"; };
 		4679C28B204900060082D0C3 /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
@@ -470,6 +482,7 @@
 		466C72CF20521EF40008BAF7 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				4673CA3F20F89C9C0084E297 /* Study_面向对象 */,
 				468AB4A420AD0AEB009B7ADF /* Study_架构设计 */,
 				46BE85D520A03C4E002B8E1F /* Study_Adapt */,
 				4695DE692092F63B00E892C4 /* Study_Thread */,
@@ -532,6 +545,45 @@
 				4671EC762091C0D30075C6E0 /* NSArray+AssociateObject.m */,
 			);
 			path = Category_AssociateObject;
+			sourceTree = "<group>";
+		};
+		4673CA3F20F89C9C0084E297 /* Study_面向对象 */ = {
+			isa = PBXGroup;
+			children = (
+				4673CA4020F89CF80084E297 /* Study_封装 */,
+				4673CA4120F89D1B0084E297 /* Study_继承 */,
+				4673CA4220F89D290084E297 /* Study_多态 */,
+			);
+			path = "Study_面向对象";
+			sourceTree = "<group>";
+		};
+		4673CA4020F89CF80084E297 /* Study_封装 */ = {
+			isa = PBXGroup;
+			children = (
+				4673CA4D20F8A1C10084E297 /* Study_EncapsulationVC.h */,
+				4673CA4E20F8A1C10084E297 /* Study_EncapsulationVC.m */,
+			);
+			path = "Study_封装";
+			sourceTree = "<group>";
+		};
+		4673CA4120F89D1B0084E297 /* Study_继承 */ = {
+			isa = PBXGroup;
+			children = (
+				4673CA5F20F8A82E0084E297 /* Study_InheritVC.h */,
+				4673CA6020F8A82E0084E297 /* Study_InheritVC.m */,
+				4673CA5920F8A77A0084E297 /* Study_Car.h */,
+				4673CA5A20F8A77A0084E297 /* Study_Car.m */,
+				4673CA5C20F8A79C0084E297 /* Study_Taxi.h */,
+				4673CA5D20F8A79C0084E297 /* Study_Taxi.m */,
+			);
+			path = "Study_继承";
+			sourceTree = "<group>";
+		};
+		4673CA4220F89D290084E297 /* Study_多态 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Study_多态";
 			sourceTree = "<group>";
 		};
 		4679C2852048ED650082D0C3 /* Main */ = {
@@ -1651,12 +1703,14 @@
 				4670079E2089CE3000A93BC8 /* Study_AFNetworkingVC.m in Sources */,
 				4686899F202D513A009E9098 /* LXBaseNavigationController.m in Sources */,
 				4699BBD0204D165800E8F445 /* LXCoreDataAPI.m in Sources */,
+				4673CA6120F8A82E0084E297 /* Study_InheritVC.m in Sources */,
 				46828549204537AD00A0C720 /* LXNightBaseTableView.m in Sources */,
 				4671EC732091BFEA0075C6E0 /* Study_RuntimeVC.m in Sources */,
 				46BE85D820A03CB5002B8E1F /* Study_AdaptVC.m in Sources */,
 				4687DD4D20327D380041CC06 /* SVProgressHUD+LX.m in Sources */,
 				4699BB83204CD34800E8F445 /* AppUseTime_API.m in Sources */,
 				467BD104202C524200F9334A /* Mediator.m in Sources */,
+				4673CA5B20F8A77A0084E297 /* Study_Car.m in Sources */,
 				468689E6202DAD72009E9098 /* LXTabBar.m in Sources */,
 				46AD50D8204405AB001066FE /* LXNightBaseView.m in Sources */,
 				467BD0A6202BEB6000F9334A /* SecondViewController.m in Sources */,
@@ -1675,6 +1729,7 @@
 				467CB55F208F0113000E3F96 /* Study_AccuracyMissingVC.m in Sources */,
 				467BD0A0202BEB6000F9334A /* AppDelegate.m in Sources */,
 				4619AC51204009DA00BC07D0 /* TYTabPagerView.m in Sources */,
+				4673CA5E20F8A79C0084E297 /* Study_Taxi.m in Sources */,
 				4699BB7A204CCBD700E8F445 /* AppUseTime+CoreDataClass.m in Sources */,
 				466C72D620522F8A0008BAF7 /* Study_Enum_VC.m in Sources */,
 				467DE1D420318DD800D26EFD /* LXQRCode_VC.m in Sources */,
@@ -1723,6 +1778,7 @@
 				467BD0F4202C3E9400F9334A /* MainTabBarController.m in Sources */,
 				46BB5479203029FD00DC30DD /* FifthViewController.m in Sources */,
 				4619AC5B20400AEA00BC07D0 /* Attention_SEC_VC.m in Sources */,
+				4673CA4F20F8A1C10084E297 /* Study_EncapsulationVC.m in Sources */,
 				467BD0A3202BEB6000F9334A /* FirstViewController.m in Sources */,
 				467A80EA2046AF4C00258EFA /* LXADView.m in Sources */,
 				467DE1C820318AFF00D26EFD /* YBRectConst.m in Sources */,

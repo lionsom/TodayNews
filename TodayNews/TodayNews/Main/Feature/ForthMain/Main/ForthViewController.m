@@ -24,6 +24,7 @@
 #import "study_threadSecureVC.h"
 #import "Study_PassValue_A_VC.h"
 #import "Study_AdaptVC.h"
+#import "Study_InheritVC.h"  // OC继承
 
 @interface ForthViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -47,7 +48,7 @@
 #pragma mark - TableView DataSource
 // Section Number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 7;
+    return 8;
 }
 
 // Rows Number
@@ -65,6 +66,8 @@
     }else if (section == 5) {
         return 5;
     }else if (section == 6) {
+        return 1;
+    }else if (section == 7) {
         return 1;
     }
     return 0;
@@ -153,6 +156,11 @@
         cell.textLabel.text = @"页面传值 - Block";
         cell.detailTextLabel.text = @"进入";
         return cell;
+    } else if (indexPath.section == 7 && indexPath.row == 0){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"OC继承";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
     } else {
         cell.textLabel.text = @"123";
         return cell;
@@ -200,6 +208,8 @@
         titleLabel.text = @"  多线程";
     }else if (section == 6) {
         titleLabel.text = @"  页面传值";
+    }else if (section == 7) {
+        titleLabel.text = @"  OC语言特性";
     }else {
         titleLabel.text = @"AAA";
     }
@@ -251,8 +261,10 @@
     }else if (indexPath.section == 6 && indexPath.row == 0){
         Study_PassValue_A_VC * vc = [[Study_PassValue_A_VC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 7 && indexPath.row == 0){
+        Study_InheritVC * vc = [[Study_InheritVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
-
     
 }
 
