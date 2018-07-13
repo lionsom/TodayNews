@@ -248,6 +248,29 @@ static NSString * const KBuglyAppId = @"e58b6a4d80";
     
 }
 
+#pragma mark - AvoidCrash 自定义通知异常回调，并通过Bugly上传
+- (void)dealwithCrashMessage:(NSNotification *)note {
+    //异常拦截并且通过bugly上报
+    
+    NSDictionary *info = note.userInfo;
+    NSString *errorReason = [NSString stringWithFormat:@"【ErrorReason】%@========\n【ErrorPlace】%@========\n【DefaultToDo】%@========\n【ErrorName】%@", info[@"errorReason"], info[@"errorPlace"], info[@"defaultToDo"], info[@"errorName"]];
+    NSArray *callStack = info[@"callStackSymbols"];
+    
+    // 额外信息
+    NSDictionary * extraInfo = @{@"UserID":@"defaultID"};
+    
+    /**
+     *    @brief 上报自定义错误
+     *
+     *    @param category    类型(Cocoa=3,CSharp=4,JS=5,Lua=6)
+     *    @param aName       名称
+     *    @param aReason     错误原因
+     *    @param aStackArray 堆栈
+     *    @param info        附加数据
+     *    @param terminate   上报后是否退出应用进程
+     */
+    [Bugly reportExceptionWithCategory:3 name:@"AvoidCrash框架拦截异常" reason:errorReason callStack:callStack extraInfo:extraInfo terminateApp:NO];
+}
 
 
 

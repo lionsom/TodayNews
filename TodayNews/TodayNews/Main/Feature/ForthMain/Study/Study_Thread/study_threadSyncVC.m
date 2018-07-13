@@ -135,13 +135,12 @@
             /* 耗时任务1，执行前等待信号使信号量减1 */
             dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
             NSLog(@"任务%d开始", i);
-            [NSThread sleepForTimeInterval:10];
+            [NSThread sleepForTimeInterval:(arc4random() % 5 + 1)];   // 耗时操作随机[1,6)
             NSLog(@"任务%d结束", i);
             /* 任务i结束，发送信号释放一个资源 */
             dispatch_semaphore_signal(semaphore);
         });
     }
-
 }
 
 

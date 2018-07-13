@@ -18,6 +18,8 @@
 		4619AC5820400AC500BC07D0 /* Recommend_SEC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619AC5720400AC500BC07D0 /* Recommend_SEC_VC.m */; };
 		4619AC5B20400AEA00BC07D0 /* Attention_SEC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619AC5A20400AEA00BC07D0 /* Attention_SEC_VC.m */; };
 		4619AC5E20400B0F00BC07D0 /* Location_SEC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619AC5D20400B0F00BC07D0 /* Location_SEC_VC.m */; };
+		4665172B20E3388A007CC02C /* README_Thread.md in Resources */ = {isa = PBXBuildFile; fileRef = 4665172A20E3388A007CC02C /* README_Thread.md */; };
+		4665172E20E33B1C007CC02C /* Study_BlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4665172D20E33B1C007CC02C /* Study_BlockVC.m */; };
 		466C72D320521F550008BAF7 /* Study_NSDate_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 466C72D220521F550008BAF7 /* Study_NSDate_VC.m */; };
 		466C72D620522F8A0008BAF7 /* Study_Enum_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 466C72D520522F8A0008BAF7 /* Study_Enum_VC.m */; };
 		4670079E2089CE3000A93BC8 /* Study_AFNetworkingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4670079D2089CE3000A93BC8 /* Study_AFNetworkingVC.m */; };
@@ -175,6 +177,9 @@
 		4619AC5A20400AEA00BC07D0 /* Attention_SEC_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Attention_SEC_VC.m; sourceTree = "<group>"; };
 		4619AC5C20400B0F00BC07D0 /* Location_SEC_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location_SEC_VC.h; sourceTree = "<group>"; };
 		4619AC5D20400B0F00BC07D0 /* Location_SEC_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location_SEC_VC.m; sourceTree = "<group>"; };
+		4665172A20E3388A007CC02C /* README_Thread.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README_Thread.md; sourceTree = "<group>"; };
+		4665172C20E33B1C007CC02C /* Study_BlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_BlockVC.h; sourceTree = "<group>"; };
+		4665172D20E33B1C007CC02C /* Study_BlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_BlockVC.m; sourceTree = "<group>"; };
 		466C72D120521F550008BAF7 /* Study_NSDate_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_NSDate_VC.h; sourceTree = "<group>"; };
 		466C72D220521F550008BAF7 /* Study_NSDate_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_NSDate_VC.m; sourceTree = "<group>"; };
 		466C72D420522F8A0008BAF7 /* Study_Enum_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_Enum_VC.h; sourceTree = "<group>"; };
@@ -468,6 +473,7 @@
 				468AB4A420AD0AEB009B7ADF /* Study_架构设计 */,
 				46BE85D520A03C4E002B8E1F /* Study_Adapt */,
 				4695DE692092F63B00E892C4 /* Study_Thread */,
+				467E71BC20B8042000213599 /* Study_Block */,
 				4671EC702091BFC20075C6E0 /* Study_Runtime */,
 				467CB55C208EFEB8000E3F96 /* Study_小数精度丢失 */,
 				467007982089CD3E00A93BC8 /* Study_AFN */,
@@ -966,6 +972,15 @@
 			path = NSURL;
 			sourceTree = "<group>";
 		};
+		467E71BC20B8042000213599 /* Study_Block */ = {
+			isa = PBXGroup;
+			children = (
+				4665172C20E33B1C007CC02C /* Study_BlockVC.h */,
+				4665172D20E33B1C007CC02C /* Study_BlockVC.m */,
+			);
+			path = Study_Block;
+			sourceTree = "<group>";
+		};
 		467F0CEF20B65BE600BDF33A /* Study_NSURL */ = {
 			isa = PBXGroup;
 			children = (
@@ -1123,6 +1138,7 @@
 		4695DE692092F63B00E892C4 /* Study_Thread */ = {
 			isa = PBXGroup;
 			children = (
+				4665172A20E3388A007CC02C /* README_Thread.md */,
 				4695DE6A2092FB1200E892C4 /* Study_NSThreadVC.h */,
 				4695DE6B2092FB1200E892C4 /* Study_NSThreadVC.m */,
 				468EB92D20AAB855003195DE /* Study_GCDBaseUseVC.h */,
@@ -1515,6 +1531,7 @@
 				467BD0AB202BEB6000F9334A /* Assets.xcassets in Resources */,
 				467BD0A9202BEB6000F9334A /* Main.storyboard in Resources */,
 				4682855920454C2800A0C720 /* GuidePageHUD_guideImage1.png in Resources */,
+				4665172B20E3388A007CC02C /* README_Thread.md in Resources */,
 				4682853C2044F9EC00A0C720 /* LXNight_Default.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1682,6 +1699,7 @@
 				8ADFCF7520554E4E00CC38DD /* CheckTraceRecognizer.m in Sources */,
 				46F2F7C3208DC58000D32377 /* AFAppDotNetAPIClient.m in Sources */,
 				467DE1BA2031710300D26EFD /* C_VC.m in Sources */,
+				4665172E20E33B1C007CC02C /* Study_BlockVC.m in Sources */,
 				467DE1D620318DD800D26EFD /* ShowQRCodeResult_VC.m in Sources */,
 				468134CC20415BB2009E2DF8 /* NSObject+PYThemeExtension.m in Sources */,
 				8A46A1472073AE8000123D00 /* Study_SDWebImageVC.m in Sources */,
