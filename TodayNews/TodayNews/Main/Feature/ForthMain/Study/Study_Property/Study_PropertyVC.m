@@ -1,23 +1,44 @@
 //
-//  Study_EncapsulationVC.m
+//  Study_PropertyVC.m
 //  TodayNews
 //
-//  Created by linxiang on 2018/7/13.
+//  Created by linxiang on 2018/7/16.
 //  Copyright © 2018年 LX. All rights reserved.
 //
 
-#import "Study_EncapsulationVC.h"
+#import "Study_PropertyVC.h"
 
-@interface Study_EncapsulationVC ()
+@interface Study_PropertyVC ()
 
 @end
 
-@implementation Study_EncapsulationVC
+@implementation Study_PropertyVC
+
+@synthesize myTitle = _newtitle;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = LXRandomColor;
+    
+    _newtitle = @"AAAA";
+    LXLog(@"title = %@",_newtitle);
+    
+    
+    [self setMyTitle:@"BBBB"];
+    LXLog(@"title = %@",self.myTitle);
 }
+
+// 重写setter getter
+- (NSString *)myTitle{
+    return _newtitle;
+}
+
+- (void)setMyTitle:(NSString *)myTitle{
+    _newtitle = myTitle;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

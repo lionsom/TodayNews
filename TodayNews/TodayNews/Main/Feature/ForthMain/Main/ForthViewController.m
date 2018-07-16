@@ -25,6 +25,8 @@
 #import "Study_PassValue_A_VC.h"
 #import "Study_AdaptVC.h"
 #import "Study_InheritVC.h"  // OC继承
+#import "Study_IvarVC.h"     // OC成员变量
+#import "Study_PropertyVC.h"  // Property
 
 @interface ForthViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -68,7 +70,7 @@
     }else if (section == 6) {
         return 1;
     }else if (section == 7) {
-        return 1;
+        return 3;
     }
     return 0;
 }
@@ -159,6 +161,17 @@
     } else if (indexPath.section == 7 && indexPath.row == 0){
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"OC继承";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    } else if (indexPath.section == 7 && indexPath.row == 1){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"OC成员变量";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+        
+    } else if (indexPath.section == 7 && indexPath.row == 2){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"OC属性-property";
         cell.detailTextLabel.text = @"进入";
         return cell;
     } else {
@@ -263,6 +276,12 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 7 && indexPath.row == 0){
         Study_InheritVC * vc = [[Study_InheritVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 7 && indexPath.row == 1){
+        Study_IvarVC * vc = [[Study_IvarVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 7 && indexPath.row == 2){
+        Study_PropertyVC * vc = [[Study_PropertyVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     

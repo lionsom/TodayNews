@@ -25,7 +25,6 @@
 		4670079E2089CE3000A93BC8 /* Study_AFNetworkingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4670079D2089CE3000A93BC8 /* Study_AFNetworkingVC.m */; };
 		4671EC732091BFEA0075C6E0 /* Study_RuntimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4671EC722091BFEA0075C6E0 /* Study_RuntimeVC.m */; };
 		4671EC772091C0D30075C6E0 /* NSArray+AssociateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4671EC762091C0D30075C6E0 /* NSArray+AssociateObject.m */; };
-		4673CA4F20F8A1C10084E297 /* Study_EncapsulationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4673CA4E20F8A1C10084E297 /* Study_EncapsulationVC.m */; };
 		4673CA5B20F8A77A0084E297 /* Study_Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 4673CA5A20F8A77A0084E297 /* Study_Car.m */; };
 		4673CA5E20F8A79C0084E297 /* Study_Taxi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4673CA5D20F8A79C0084E297 /* Study_Taxi.m */; };
 		4673CA6120F8A82E0084E297 /* Study_InheritVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4673CA6020F8A82E0084E297 /* Study_InheritVC.m */; };
@@ -122,6 +121,10 @@
 		46AD50DE20441272001066FE /* LXNightBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD50DD20441272001066FE /* LXNightBaseButton.m */; };
 		46AD50E120441327001066FE /* LXNightBaseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD50E020441327001066FE /* LXNightBaseImageView.m */; };
 		46AD50E6204419F1001066FE /* UIImage+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD50E5204419F1001066FE /* UIImage+Helpers.m */; };
+		46BAA52C20FC42D50098DAA4 /* Study_PropertyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BAA52B20FC42D50098DAA4 /* Study_PropertyVC.m */; };
+		46BAA52F20FC493F0098DAA4 /* Study_IvarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BAA52E20FC493F0098DAA4 /* Study_IvarVC.m */; };
+		46BAA53420FC498D0098DAA4 /* Study_Ivar_Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BAA53320FC498D0098DAA4 /* Study_Ivar_Student.m */; };
+		46BAA53720FC49B10098DAA4 /* Study_Ivar_MidStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BAA53620FC49B10098DAA4 /* Study_Ivar_MidStudent.m */; };
 		46BB5473203029E000DC30DD /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB5472203029E000DC30DD /* ThirdViewController.m */; };
 		46BB5476203029EF00DC30DD /* ForthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB5475203029EF00DC30DD /* ForthViewController.m */; };
 		46BB5479203029FD00DC30DD /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB5478203029FD00DC30DD /* FifthViewController.m */; };
@@ -194,8 +197,6 @@
 		4671EC722091BFEA0075C6E0 /* Study_RuntimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_RuntimeVC.m; sourceTree = "<group>"; };
 		4671EC752091C0D30075C6E0 /* NSArray+AssociateObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+AssociateObject.h"; sourceTree = "<group>"; };
 		4671EC762091C0D30075C6E0 /* NSArray+AssociateObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AssociateObject.m"; sourceTree = "<group>"; };
-		4673CA4D20F8A1C10084E297 /* Study_EncapsulationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_EncapsulationVC.h; sourceTree = "<group>"; };
-		4673CA4E20F8A1C10084E297 /* Study_EncapsulationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_EncapsulationVC.m; sourceTree = "<group>"; };
 		4673CA5920F8A77A0084E297 /* Study_Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_Car.h; sourceTree = "<group>"; };
 		4673CA5A20F8A77A0084E297 /* Study_Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_Car.m; sourceTree = "<group>"; };
 		4673CA5C20F8A79C0084E297 /* Study_Taxi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_Taxi.h; sourceTree = "<group>"; };
@@ -372,6 +373,14 @@
 		46AD50E020441327001066FE /* LXNightBaseImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXNightBaseImageView.m; sourceTree = "<group>"; };
 		46AD50E4204419F1001066FE /* UIImage+Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Helpers.h"; sourceTree = "<group>"; };
 		46AD50E5204419F1001066FE /* UIImage+Helpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helpers.m"; sourceTree = "<group>"; };
+		46BAA52A20FC42D50098DAA4 /* Study_PropertyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_PropertyVC.h; sourceTree = "<group>"; };
+		46BAA52B20FC42D50098DAA4 /* Study_PropertyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_PropertyVC.m; sourceTree = "<group>"; };
+		46BAA52D20FC493F0098DAA4 /* Study_IvarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_IvarVC.h; sourceTree = "<group>"; };
+		46BAA52E20FC493F0098DAA4 /* Study_IvarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_IvarVC.m; sourceTree = "<group>"; };
+		46BAA53220FC498D0098DAA4 /* Study_Ivar_Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_Ivar_Student.h; sourceTree = "<group>"; };
+		46BAA53320FC498D0098DAA4 /* Study_Ivar_Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_Ivar_Student.m; sourceTree = "<group>"; };
+		46BAA53520FC49B10098DAA4 /* Study_Ivar_MidStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_Ivar_MidStudent.h; sourceTree = "<group>"; };
+		46BAA53620FC49B10098DAA4 /* Study_Ivar_MidStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_Ivar_MidStudent.m; sourceTree = "<group>"; };
 		46BB5471203029E000DC30DD /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		46BB5472203029E000DC30DD /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		46BB5474203029EF00DC30DD /* ForthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForthViewController.h; sourceTree = "<group>"; };
@@ -482,6 +491,7 @@
 		466C72CF20521EF40008BAF7 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				46BAA52920FC40630098DAA4 /* Study_Property */,
 				4673CA3F20F89C9C0084E297 /* Study_面向对象 */,
 				468AB4A420AD0AEB009B7ADF /* Study_架构设计 */,
 				46BE85D520A03C4E002B8E1F /* Study_Adapt */,
@@ -560,8 +570,6 @@
 		4673CA4020F89CF80084E297 /* Study_封装 */ = {
 			isa = PBXGroup;
 			children = (
-				4673CA4D20F8A1C10084E297 /* Study_EncapsulationVC.h */,
-				4673CA4E20F8A1C10084E297 /* Study_EncapsulationVC.m */,
 			);
 			path = "Study_封装";
 			sourceTree = "<group>";
@@ -1321,6 +1329,29 @@
 			path = UITabBar;
 			sourceTree = "<group>";
 		};
+		46BAA52920FC40630098DAA4 /* Study_Property */ = {
+			isa = PBXGroup;
+			children = (
+				46BAA52A20FC42D50098DAA4 /* Study_PropertyVC.h */,
+				46BAA52B20FC42D50098DAA4 /* Study_PropertyVC.m */,
+				46BAA53120FC49560098DAA4 /* Study_成员变量 */,
+			);
+			path = Study_Property;
+			sourceTree = "<group>";
+		};
+		46BAA53120FC49560098DAA4 /* Study_成员变量 */ = {
+			isa = PBXGroup;
+			children = (
+				46BAA52D20FC493F0098DAA4 /* Study_IvarVC.h */,
+				46BAA52E20FC493F0098DAA4 /* Study_IvarVC.m */,
+				46BAA53220FC498D0098DAA4 /* Study_Ivar_Student.h */,
+				46BAA53320FC498D0098DAA4 /* Study_Ivar_Student.m */,
+				46BAA53520FC49B10098DAA4 /* Study_Ivar_MidStudent.h */,
+				46BAA53620FC49B10098DAA4 /* Study_Ivar_MidStudent.m */,
+			);
+			path = "Study_成员变量";
+			sourceTree = "<group>";
+		};
 		46BB546D2030294800DC30DD /* Feature */ = {
 			isa = PBXGroup;
 			children = (
@@ -1694,10 +1725,12 @@
 				4671EC772091C0D30075C6E0 /* NSArray+AssociateObject.m in Sources */,
 				4695DE732093202F00E892C4 /* Study_PassValue_B_VC.m in Sources */,
 				46BB5473203029E000DC30DD /* ThirdViewController.m in Sources */,
+				46BAA52F20FC493F0098DAA4 /* Study_IvarVC.m in Sources */,
 				46AD50E6204419F1001066FE /* UIImage+Helpers.m in Sources */,
 				4679C28D204900070082D0C3 /* UIButton+ImageTitleSpacing.m in Sources */,
 				4619AC4F204009DA00BC07D0 /* TYTabPagerBarLayout.m in Sources */,
 				46814B9D20AC268C00F572AB /* study_threadSecureVC.m in Sources */,
+				46BAA52C20FC42D50098DAA4 /* Study_PropertyVC.m in Sources */,
 				46814B9A20AC24D700F572AB /* study_threadSyncVC.m in Sources */,
 				4697897D20B2A3D6006DE6CB /* Study_SandboxShowVC.m in Sources */,
 				4670079E2089CE3000A93BC8 /* Study_AFNetworkingVC.m in Sources */,
@@ -1731,6 +1764,7 @@
 				4619AC51204009DA00BC07D0 /* TYTabPagerView.m in Sources */,
 				4673CA5E20F8A79C0084E297 /* Study_Taxi.m in Sources */,
 				4699BB7A204CCBD700E8F445 /* AppUseTime+CoreDataClass.m in Sources */,
+				46BAA53720FC49B10098DAA4 /* Study_Ivar_MidStudent.m in Sources */,
 				466C72D620522F8A0008BAF7 /* Study_Enum_VC.m in Sources */,
 				467DE1D420318DD800D26EFD /* LXQRCode_VC.m in Sources */,
 				4679C291204926650082D0C3 /* LocalPushCenter.m in Sources */,
@@ -1778,7 +1812,6 @@
 				467BD0F4202C3E9400F9334A /* MainTabBarController.m in Sources */,
 				46BB5479203029FD00DC30DD /* FifthViewController.m in Sources */,
 				4619AC5B20400AEA00BC07D0 /* Attention_SEC_VC.m in Sources */,
-				4673CA4F20F8A1C10084E297 /* Study_EncapsulationVC.m in Sources */,
 				467BD0A3202BEB6000F9334A /* FirstViewController.m in Sources */,
 				467A80EA2046AF4C00258EFA /* LXADView.m in Sources */,
 				467DE1C820318AFF00D26EFD /* YBRectConst.m in Sources */,
@@ -1787,6 +1820,7 @@
 				4686899A202D4551009E9098 /* UITabBar+Badge.m in Sources */,
 				46AD50BE2043F854001066FE /* LXNightThemeManager.m in Sources */,
 				46BB5476203029EF00DC30DD /* ForthViewController.m in Sources */,
+				46BAA53420FC498D0098DAA4 /* Study_Ivar_Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
