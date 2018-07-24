@@ -27,5 +27,7 @@
     
 }
 
+@property (copy, nonatomic) NSString *myFFF;
+
 @end
 

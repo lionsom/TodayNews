@@ -195,7 +195,7 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     
-    NSLog(@"ViewControllers = %@",self.viewControllers);
+//    NSLog(@"ViewControllers = %@",self.viewControllers);
     
     // 如果是九宫格手势页面。左滑返回手势与九宫格手势冲突
     if ([self.viewControllers[self.viewControllers.count-1] isKindOfClass:NSClassFromString(@"LXNineBoxVC")]) {

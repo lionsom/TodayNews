@@ -50,6 +50,7 @@ int ABC = 10;   // 没有 {} 则为全局变量
 //        self->A = @"A";
         self->AA = @"AA";
 //        self->AAA = @"AAA";
+        _A = @"我是新的";
         
         LXLog(@"ABC = %d",ABC);
     }

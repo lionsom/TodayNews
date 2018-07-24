@@ -21,6 +21,10 @@
 //        LXLog(@"C = %@",self->_C);
         LXLog(@"D = %@",self->_D);
         LXLog(@"E = %@",self->_E);
+        
+        // 访问父类属性   区分 self.XX 和 _XX
+        LXLog(@"父类属性 = %@", self.myFFF);
+//        LXLog(@"父类属性 = %@", _myFFF);
     }
     
     return self;

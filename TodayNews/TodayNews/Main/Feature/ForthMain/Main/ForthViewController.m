@@ -27,6 +27,7 @@
 #import "Study_InheritVC.h"  // OC继承
 #import "Study_IvarVC.h"     // OC成员变量
 #import "Study_PropertyVC.h"  // Property
+#import "Study_MVC_VC.h"
 
 @interface ForthViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -50,7 +51,7 @@
 #pragma mark - TableView DataSource
 // Section Number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 8;
+    return 9;
 }
 
 // Rows Number
@@ -71,6 +72,8 @@
         return 1;
     }else if (section == 7) {
         return 3;
+    }else if (section == 8) {
+        return 1;
     }
     return 0;
 }
@@ -168,10 +171,14 @@
         cell.textLabel.text = @"OC成员变量";
         cell.detailTextLabel.text = @"进入";
         return cell;
-        
     } else if (indexPath.section == 7 && indexPath.row == 2){
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"OC属性-property";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    }else if (indexPath.section == 8 && indexPath.row == 0){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"MVC 瘦身";
         cell.detailTextLabel.text = @"进入";
         return cell;
     } else {
@@ -223,6 +230,8 @@
         titleLabel.text = @"  页面传值";
     }else if (section == 7) {
         titleLabel.text = @"  OC语言特性";
+    }else if (section == 8) {
+        titleLabel.text = @"  架构设计";
     }else {
         titleLabel.text = @"AAA";
     }
@@ -282,6 +291,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 7 && indexPath.row == 2){
         Study_PropertyVC * vc = [[Study_PropertyVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 8 && indexPath.row == 0){
+        Study_MVC_VC * vc = [[Study_MVC_VC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     

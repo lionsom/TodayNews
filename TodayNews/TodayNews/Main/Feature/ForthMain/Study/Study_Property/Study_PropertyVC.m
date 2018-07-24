@@ -16,6 +16,8 @@
 
 @synthesize myTitle = _newtitle;
 
+@synthesize myName = _myname;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -28,7 +30,23 @@
     
     [self setMyTitle:@"BBBB"];
     LXLog(@"title = %@",self.myTitle);
+
+    
+    _myname = @"AAAAA";
+    LXLog(@"自定义属性方法名 = %@",self.myName);
+
+    self.myName = @"DDDDD";
+    LXLog(@"自定义属性方法名 = %@",self.myName);
+
 }
+
+-(NSString *)show1 {
+    return _myname;
+}
+-(void)show2:(NSString *)myName {
+    _myname = [myName copy];
+}
+
 
 // 重写setter getter
 - (NSString *)myTitle{
@@ -38,6 +56,25 @@
 - (void)setMyTitle:(NSString *)myTitle{
     _newtitle = myTitle;
 }
+
+
+
+-(id)initWithFirstName:(NSString *)firstName
+                lastName:(NSString *)lastName {
+    
+    if (self = [super init]) {
+        _firstName = [firstName copy];
+        _lastName = [lastName copy];
+    }
+    
+    return self;
+}
+
+
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning {
