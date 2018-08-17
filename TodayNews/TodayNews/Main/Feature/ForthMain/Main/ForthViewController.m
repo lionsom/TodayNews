@@ -28,6 +28,7 @@
 #import "Study_IvarVC.h"     // OC成员变量
 #import "Study_PropertyVC.h"  // Property
 #import "Study_MVC_VC.h"
+#import "Study_copy_mutableCopy.h"
 
 @interface ForthViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -71,7 +72,7 @@
     }else if (section == 6) {
         return 1;
     }else if (section == 7) {
-        return 3;
+        return 4;
     }else if (section == 8) {
         return 1;
     }
@@ -176,7 +177,12 @@
         cell.textLabel.text = @"OC属性-property";
         cell.detailTextLabel.text = @"进入";
         return cell;
-    }else if (indexPath.section == 8 && indexPath.row == 0){
+    } else if (indexPath.section == 7 && indexPath.row == 3){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"copy mutableCopy";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    } else if (indexPath.section == 8 && indexPath.row == 0){
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"MVC 瘦身";
         cell.detailTextLabel.text = @"进入";
@@ -291,6 +297,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 7 && indexPath.row == 2){
         Study_PropertyVC * vc = [[Study_PropertyVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 7 && indexPath.row == 3){
+        Study_copy_mutableCopy * vc = [[Study_copy_mutableCopy alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 8 && indexPath.row == 0){
         Study_MVC_VC * vc = [[Study_MVC_VC alloc]init];

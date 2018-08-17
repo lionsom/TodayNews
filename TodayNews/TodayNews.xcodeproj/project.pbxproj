@@ -20,6 +20,7 @@
 		4619AC5E20400B0F00BC07D0 /* Location_SEC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619AC5D20400B0F00BC07D0 /* Location_SEC_VC.m */; };
 		4665172B20E3388A007CC02C /* README_Thread.md in Resources */ = {isa = PBXBuildFile; fileRef = 4665172A20E3388A007CC02C /* README_Thread.md */; };
 		4665172E20E33B1C007CC02C /* Study_BlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4665172D20E33B1C007CC02C /* Study_BlockVC.m */; };
+		466AD6172126DA9900479263 /* Study_copy_mutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 466AD6162126DA9900479263 /* Study_copy_mutableCopy.m */; };
 		466C72D320521F550008BAF7 /* Study_NSDate_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 466C72D220521F550008BAF7 /* Study_NSDate_VC.m */; };
 		466C72D620522F8A0008BAF7 /* Study_Enum_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 466C72D520522F8A0008BAF7 /* Study_Enum_VC.m */; };
 		4670079E2089CE3000A93BC8 /* Study_AFNetworkingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4670079D2089CE3000A93BC8 /* Study_AFNetworkingVC.m */; };
@@ -193,6 +194,8 @@
 		4665172A20E3388A007CC02C /* README_Thread.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README_Thread.md; sourceTree = "<group>"; };
 		4665172C20E33B1C007CC02C /* Study_BlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_BlockVC.h; sourceTree = "<group>"; };
 		4665172D20E33B1C007CC02C /* Study_BlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_BlockVC.m; sourceTree = "<group>"; };
+		466AD6152126DA9900479263 /* Study_copy_mutableCopy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_copy_mutableCopy.h; sourceTree = "<group>"; };
+		466AD6162126DA9900479263 /* Study_copy_mutableCopy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_copy_mutableCopy.m; sourceTree = "<group>"; };
 		466C72D120521F550008BAF7 /* Study_NSDate_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_NSDate_VC.h; sourceTree = "<group>"; };
 		466C72D220521F550008BAF7 /* Study_NSDate_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_NSDate_VC.m; sourceTree = "<group>"; };
 		466C72D420522F8A0008BAF7 /* Study_Enum_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_Enum_VC.h; sourceTree = "<group>"; };
@@ -505,9 +508,19 @@
 			path = MainViewController;
 			sourceTree = "<group>";
 		};
+		466AD6142126D99F00479263 /* Study_copy_mutableCopy */ = {
+			isa = PBXGroup;
+			children = (
+				466AD6152126DA9900479263 /* Study_copy_mutableCopy.h */,
+				466AD6162126DA9900479263 /* Study_copy_mutableCopy.m */,
+			);
+			path = Study_copy_mutableCopy;
+			sourceTree = "<group>";
+		};
 		466C72CF20521EF40008BAF7 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				466AD6142126D99F00479263 /* Study_copy_mutableCopy */,
 				46BAA52920FC40630098DAA4 /* Study_Property */,
 				4673CA3F20F89C9C0084E297 /* Study_面向对象 */,
 				468AB4A420AD0AEB009B7ADF /* Study_架构设计 */,
@@ -1852,6 +1865,7 @@
 				466C72D320521F550008BAF7 /* Study_NSDate_VC.m in Sources */,
 				4682855F20454C2800A0C720 /* LXLaunchGuideView.m in Sources */,
 				467BD0F4202C3E9400F9334A /* MainTabBarController.m in Sources */,
+				466AD6172126DA9900479263 /* Study_copy_mutableCopy.m in Sources */,
 				46BB5479203029FD00DC30DD /* FifthViewController.m in Sources */,
 				4619AC5B20400AEA00BC07D0 /* Attention_SEC_VC.m in Sources */,
 				467BD0A3202BEB6000F9334A /* FirstViewController.m in Sources */,
