@@ -18,6 +18,7 @@
 		4619AC5820400AC500BC07D0 /* Recommend_SEC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619AC5720400AC500BC07D0 /* Recommend_SEC_VC.m */; };
 		4619AC5B20400AEA00BC07D0 /* Attention_SEC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619AC5A20400AEA00BC07D0 /* Attention_SEC_VC.m */; };
 		4619AC5E20400B0F00BC07D0 /* Location_SEC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619AC5D20400B0F00BC07D0 /* Location_SEC_VC.m */; };
+		463672932134D9FA006EE9D5 /* Study_Equality_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 463672922134D9FA006EE9D5 /* Study_Equality_VC.m */; };
 		4665172B20E3388A007CC02C /* README_Thread.md in Resources */ = {isa = PBXBuildFile; fileRef = 4665172A20E3388A007CC02C /* README_Thread.md */; };
 		4665172E20E33B1C007CC02C /* Study_BlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4665172D20E33B1C007CC02C /* Study_BlockVC.m */; };
 		466AD6172126DA9900479263 /* Study_copy_mutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 466AD6162126DA9900479263 /* Study_copy_mutableCopy.m */; };
@@ -191,6 +192,8 @@
 		4619AC5A20400AEA00BC07D0 /* Attention_SEC_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Attention_SEC_VC.m; sourceTree = "<group>"; };
 		4619AC5C20400B0F00BC07D0 /* Location_SEC_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location_SEC_VC.h; sourceTree = "<group>"; };
 		4619AC5D20400B0F00BC07D0 /* Location_SEC_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location_SEC_VC.m; sourceTree = "<group>"; };
+		463672912134D9FA006EE9D5 /* Study_Equality_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_Equality_VC.h; sourceTree = "<group>"; };
+		463672922134D9FA006EE9D5 /* Study_Equality_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_Equality_VC.m; sourceTree = "<group>"; };
 		4665172A20E3388A007CC02C /* README_Thread.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README_Thread.md; sourceTree = "<group>"; };
 		4665172C20E33B1C007CC02C /* Study_BlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_BlockVC.h; sourceTree = "<group>"; };
 		4665172D20E33B1C007CC02C /* Study_BlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_BlockVC.m; sourceTree = "<group>"; };
@@ -508,6 +511,15 @@
 			path = MainViewController;
 			sourceTree = "<group>";
 		};
+		463672902134CEBF006EE9D5 /* Study_等同性 */ = {
+			isa = PBXGroup;
+			children = (
+				463672912134D9FA006EE9D5 /* Study_Equality_VC.h */,
+				463672922134D9FA006EE9D5 /* Study_Equality_VC.m */,
+			);
+			path = "Study_等同性";
+			sourceTree = "<group>";
+		};
 		466AD6142126D99F00479263 /* Study_copy_mutableCopy */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +532,7 @@
 		466C72CF20521EF40008BAF7 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				463672902134CEBF006EE9D5 /* Study_等同性 */,
 				466AD6142126D99F00479263 /* Study_copy_mutableCopy */,
 				46BAA52920FC40630098DAA4 /* Study_Property */,
 				4673CA3F20F89C9C0084E297 /* Study_面向对象 */,
@@ -1798,6 +1811,7 @@
 				46AD50D8204405AB001066FE /* LXNightBaseView.m in Sources */,
 				467BD0A6202BEB6000F9334A /* SecondViewController.m in Sources */,
 				467EFD0D2106AD9300EA8A5B /* Study_MVC_Datasource.m in Sources */,
+				463672932134D9FA006EE9D5 /* Study_Equality_VC.m in Sources */,
 				4698E34A2105E24F0080D788 /* Study_MVC_VC.m in Sources */,
 				4679C29420492A600082D0C3 /* FifthMain_SecondTypeCell.m in Sources */,
 				4679C2892048EE590082D0C3 /* FifthMain_FirstTypeCell.m in Sources */,

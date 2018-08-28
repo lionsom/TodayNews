@@ -29,6 +29,8 @@
 #import "Study_PropertyVC.h"  // Property
 #import "Study_MVC_VC.h"
 #import "Study_copy_mutableCopy.h"
+#import "Study_Equality_VC.h"
+
 
 @interface ForthViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -72,7 +74,7 @@
     }else if (section == 6) {
         return 1;
     }else if (section == 7) {
-        return 4;
+        return 5;
     }else if (section == 8) {
         return 1;
     }
@@ -180,6 +182,11 @@
     } else if (indexPath.section == 7 && indexPath.row == 3){
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"copy mutableCopy";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    } else if (indexPath.section == 7 && indexPath.row == 4){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"对象等同性";
         cell.detailTextLabel.text = @"进入";
         return cell;
     } else if (indexPath.section == 8 && indexPath.row == 0){
@@ -300,6 +307,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 7 && indexPath.row == 3){
         Study_copy_mutableCopy * vc = [[Study_copy_mutableCopy alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 7 && indexPath.row == 3){
+        Study_Equality_VC * vc = [[Study_Equality_VC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 8 && indexPath.row == 0){
         Study_MVC_VC * vc = [[Study_MVC_VC alloc]init];
