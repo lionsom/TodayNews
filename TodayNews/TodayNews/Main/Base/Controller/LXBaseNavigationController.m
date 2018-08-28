@@ -255,6 +255,13 @@
         viewController.hidesBottomBarWhenPushed = YES;
     }
     
+    //FIXME:这样做防止主界面卡顿时，导致一个ViewController被push多次
+    if (self.childViewControllers.count > 0) {
+        if ([[self.childViewControllers lastObject] isKindOfClass:[viewController class]]) {
+            return;
+        }
+    }
+    
     [super pushViewController:viewController animated:animated];
     
     // 设置全局返回文字
