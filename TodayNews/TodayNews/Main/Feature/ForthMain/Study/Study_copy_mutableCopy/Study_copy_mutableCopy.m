@@ -20,37 +20,50 @@
     
     self.view.backgroundColor = LXRandomColor;
 
-
-    [self stringCopyAndMutableCopy];
-
-    [self mutableStringCopyAndMutableCopy];
- 
+#pragma mark -- NSString
+    // 字符串
+    [self NSStringCopyAndMutableCopy];
+    
 }
 
 
-#pragma mark - NSString、NSMutableString、NSArray、NSMutableArray分别进行copy和mutableCopy时的情况
+// #pragma mark - NSString、NSMutableString、NSArray、NSMutableArray分别进行copy和mutableCopy时的情况
 
 #pragma mark - 1.系统的非容器类对象
 // 这里指的是NSString,NSNumber等等一类的对象。
 
--(void)stringCopyAndMutableCopy {
-    NSString * originStr = @"origin";
-    NSString * originStrCopy = [originStr copy];
-    NSString * originStrMutableCopy = [originStr mutableCopy];
-    
-    NSLog(@"originStr = %p = %@",originStr,originStr);
-    NSLog(@"originStrCopy = %p = %@",originStrCopy,originStrCopy);
-    NSLog(@"originStrMutableCopy = %p = %@",originStrMutableCopy,originStrMutableCopy);
-}
+-(void)NSStringCopyAndMutableCopy {
+    // const是常量字符串,存在常量区
+    // constStr指针存在栈区, 指针指向常量区
+    NSString * constStr = @"const";
+    NSString * constStrCopy = [constStr copy];
+    NSMutableString * constStrMutableCopy = [constStr mutableCopy];
+    NSLog(@"constStr = %p",constStr);
+    NSLog(@"constStrCopy = %p",constStrCopy);
+    NSLog(@"constStrMutableCopy = %p",constStrMutableCopy);
 
--(void)mutableStringCopyAndMutableCopy {
-    NSMutableString *mutableOriginStr = [NSMutableString stringWithFormat:@"mutableOrigin"];  // @"mutableOrigin";
+    // originStr在栈中,指向堆区的地址
+    NSString * originStr = [NSString stringWithFormat:@"origin"];
+    NSString * originStrCopy = [originStr copy];
+    NSMutableString * originStrMutableCopy = [originStr mutableCopy];
+    NSLog(@"originStr = %p",originStr);
+    NSLog(@"originStrCopy = %p",originStrCopy);
+    NSLog(@"originStrMutableCopy = %p",originStrMutableCopy);
+    
+    NSMutableString *mutableOriginStr = [NSMutableString stringWithFormat:@"mutableOrigin"];
     NSMutableString *mutableOriginStrCopy = [mutableOriginStr copy];
     NSMutableString *mutableOriginStrMutableCopy = [mutableOriginStr mutableCopy];
+    NSLog(@"mutableOriginStr = %p",mutableOriginStr);
+    NSLog(@"mutableOriginStrCopy = %p",mutableOriginStrCopy);
+    NSLog(@"mutableOriginStrMutableCopy = %p",mutableOriginStrMutableCopy);
+    
+    
+    [constStrMutableCopy appendString:@"const"];
+    
+    [originStrMutableCopy appendString:@"origin"];
 
-    NSLog(@"mutableOriginStr = %p = %@",mutableOriginStr,mutableOriginStr);
-    NSLog(@"mutableOriginStrCopy = %p = %@",mutableOriginStrCopy,mutableOriginStrCopy);
-    NSLog(@"mutableOriginStrMutableCopy = %p = %@",mutableOriginStrMutableCopy,mutableOriginStrMutableCopy);
+#pragma warnning - ERROR
+    [mutableOriginStrCopy appendString:@"mm"];   // ERROR
 }
 
 
