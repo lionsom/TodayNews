@@ -96,6 +96,7 @@
 		4682856920456AB800A0C720 /* GuidePageHUD_Gif03.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4682856520456AB800A0C720 /* GuidePageHUD_Gif03.gif */; };
 		4682856A20456AB800A0C720 /* GuidePageHUD_Movie01.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4682856620456AB800A0C720 /* GuidePageHUD_Movie01.mov */; };
 		4682856B20456AB800A0C720 /* GuidePageHUD_Gif02.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4682856720456AB800A0C720 /* GuidePageHUD_Gif02.gif */; };
+		468414B82180186F00B1BBB6 /* Study_Property_copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 468414B72180186F00B1BBB6 /* Study_Property_copy.m */; };
 		4686899A202D4551009E9098 /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 46868999202D4551009E9098 /* UITabBar+Badge.m */; };
 		4686899C202D50BF009E9098 /* TabBarConfigure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4686899B202D50BF009E9098 /* TabBarConfigure.plist */; };
 		4686899F202D513A009E9098 /* LXBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4686899E202D513A009E9098 /* LXBaseNavigationController.m */; };
@@ -332,6 +333,8 @@
 		4682856520456AB800A0C720 /* GuidePageHUD_Gif03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GuidePageHUD_Gif03.gif; sourceTree = "<group>"; };
 		4682856620456AB800A0C720 /* GuidePageHUD_Movie01.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = GuidePageHUD_Movie01.mov; sourceTree = "<group>"; };
 		4682856720456AB800A0C720 /* GuidePageHUD_Gif02.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GuidePageHUD_Gif02.gif; sourceTree = "<group>"; };
+		468414B62180186F00B1BBB6 /* Study_Property_copy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_Property_copy.h; sourceTree = "<group>"; };
+		468414B72180186F00B1BBB6 /* Study_Property_copy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_Property_copy.m; sourceTree = "<group>"; };
 		46868998202D4551009E9098 /* UITabBar+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Badge.h"; sourceTree = "<group>"; };
 		46868999202D4551009E9098 /* UITabBar+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+Badge.m"; sourceTree = "<group>"; };
 		4686899B202D50BF009E9098 /* TabBarConfigure.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TabBarConfigure.plist; sourceTree = "<group>"; };
@@ -525,6 +528,8 @@
 			children = (
 				466AD6152126DA9900479263 /* Study_copy_mutableCopy.h */,
 				466AD6162126DA9900479263 /* Study_copy_mutableCopy.m */,
+				468414B62180186F00B1BBB6 /* Study_Property_copy.h */,
+				468414B72180186F00B1BBB6 /* Study_Property_copy.m */,
 			);
 			path = Study_copy_mutableCopy;
 			sourceTree = "<group>";
@@ -1887,6 +1892,7 @@
 				467DE1C820318AFF00D26EFD /* YBRectConst.m in Sources */,
 				46AD50AC2043AE4A001066FE /* PYTempCollectionViewController.m in Sources */,
 				46AD50AF2043AEE8001066FE /* UIView+PYExtension.m in Sources */,
+				468414B82180186F00B1BBB6 /* Study_Property_copy.m in Sources */,
 				4686899A202D4551009E9098 /* UITabBar+Badge.m in Sources */,
 				46AD50BE2043F854001066FE /* LXNightThemeManager.m in Sources */,
 				46BB5476203029EF00DC30DD /* ForthViewController.m in Sources */,
