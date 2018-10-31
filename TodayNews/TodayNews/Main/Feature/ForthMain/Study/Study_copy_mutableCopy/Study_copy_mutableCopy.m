@@ -8,6 +8,8 @@
 
 #import "Study_copy_mutableCopy.h"
 
+#import "Study_CustomObject_copy_mutableCopy.h"
+
 @interface Study_copy_mutableCopy ()
 
 @end
@@ -50,6 +52,22 @@
     //添加事件
     [segC1 addTarget:self action:@selector(segmentValueChanged1:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:segC1];
+    
+// =======================
+    //创建segmentControl 分段控件
+    UISegmentedControl *segC2 = [[UISegmentedControl alloc]initWithFrame:CGRectMake(0,250,SCREEN_WIDTH,50)];
+    //添加小按钮
+    [segC2 insertSegmentWithTitle:@"自定义对象拷贝、深拷贝" atIndex:0 animated:YES];
+    [segC2 insertSegmentWithTitle:@"未使用" atIndex:1 animated:YES];
+    [segC2 insertSegmentWithTitle:@"未使用" atIndex:2 animated:YES];
+    
+    //设置样式
+    [segC2 setTintColor:[UIColor grayColor]];
+    //设置字体样式
+    [segC2 setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:8],NSForegroundColorAttributeName:[UIColor redColor]} forState:UIControlStateNormal];
+    //添加事件
+    [segC2 addTarget:self action:@selector(segmentValueChanged2:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:segC2];
 }
 
 
@@ -82,7 +100,18 @@
     }
 }
 
+-(void)segmentValueChanged2:(UISegmentedControl *)seg{
+    NSUInteger segIndex = [seg selectedSegmentIndex];
+    //将当旧VC的view移除，然后在添加新VC的view
+    if (segIndex == 0) {
+        [self CustomObject_copy_mutableCopy];
+    }else if (segIndex == 1){
 
+    }else if (segIndex == 2){
+
+    }else{
+    }
+}
 
 // #pragma mark - NSString、NSMutableString、NSArray、NSMutableArray分别进行copy和mutableCopy时的情况
 
@@ -278,6 +307,21 @@
 }
 
 
+#pragma mark - 3. 自定义对象copy mutableCopy
+
+-(void)CustomObject_copy_mutableCopy {
+    
+    Study_CustomObject_copy_mutableCopy *object = [[Study_CustomObject_copy_mutableCopy alloc]init];
+    object.age = @"99";
+    object.name = @"lionsom";
+    
+    Study_CustomObject_copy_mutableCopy *objectCopy = [object copy];
+    Study_CustomObject_copy_mutableCopy *objectMutableCopy = [object mutableCopy];
+    
+    NSLog(@"object === %p , name === %p , age === %p",object, object.name, object.age);
+    NSLog(@"objectCopy === %p , name === %p , age === %p",objectCopy, objectCopy.name, objectCopy.age);
+    NSLog(@"objectMutableCopy === %p , name === %p , age === %p",objectMutableCopy, objectMutableCopy.name, objectMutableCopy.age);
+}
 
 
 - (void)didReceiveMemoryWarning {

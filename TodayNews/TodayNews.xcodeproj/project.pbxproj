@@ -140,6 +140,7 @@
 		46BB547C2030370100DC30DD /* LXLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB547B2030370100DC30DD /* LXLog.m */; };
 		46BB5480203043DA00DC30DD /* MainTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB547F203043DA00DC30DD /* MainTabbarView.m */; };
 		46BE85D820A03CB5002B8E1F /* Study_AdaptVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BE85D720A03CB5002B8E1F /* Study_AdaptVC.m */; };
+		46BED27821893251002C0612 /* Study_CustomObject_copy_mutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BED27721893251002C0612 /* Study_CustomObject_copy_mutableCopy.m */; };
 		46F2F7C0208DC3A800D32377 /* LXAFNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2F7BF208DC3A700D32377 /* LXAFNetwork.m */; };
 		46F2F7C3208DC58000D32377 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2F7C2208DC58000D32377 /* AFAppDotNetAPIClient.m */; };
 		6274A78B8418A2AF9FB3E220 /* Pods_TodayNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE6EE84554C349F4582E4CB /* Pods_TodayNews.framework */; };
@@ -419,6 +420,8 @@
 		46BB547F203043DA00DC30DD /* MainTabbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabbarView.m; sourceTree = "<group>"; };
 		46BE85D620A03CB5002B8E1F /* Study_AdaptVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_AdaptVC.h; sourceTree = "<group>"; };
 		46BE85D720A03CB5002B8E1F /* Study_AdaptVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_AdaptVC.m; sourceTree = "<group>"; };
+		46BED27621893251002C0612 /* Study_CustomObject_copy_mutableCopy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_CustomObject_copy_mutableCopy.h; sourceTree = "<group>"; };
+		46BED27721893251002C0612 /* Study_CustomObject_copy_mutableCopy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_CustomObject_copy_mutableCopy.m; sourceTree = "<group>"; };
 		46F2F7BE208DC3A700D32377 /* LXAFNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXAFNetwork.h; sourceTree = "<group>"; };
 		46F2F7BF208DC3A700D32377 /* LXAFNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXAFNetwork.m; sourceTree = "<group>"; };
 		46F2F7C1208DC58000D32377 /* AFAppDotNetAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFAppDotNetAPIClient.h; sourceTree = "<group>"; };
@@ -526,6 +529,7 @@
 		466AD6142126D99F00479263 /* Study_copy_mutableCopy */ = {
 			isa = PBXGroup;
 			children = (
+				46BED27521893190002C0612 /* 自定义类copy_mutableCopy */,
 				466AD6152126DA9900479263 /* Study_copy_mutableCopy.h */,
 				466AD6162126DA9900479263 /* Study_copy_mutableCopy.m */,
 				468414B62180186F00B1BBB6 /* Study_Property_copy.h */,
@@ -1478,6 +1482,15 @@
 			path = Study_Adapt;
 			sourceTree = "<group>";
 		};
+		46BED27521893190002C0612 /* 自定义类copy_mutableCopy */ = {
+			isa = PBXGroup;
+			children = (
+				46BED27621893251002C0612 /* Study_CustomObject_copy_mutableCopy.h */,
+				46BED27721893251002C0612 /* Study_CustomObject_copy_mutableCopy.m */,
+			);
+			path = "自定义类copy_mutableCopy";
+			sourceTree = "<group>";
+		};
 		46F2F7BA208D85A200D32377 /* LXAFNetwork */ = {
 			isa = PBXGroup;
 			children = (
@@ -1888,6 +1901,7 @@
 				46BB5479203029FD00DC30DD /* FifthViewController.m in Sources */,
 				4619AC5B20400AEA00BC07D0 /* Attention_SEC_VC.m in Sources */,
 				467BD0A3202BEB6000F9334A /* FirstViewController.m in Sources */,
+				46BED27821893251002C0612 /* Study_CustomObject_copy_mutableCopy.m in Sources */,
 				467A80EA2046AF4C00258EFA /* LXADView.m in Sources */,
 				467DE1C820318AFF00D26EFD /* YBRectConst.m in Sources */,
 				46AD50AC2043AE4A001066FE /* PYTempCollectionViewController.m in Sources */,
