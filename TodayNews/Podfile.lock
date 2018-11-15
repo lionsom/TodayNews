@@ -24,6 +24,7 @@ PODS:
   - MJExtension (3.0.13)
   - MJRefresh (3.1.14.1)
   - PYSearch (0.8.5)
+  - ReactiveObjC (3.1.0)
   - SDWebImage (4.1.2):
     - SDWebImage/Core (= 4.1.2)
   - SDWebImage/Core (4.1.2)
@@ -40,9 +41,26 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - PYSearch
+  - ReactiveObjC
   - SDWebImage (~> 4.0)
   - SVProgressHUD
   - WebViewJavascriptBridge (~> 5.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - AvoidCrash
+    - Bugly
+    - DateTools
+    - GCDWebServer
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - PYSearch
+    - ReactiveObjC
+    - SDWebImage
+    - SVProgressHUD
+    - WebViewJavascriptBridge
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -54,10 +72,11 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: 238e6a37e2dba12160ee3b79f6d2a2b26abcab42
   PYSearch: 3eca6a4736700076565cd7d3a64343aff8397eea
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
   WebViewJavascriptBridge: a00b2d61252aec5207e3263d46fd0fd3cfaf7895
 
-PODFILE CHECKSUM: aea5ab79931ac43089efc2c902ee32d9043d5e72
+PODFILE CHECKSUM: fd9e4c251827f44018c76ef4b0dcdee619dfda89
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.3
