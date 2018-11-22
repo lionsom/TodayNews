@@ -29,7 +29,16 @@
 #import "Study_PropertyVC.h"  // Property
 #import "Study_MVC_VC.h"
 #import "Study_copy_mutableCopy.h"
+#import "Study_Property_copy.h"
 #import "Study_Equality_VC.h"
+#import "Study_BlockVC.h"
+#import "Study_RAC_VC.h"
+
+// Section 11
+#import "Study_Animation_xuliezhen_VC.h"
+#import "Study_Animation_UIViewAnimation_VC.h"
+#import "Study_Animation_CAAnimation_VC.h"
+
 
 
 @interface ForthViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -54,7 +63,7 @@
 #pragma mark - TableView DataSource
 // Section Number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 9;
+    return 11;
 }
 
 // Rows Number
@@ -74,9 +83,13 @@
     }else if (section == 6) {
         return 1;
     }else if (section == 7) {
-        return 5;
+        return 6;
     }else if (section == 8) {
+        return 2;
+    }else if (section == 9) {
         return 1;
+    }else if (section == 10) {
+        return 3;
     }
     return 0;
 }
@@ -186,6 +199,11 @@
         return cell;
     } else if (indexPath.section == 7 && indexPath.row == 4){
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"@property copy属性";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    } else if (indexPath.section == 7 && indexPath.row == 5){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"对象等同性";
         cell.detailTextLabel.text = @"进入";
         return cell;
@@ -194,7 +212,37 @@
         cell.textLabel.text = @"MVC 瘦身";
         cell.detailTextLabel.text = @"进入";
         return cell;
-    } else {
+    } else if (indexPath.section == 8 && indexPath.row == 1){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"RAC学习";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    } else if (indexPath.section == 9 && indexPath.row == 0){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"什么是Blocks";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    } else if (indexPath.section == 9 && indexPath.row == 1){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"Blocks实现";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    }else if (indexPath.section == 10 && indexPath.row == 0){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"序列帧动画--UIImageView";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    }else if (indexPath.section == 10 && indexPath.row == 1){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"UIView动画";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    }else if (indexPath.section == 10 && indexPath.row == 2){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"核心动画--Core Animation";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    }else {
         cell.textLabel.text = @"123";
         return cell;
     }
@@ -245,6 +293,10 @@
         titleLabel.text = @"  OC语言特性";
     }else if (section == 8) {
         titleLabel.text = @"  架构设计";
+    }else if (section == 9) {
+        titleLabel.text = @"  Blocks";
+    }else if (section == 10) {
+        titleLabel.text = @"  动画Animation";
     }else {
         titleLabel.text = @"AAA";
     }
@@ -308,11 +360,29 @@
     }else if (indexPath.section == 7 && indexPath.row == 3){
         Study_copy_mutableCopy * vc = [[Study_copy_mutableCopy alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.section == 7 && indexPath.row == 3){
+    }else if (indexPath.section == 7 && indexPath.row == 4){
+        Study_Property_copy * vc = [[Study_Property_copy alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 7 && indexPath.row == 5){
         Study_Equality_VC * vc = [[Study_Equality_VC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 8 && indexPath.row == 0){
         Study_MVC_VC * vc = [[Study_MVC_VC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 8 && indexPath.row == 1){
+        Study_RAC_VC * vc = [[Study_RAC_VC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 9 && indexPath.row == 0){
+        Study_BlockVC * vc = [[Study_BlockVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 10 && indexPath.row == 0){
+        Study_Animation_xuliezhen_VC * vc = [[Study_Animation_xuliezhen_VC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 10 && indexPath.row == 1){
+        Study_Animation_UIViewAnimation_VC * vc = [[Study_Animation_UIViewAnimation_VC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 10 && indexPath.row == 2){
+        Study_Animation_CAAnimation_VC * vc = [[Study_Animation_CAAnimation_VC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     
