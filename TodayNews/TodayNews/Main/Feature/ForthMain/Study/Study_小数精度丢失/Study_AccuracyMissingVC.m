@@ -41,8 +41,14 @@
     size_t shortSize = sizeof(short);
     NSLog(@"shortSize = %zu", shortSize);
     
+    size_t NSIntegerSize = sizeof(NSInteger);
+    NSLog(@"NSIntegerSize = %zu", NSIntegerSize);
+    
     size_t intSize = sizeof(int);
     NSLog(@"intSize = %zu", intSize);
+    
+    size_t longSize = sizeof(long);
+    NSLog(@"longSize = %zu", longSize);
     
     size_t floatSize = sizeof(float);
     NSLog(@"floatSize = %zu", floatSize);
