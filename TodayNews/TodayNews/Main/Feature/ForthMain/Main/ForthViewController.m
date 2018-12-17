@@ -39,6 +39,8 @@
 #import "Study_Animation_UIViewAnimation_VC.h"
 #import "Study_Animation_CAAnimation_VC.h"
 
+// Section 12
+#import "algorithm001_VC.h"
 
 
 @interface ForthViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -63,7 +65,7 @@
 #pragma mark - TableView DataSource
 // Section Number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 11;
+    return 12;
 }
 
 // Rows Number
@@ -90,6 +92,8 @@
         return 1;
     }else if (section == 10) {
         return 3;
+    }else if (section == 11) {
+        return 1;
     }
     return 0;
 }
@@ -242,6 +246,11 @@
         cell.textLabel.text = @"核心动画--Core Animation";
         cell.detailTextLabel.text = @"进入";
         return cell;
+    }else if (indexPath.section == 11 && indexPath.row == 0){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"Deep First Search - 抖音一笔画完";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
     }else {
         cell.textLabel.text = @"123";
         return cell;
@@ -297,6 +306,8 @@
         titleLabel.text = @"  Blocks";
     }else if (section == 10) {
         titleLabel.text = @"  动画Animation";
+    }else if (section == 11) {
+        titleLabel.text = @"  算法";
     }else {
         titleLabel.text = @"AAA";
     }
@@ -383,6 +394,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 10 && indexPath.row == 2){
         Study_Animation_CAAnimation_VC * vc = [[Study_Animation_CAAnimation_VC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 11 && indexPath.row == 0){
+        algorithm001_VC * vc = [[algorithm001_VC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     

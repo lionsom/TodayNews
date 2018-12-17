@@ -116,6 +116,7 @@
 		46895B7621996B9B00709333 /* Login_M_R_VM.m in Sources */ = {isa = PBXBuildFile; fileRef = 46895B7521996B9B00709333 /* Login_M_R_VM.m */; };
 		468EB92F20AAB855003195DE /* Study_GCDBaseUseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 468EB92E20AAB855003195DE /* Study_GCDBaseUseVC.m */; };
 		468EB93220AAE56C003195DE /* Study_GCDUsefulVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 468EB93120AAE56C003195DE /* Study_GCDUsefulVC.m */; };
+		4693371221C7508B006EAC38 /* algorithm001_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4693371121C7508B006EAC38 /* algorithm001_VC.m */; };
 		4695DE6C2092FB1200E892C4 /* Study_NSThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695DE6B2092FB1200E892C4 /* Study_NSThreadVC.m */; };
 		4695DE702093201400E892C4 /* Study_PassValue_A_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695DE6F2093201400E892C4 /* Study_PassValue_A_VC.m */; };
 		4695DE732093202F00E892C4 /* Study_PassValue_B_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695DE722093202F00E892C4 /* Study_PassValue_B_VC.m */; };
@@ -380,6 +381,8 @@
 		468EB92E20AAB855003195DE /* Study_GCDBaseUseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_GCDBaseUseVC.m; sourceTree = "<group>"; };
 		468EB93020AAE56C003195DE /* Study_GCDUsefulVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_GCDUsefulVC.h; sourceTree = "<group>"; };
 		468EB93120AAE56C003195DE /* Study_GCDUsefulVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_GCDUsefulVC.m; sourceTree = "<group>"; };
+		4693371021C7508B006EAC38 /* algorithm001_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algorithm001_VC.h; sourceTree = "<group>"; };
+		4693371121C7508B006EAC38 /* algorithm001_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = algorithm001_VC.m; sourceTree = "<group>"; };
 		4695DE6A2092FB1200E892C4 /* Study_NSThreadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_NSThreadVC.h; sourceTree = "<group>"; };
 		4695DE6B2092FB1200E892C4 /* Study_NSThreadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_NSThreadVC.m; sourceTree = "<group>"; };
 		4695DE6E2093201400E892C4 /* Study_PassValue_A_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_PassValue_A_VC.h; sourceTree = "<group>"; };
@@ -1333,6 +1336,23 @@
 			path = Study_MMVM;
 			sourceTree = "<group>";
 		};
+		4693370B21C738CE006EAC38 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				4693370C21C7391E006EAC38 /* 抖音一笔画完 */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		4693370C21C7391E006EAC38 /* 抖音一笔画完 */ = {
+			isa = PBXGroup;
+			children = (
+				4693371021C7508B006EAC38 /* algorithm001_VC.h */,
+				4693371121C7508B006EAC38 /* algorithm001_VC.m */,
+			);
+			path = "抖音一笔画完";
+			sourceTree = "<group>";
+		};
 		4695DE692092F63B00E892C4 /* Study_Thread */ = {
 			isa = PBXGroup;
 			children = (
@@ -1534,6 +1554,7 @@
 			children = (
 				467C6BD520513D5A00736D6D /* Main */,
 				466C72CF20521EF40008BAF7 /* Study */,
+				4693370B21C738CE006EAC38 /* Algorithm */,
 			);
 			path = ForthMain;
 			sourceTree = "<group>";
@@ -1988,6 +2009,7 @@
 				4686899A202D4551009E9098 /* UITabBar+Badge.m in Sources */,
 				46AD50BE2043F854001066FE /* LXNightThemeManager.m in Sources */,
 				46BB5476203029EF00DC30DD /* ForthViewController.m in Sources */,
+				4693371221C7508B006EAC38 /* algorithm001_VC.m in Sources */,
 				46BAA53420FC498D0098DAA4 /* Study_Ivar_Student.m in Sources */,
 				46895B7621996B9B00709333 /* Login_M_R_VM.m in Sources */,
 				46895B7321996B4B00709333 /* Login_M_R_VC.m in Sources */,
