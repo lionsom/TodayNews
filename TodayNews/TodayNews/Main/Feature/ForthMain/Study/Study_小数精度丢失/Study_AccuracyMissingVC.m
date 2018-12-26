@@ -30,8 +30,8 @@
     
     [self Size];
     
-    
-
+    // float 四舍五入
+    [self floatnumToNew];
 }
 
 -(void)Size {
@@ -151,6 +151,75 @@
     NSLog(@"%x",b);
     
 }
+
+
+
+#pragma mark - float保留2位小数
+
+-(void)floatnumToNew {
+    float A = 0.124000;
+    float B = 0.124200;
+    float C = 0.125000;
+    float D = 0.125001;
+    float E = 0.126000;
+    
+    // 方法一
+    NSString * showA = [NSString stringWithFormat:@"%0.2f",A];
+    NSString * showB = [NSString stringWithFormat:@"%0.2f",B];
+    NSString * showC = [NSString stringWithFormat:@"%0.2f",C];
+    NSString * showD = [NSString stringWithFormat:@"%0.2f",D];
+    NSString * showE = [NSString stringWithFormat:@"%0.2f",E];
+    NSLog(@"\n A = %@ \n B = %@ \n C = %@ \n D = %@ \n E = %@",showA,showB,showC,showD,showE);
+    
+    // 方法二：NSDecimalNumber
+    /*
+     枚举
+     NSRoundPlain,   // Round up on a tie ／／貌似取整 翻译出来是个圆 吗的垃圾百度翻译
+     NSRoundDown,    // Always down == truncate  ／／只舍不入
+     NSRoundUp,      // Always up    ／／ 只入不舍
+     NSRoundBankers  // on a tie round so last digit is even  貌似四舍五入
+     */
+    NSDecimalNumberHandler* roundingBehavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundBankers
+                                                                                                      scale:2
+                                                                                           raiseOnExactness:NO
+                                                                                            raiseOnOverflow:NO
+                                                                                           raiseOnUnderflow:NO
+                                                                                        raiseOnDivideByZero:YES];
+    NSDecimalNumber * ouncesDecimalA = [[NSDecimalNumber alloc] initWithFloat:A];
+    NSDecimalNumber * roundedOuncesA = [ouncesDecimalA decimalNumberByRoundingAccordingToBehavior:roundingBehavior];
+    NSString * showA_2 = [NSString stringWithFormat:@"%@",roundedOuncesA];
+    
+    NSDecimalNumber * ouncesDecimalB = [[NSDecimalNumber alloc] initWithFloat:B];
+    NSDecimalNumber * roundedOuncesB = [ouncesDecimalB decimalNumberByRoundingAccordingToBehavior:roundingBehavior];
+    NSString * showB_2 = [NSString stringWithFormat:@"%@",roundedOuncesB];
+    
+    NSDecimalNumber * ouncesDecimalC = [[NSDecimalNumber alloc] initWithFloat:C];
+    NSDecimalNumber * roundedOuncesC = [ouncesDecimalC decimalNumberByRoundingAccordingToBehavior:roundingBehavior];
+    NSString * showC_2 = [NSString stringWithFormat:@"%@",roundedOuncesC];
+    
+    NSDecimalNumber * ouncesDecimalD = [[NSDecimalNumber alloc] initWithFloat:D];
+    NSDecimalNumber * roundedOuncesD = [ouncesDecimalD decimalNumberByRoundingAccordingToBehavior:roundingBehavior];
+    NSString * showD_2 = [NSString stringWithFormat:@"%@",roundedOuncesD];
+    
+    NSDecimalNumber * ouncesDecimalE = [[NSDecimalNumber alloc] initWithFloat:E];
+    NSDecimalNumber * roundedOuncesE = [ouncesDecimalE decimalNumberByRoundingAccordingToBehavior:roundingBehavior];
+    NSString * showE_2 = [NSString stringWithFormat:@"%@",roundedOuncesE];
+    NSLog(@"\n A = %@ \n B = %@ \n C = %@ \n D = %@ \n E = %@",showA_2,showB_2,showC_2,showD_2,showE_2);
+
+    
+    // 方法三：自带函数 round
+    NSString * showA_3 = [NSString stringWithFormat:@"%0.2f",roundf(A * 100)/100];
+    NSString * showB_3 = [NSString stringWithFormat:@"%0.2f",roundf(B * 100)/100];
+    NSString * showC_3 = [NSString stringWithFormat:@"%0.2f",roundf(C * 100)/100];
+    NSString * showD_3 = [NSString stringWithFormat:@"%0.2f",roundf(D * 100)/100];
+    NSString * showE_3 = [NSString stringWithFormat:@"%0.2f",roundf(E * 100)/100];
+    NSLog(@"\n A = %@ \n B = %@ \n C = %@ \n D = %@ \n E = %@",showA_3,showB_3,showC_3,showD_3,showE_3);
+}
+
+
+
+
+
 
 
 
