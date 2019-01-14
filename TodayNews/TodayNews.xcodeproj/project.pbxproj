@@ -18,6 +18,7 @@
 		4619AC5820400AC500BC07D0 /* Recommend_SEC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619AC5720400AC500BC07D0 /* Recommend_SEC_VC.m */; };
 		4619AC5B20400AEA00BC07D0 /* Attention_SEC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619AC5A20400AEA00BC07D0 /* Attention_SEC_VC.m */; };
 		4619AC5E20400B0F00BC07D0 /* Location_SEC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619AC5D20400B0F00BC07D0 /* Location_SEC_VC.m */; };
+		4624A29A21EC9DC100780754 /* NSString+getDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4624A29921EC9DC100780754 /* NSString+getDeviceModel.m */; };
 		463672932134D9FA006EE9D5 /* Study_Equality_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 463672922134D9FA006EE9D5 /* Study_Equality_VC.m */; };
 		4665172B20E3388A007CC02C /* README_Thread.md in Resources */ = {isa = PBXBuildFile; fileRef = 4665172A20E3388A007CC02C /* README_Thread.md */; };
 		4665172E20E33B1C007CC02C /* Study_BlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4665172D20E33B1C007CC02C /* Study_BlockVC.m */; };
@@ -204,6 +205,8 @@
 		4619AC5A20400AEA00BC07D0 /* Attention_SEC_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Attention_SEC_VC.m; sourceTree = "<group>"; };
 		4619AC5C20400B0F00BC07D0 /* Location_SEC_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location_SEC_VC.h; sourceTree = "<group>"; };
 		4619AC5D20400B0F00BC07D0 /* Location_SEC_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location_SEC_VC.m; sourceTree = "<group>"; };
+		4624A29821EC9DC100780754 /* NSString+getDeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+getDeviceModel.h"; sourceTree = "<group>"; };
+		4624A29921EC9DC100780754 /* NSString+getDeviceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+getDeviceModel.m"; sourceTree = "<group>"; };
 		463672912134D9FA006EE9D5 /* Study_Equality_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_Equality_VC.h; sourceTree = "<group>"; };
 		463672922134D9FA006EE9D5 /* Study_Equality_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_Equality_VC.m; sourceTree = "<group>"; };
 		4665172A20E3388A007CC02C /* README_Thread.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README_Thread.md; sourceTree = "<group>"; };
@@ -742,6 +745,8 @@
 				467A80E320468D8600258EFA /* NSString+FileType.m */,
 				467C6BD2205133E500736D6D /* NSString+DisplayTime.h */,
 				467C6BD3205133E500736D6D /* NSString+DisplayTime.m */,
+				4624A29821EC9DC100780754 /* NSString+getDeviceModel.h */,
+				4624A29921EC9DC100780754 /* NSString+getDeviceModel.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -2006,6 +2011,7 @@
 				46AD50AC2043AE4A001066FE /* PYTempCollectionViewController.m in Sources */,
 				46AD50AF2043AEE8001066FE /* UIView+PYExtension.m in Sources */,
 				468414B82180186F00B1BBB6 /* Study_Property_copy.m in Sources */,
+				4624A29A21EC9DC100780754 /* NSString+getDeviceModel.m in Sources */,
 				4686899A202D4551009E9098 /* UITabBar+Badge.m in Sources */,
 				46AD50BE2043F854001066FE /* LXNightThemeManager.m in Sources */,
 				46BB5476203029EF00DC30DD /* ForthViewController.m in Sources */,
@@ -2177,7 +2183,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FL2VP3W5B3;
+				DEVELOPMENT_TEAM = 2STZ5AM32F;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TodayNews/Support/PrefixHeader.pch";
 				INFOPLIST_FILE = TodayNews/Support/Info.plist;
@@ -2195,7 +2201,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FL2VP3W5B3;
+				DEVELOPMENT_TEAM = 2STZ5AM32F;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TodayNews/Support/PrefixHeader.pch";
 				INFOPLIST_FILE = TodayNews/Support/Info.plist;
