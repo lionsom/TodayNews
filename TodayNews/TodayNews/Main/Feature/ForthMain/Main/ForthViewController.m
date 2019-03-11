@@ -27,12 +27,14 @@
 #import "Study_InheritVC.h"  // OC继承
 #import "Study_IvarVC.h"     // OC成员变量
 #import "Study_PropertyVC.h"  // Property
-#import "Study_MVC_VC.h"
 #import "Study_copy_mutableCopy.h"
 #import "Study_Property_copy.h"
 #import "Study_Equality_VC.h"
 #import "Study_BlockVC.h"
-#import "Study_RAC_VC.h"
+
+// Section 8
+#import "Study_MVC_VC.h"
+#import "LoginRAC_ViewController.h"
 
 // Section 11
 #import "Study_Animation_xuliezhen_VC.h"
@@ -218,7 +220,7 @@
         return cell;
     } else if (indexPath.section == 8 && indexPath.row == 1){
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
-        cell.textLabel.text = @"RAC学习";
+        cell.textLabel.text = @"RAC+MVVM登录页面";
         cell.detailTextLabel.text = @"进入";
         return cell;
     } else if (indexPath.section == 9 && indexPath.row == 0){
@@ -381,7 +383,7 @@
         Study_MVC_VC * vc = [[Study_MVC_VC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 8 && indexPath.row == 1){
-        Study_RAC_VC * vc = [[Study_RAC_VC alloc]init];
+        LoginRAC_ViewController * vc = [[LoginRAC_ViewController alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 9 && indexPath.row == 0){
         Study_BlockVC * vc = [[Study_BlockVC alloc]init];

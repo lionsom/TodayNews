@@ -1,22 +1,25 @@
 //
-//  Login_M_R_VC.m
+//  LoginRAC_ViewController.m
 //  TodayNews
 //
-//  Created by linxiang on 2018/11/12.
-//  Copyright © 2018年 LX. All rights reserved.
+//  Created by 林祥 on 2019/3/12.
+//  Copyright © 2019 LX. All rights reserved.
 //
 
-#import "Login_M_R_VC.h"
+#import "LoginRAC_ViewController.h"
 
-@interface Login_M_R_VC ()
+@interface LoginRAC_ViewController ()
 
 @end
 
-@implementation Login_M_R_VC
+@implementation LoginRAC_ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    
 }
 
 /*
