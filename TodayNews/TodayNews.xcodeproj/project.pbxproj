@@ -149,13 +149,14 @@
 		46BED27821893251002C0612 /* Study_CustomObject_copy_mutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BED27721893251002C0612 /* Study_CustomObject_copy_mutableCopy.m */; };
 		46F2F7C0208DC3A800D32377 /* LXAFNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2F7BF208DC3A700D32377 /* LXAFNetwork.m */; };
 		46F2F7C3208DC58000D32377 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2F7C2208DC58000D32377 /* AFAppDotNetAPIClient.m */; };
+		46F5EC252237447F00F077BB /* HowToUseRAC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F5EC242237447F00F077BB /* HowToUseRAC_VC.m */; };
+		46F5EC2F22378DD900F077BB /* RWDummySignInService.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F5EC2E22378DD900F077BB /* RWDummySignInService.m */; };
 		6274A78B8418A2AF9FB3E220 /* Pods_TodayNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE6EE84554C349F4582E4CB /* Pods_TodayNews.framework */; };
 		8A423B8F206201D8009312A8 /* Study_CatchCrash_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A423B8E206201D8009312A8 /* Study_CatchCrash_VC.m */; };
 		8A46A1472073AE8000123D00 /* Study_SDWebImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A46A1462073AE8000123D00 /* Study_SDWebImageVC.m */; };
 		8A85050D2236C25000017F6C /* LoginRAC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85050C2236C25000017F6C /* LoginRAC_ViewController.m */; };
 		8A8505102236C27900017F6C /* LoginRAC_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85050F2236C27900017F6C /* LoginRAC_Model.m */; };
 		8A8505132236C29300017F6C /* LoginRAC_ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8505122236C29300017F6C /* LoginRAC_ViewModel.m */; };
-		8A8505162236CA9700017F6C /* LoginRAC_View.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8505152236CA9700017F6C /* LoginRAC_View.m */; };
 		8AAF8D1D2084EF8C0033DC82 /* Study_SandboxFilePathVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF8D1C2084EF8C0033DC82 /* Study_SandboxFilePathVC.m */; };
 		8ADFCF7420554E4E00CC38DD /* KMNineBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFCF6D20554E4D00CC38DD /* KMNineBoxView.m */; };
 		8ADFCF7520554E4E00CC38DD /* CheckTraceRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFCF7020554E4E00CC38DD /* CheckTraceRecognizer.m */; };
@@ -447,6 +448,10 @@
 		46F2F7BF208DC3A700D32377 /* LXAFNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXAFNetwork.m; sourceTree = "<group>"; };
 		46F2F7C1208DC58000D32377 /* AFAppDotNetAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFAppDotNetAPIClient.h; sourceTree = "<group>"; };
 		46F2F7C2208DC58000D32377 /* AFAppDotNetAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFAppDotNetAPIClient.m; sourceTree = "<group>"; };
+		46F5EC232237447F00F077BB /* HowToUseRAC_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HowToUseRAC_VC.h; sourceTree = "<group>"; };
+		46F5EC242237447F00F077BB /* HowToUseRAC_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HowToUseRAC_VC.m; sourceTree = "<group>"; };
+		46F5EC2D22378DD900F077BB /* RWDummySignInService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWDummySignInService.h; sourceTree = "<group>"; };
+		46F5EC2E22378DD900F077BB /* RWDummySignInService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWDummySignInService.m; sourceTree = "<group>"; };
 		8A423B8D206201D8009312A8 /* Study_CatchCrash_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_CatchCrash_VC.h; sourceTree = "<group>"; };
 		8A423B8E206201D8009312A8 /* Study_CatchCrash_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_CatchCrash_VC.m; sourceTree = "<group>"; };
 		8A46A1452073AE8000123D00 /* Study_SDWebImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_SDWebImageVC.h; sourceTree = "<group>"; };
@@ -457,8 +462,6 @@
 		8A85050F2236C27900017F6C /* LoginRAC_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginRAC_Model.m; sourceTree = "<group>"; };
 		8A8505112236C29300017F6C /* LoginRAC_ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginRAC_ViewModel.h; sourceTree = "<group>"; };
 		8A8505122236C29300017F6C /* LoginRAC_ViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginRAC_ViewModel.m; sourceTree = "<group>"; };
-		8A8505142236CA9700017F6C /* LoginRAC_View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginRAC_View.h; sourceTree = "<group>"; };
-		8A8505152236CA9700017F6C /* LoginRAC_View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginRAC_View.m; sourceTree = "<group>"; };
 		8AAF8D1B2084EF8C0033DC82 /* Study_SandboxFilePathVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_SandboxFilePathVC.h; sourceTree = "<group>"; };
 		8AAF8D1C2084EF8C0033DC82 /* Study_SandboxFilePathVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_SandboxFilePathVC.m; sourceTree = "<group>"; };
 		8ADFCF6D20554E4D00CC38DD /* KMNineBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMNineBoxView.m; sourceTree = "<group>"; };
@@ -1253,6 +1256,7 @@
 		46838CF32193DA0D0081CD0F /* Study_ReactiveCocoa */ = {
 			isa = PBXGroup;
 			children = (
+				46F5EC222237441800F077BB /* HowToUseRAC */,
 				46895B682199575500709333 /* Login_MVVM_RAC */,
 			);
 			path = Study_ReactiveCocoa;
@@ -1288,8 +1292,6 @@
 				8A85050F2236C27900017F6C /* LoginRAC_Model.m */,
 				8A8505112236C29300017F6C /* LoginRAC_ViewModel.h */,
 				8A8505122236C29300017F6C /* LoginRAC_ViewModel.m */,
-				8A8505142236CA9700017F6C /* LoginRAC_View.h */,
-				8A8505152236CA9700017F6C /* LoginRAC_View.m */,
 			);
 			path = Login_MVVM_RAC;
 			sourceTree = "<group>";
@@ -1588,6 +1590,17 @@
 				46F2F7BF208DC3A700D32377 /* LXAFNetwork.m */,
 			);
 			path = LXAFNetwork;
+			sourceTree = "<group>";
+		};
+		46F5EC222237441800F077BB /* HowToUseRAC */ = {
+			isa = PBXGroup;
+			children = (
+				46F5EC232237447F00F077BB /* HowToUseRAC_VC.h */,
+				46F5EC242237447F00F077BB /* HowToUseRAC_VC.m */,
+				46F5EC2D22378DD900F077BB /* RWDummySignInService.h */,
+				46F5EC2E22378DD900F077BB /* RWDummySignInService.m */,
+			);
+			path = HowToUseRAC;
 			sourceTree = "<group>";
 		};
 		5E97324B7F0AABDAC3A0E29E /* Frameworks */ = {
@@ -1891,8 +1904,8 @@
 				46814B9D20AC268C00F572AB /* study_threadSecureVC.m in Sources */,
 				46BAA52C20FC42D50098DAA4 /* Study_PropertyVC.m in Sources */,
 				46814B9A20AC24D700F572AB /* study_threadSyncVC.m in Sources */,
-				8A8505162236CA9700017F6C /* LoginRAC_View.m in Sources */,
 				4697897D20B2A3D6006DE6CB /* Study_SandboxShowVC.m in Sources */,
+				46F5EC252237447F00F077BB /* HowToUseRAC_VC.m in Sources */,
 				4670079E2089CE3000A93BC8 /* Study_AFNetworkingVC.m in Sources */,
 				4686899F202D513A009E9098 /* LXBaseNavigationController.m in Sources */,
 				4699BBD0204D165800E8F445 /* LXCoreDataAPI.m in Sources */,
@@ -1934,6 +1947,7 @@
 				4679C291204926650082D0C3 /* LocalPushCenter.m in Sources */,
 				4619AC52204009DA00BC07D0 /* TYPagerController.m in Sources */,
 				4619AC4D204009DA00BC07D0 /* TYTabPagerBar.m in Sources */,
+				46F5EC2F22378DD900F077BB /* RWDummySignInService.m in Sources */,
 				4698E34D2105E2AD0080D788 /* Study_MVC_User_Cell.m in Sources */,
 				467DE1DA20319B7B00D26EFD /* NSURL+url.m in Sources */,
 				4619AC54204009DA00BC07D0 /* TYPagerViewLayout.m in Sources */,
