@@ -1288,10 +1288,10 @@
 			children = (
 				8A85050B2236C25000017F6C /* LoginRAC_ViewController.h */,
 				8A85050C2236C25000017F6C /* LoginRAC_ViewController.m */,
-				8A85050E2236C27900017F6C /* LoginRAC_Model.h */,
-				8A85050F2236C27900017F6C /* LoginRAC_Model.m */,
 				8A8505112236C29300017F6C /* LoginRAC_ViewModel.h */,
 				8A8505122236C29300017F6C /* LoginRAC_ViewModel.m */,
+				8A85050E2236C27900017F6C /* LoginRAC_Model.h */,
+				8A85050F2236C27900017F6C /* LoginRAC_Model.m */,
 			);
 			path = Login_MVVM_RAC;
 			sourceTree = "<group>";

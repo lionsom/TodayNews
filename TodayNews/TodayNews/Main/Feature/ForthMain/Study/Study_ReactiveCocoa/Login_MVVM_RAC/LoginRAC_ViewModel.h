@@ -12,10 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginRAC_ViewModel : NSObject
 
-@property(nonatomic, strong) RACCommand * loginCommond;
+/// 按钮能否点击
+@property (nonatomic, strong, readonly) RACSignal * validLoginSignal;
+/// 登录按钮点击执行的命令
+@property (nonatomic, strong, readonly) RACCommand * loginCommond;
 
-@property (nonatomic, copy) NSString * username;
-@property (nonatomic, copy) NSString * password;
+@property (nonatomic, copy, readwrite) NSString * username;
+@property (nonatomic, copy, readwrite) NSString * password;
+
+@property (nonatomic, copy, readwrite) NSString * avatarUrlString;
 
 @end
 
