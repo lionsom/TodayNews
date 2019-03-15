@@ -147,6 +147,10 @@
 		46BB5480203043DA00DC30DD /* MainTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB547F203043DA00DC30DD /* MainTabbarView.m */; };
 		46BE85D820A03CB5002B8E1F /* Study_AdaptVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BE85D720A03CB5002B8E1F /* Study_AdaptVC.m */; };
 		46BED27821893251002C0612 /* Study_CustomObject_copy_mutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BED27721893251002C0612 /* Study_CustomObject_copy_mutableCopy.m */; };
+		46DE21A2223A41ED00ABA744 /* Study_MVCVSMVVM_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DE21A1223A41ED00ABA744 /* Study_MVCVSMVVM_ViewController.m */; };
+		46DE21A5223A423400ABA744 /* Study_MVCVSMVVM_MVVM_Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DE21A4223A423400ABA744 /* Study_MVCVSMVVM_MVVM_Person.m */; };
+		46DE21A8223A426100ABA744 /* Study_MVCVSMVVM_MVVM_PersonViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DE21A7223A426100ABA744 /* Study_MVCVSMVVM_MVVM_PersonViewModel.m */; };
+		46DE21AB223A474D00ABA744 /* Study_MVCVSMVVM_Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DE21AA223A474D00ABA744 /* Study_MVCVSMVVM_Person.m */; };
 		46F2F7C0208DC3A800D32377 /* LXAFNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2F7BF208DC3A700D32377 /* LXAFNetwork.m */; };
 		46F2F7C3208DC58000D32377 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2F7C2208DC58000D32377 /* AFAppDotNetAPIClient.m */; };
 		46F5EC252237447F00F077BB /* HowToUseRAC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F5EC242237447F00F077BB /* HowToUseRAC_VC.m */; };
@@ -444,6 +448,14 @@
 		46BE85D720A03CB5002B8E1F /* Study_AdaptVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_AdaptVC.m; sourceTree = "<group>"; };
 		46BED27621893251002C0612 /* Study_CustomObject_copy_mutableCopy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_CustomObject_copy_mutableCopy.h; sourceTree = "<group>"; };
 		46BED27721893251002C0612 /* Study_CustomObject_copy_mutableCopy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_CustomObject_copy_mutableCopy.m; sourceTree = "<group>"; };
+		46DE21A0223A41ED00ABA744 /* Study_MVCVSMVVM_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_MVCVSMVVM_ViewController.h; sourceTree = "<group>"; };
+		46DE21A1223A41ED00ABA744 /* Study_MVCVSMVVM_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_MVCVSMVVM_ViewController.m; sourceTree = "<group>"; };
+		46DE21A3223A423400ABA744 /* Study_MVCVSMVVM_MVVM_Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_MVCVSMVVM_MVVM_Person.h; sourceTree = "<group>"; };
+		46DE21A4223A423400ABA744 /* Study_MVCVSMVVM_MVVM_Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_MVCVSMVVM_MVVM_Person.m; sourceTree = "<group>"; };
+		46DE21A6223A426100ABA744 /* Study_MVCVSMVVM_MVVM_PersonViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_MVCVSMVVM_MVVM_PersonViewModel.h; sourceTree = "<group>"; };
+		46DE21A7223A426100ABA744 /* Study_MVCVSMVVM_MVVM_PersonViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_MVCVSMVVM_MVVM_PersonViewModel.m; sourceTree = "<group>"; };
+		46DE21A9223A474D00ABA744 /* Study_MVCVSMVVM_Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_MVCVSMVVM_Person.h; sourceTree = "<group>"; };
+		46DE21AA223A474D00ABA744 /* Study_MVCVSMVVM_Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_MVCVSMVVM_Person.m; sourceTree = "<group>"; };
 		46F2F7BE208DC3A700D32377 /* LXAFNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXAFNetwork.h; sourceTree = "<group>"; };
 		46F2F7BF208DC3A700D32377 /* LXAFNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXAFNetwork.m; sourceTree = "<group>"; };
 		46F2F7C1208DC58000D32377 /* AFAppDotNetAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFAppDotNetAPIClient.h; sourceTree = "<group>"; };
@@ -1256,6 +1268,7 @@
 		46838CF32193DA0D0081CD0F /* Study_ReactiveCocoa */ = {
 			isa = PBXGroup;
 			children = (
+				46DE2199223A3E2D00ABA744 /* MVC VS MVVM */,
 				46F5EC222237441800F077BB /* HowToUseRAC */,
 				46895B682199575500709333 /* Login_MVVM_RAC */,
 			);
@@ -1579,6 +1592,21 @@
 				46BED27721893251002C0612 /* Study_CustomObject_copy_mutableCopy.m */,
 			);
 			path = "自定义类copy_mutableCopy";
+			sourceTree = "<group>";
+		};
+		46DE2199223A3E2D00ABA744 /* MVC VS MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				46DE21A9223A474D00ABA744 /* Study_MVCVSMVVM_Person.h */,
+				46DE21AA223A474D00ABA744 /* Study_MVCVSMVVM_Person.m */,
+				46DE21A0223A41ED00ABA744 /* Study_MVCVSMVVM_ViewController.h */,
+				46DE21A1223A41ED00ABA744 /* Study_MVCVSMVVM_ViewController.m */,
+				46DE21A3223A423400ABA744 /* Study_MVCVSMVVM_MVVM_Person.h */,
+				46DE21A4223A423400ABA744 /* Study_MVCVSMVVM_MVVM_Person.m */,
+				46DE21A6223A426100ABA744 /* Study_MVCVSMVVM_MVVM_PersonViewModel.h */,
+				46DE21A7223A426100ABA744 /* Study_MVCVSMVVM_MVVM_PersonViewModel.m */,
+			);
+			path = "MVC VS MVVM";
 			sourceTree = "<group>";
 		};
 		46F2F7BA208D85A200D32377 /* LXAFNetwork */ = {
@@ -1915,9 +1943,11 @@
 				46BE85D820A03CB5002B8E1F /* Study_AdaptVC.m in Sources */,
 				4687DD4D20327D380041CC06 /* SVProgressHUD+LX.m in Sources */,
 				4699BB83204CD34800E8F445 /* AppUseTime_API.m in Sources */,
+				46DE21A5223A423400ABA744 /* Study_MVCVSMVVM_MVVM_Person.m in Sources */,
 				467BD104202C524200F9334A /* Mediator.m in Sources */,
 				4673CA5B20F8A77A0084E297 /* Study_Car.m in Sources */,
 				468689E6202DAD72009E9098 /* LXTabBar.m in Sources */,
+				46DE21A2223A41ED00ABA744 /* Study_MVCVSMVVM_ViewController.m in Sources */,
 				46AD50D8204405AB001066FE /* LXNightBaseView.m in Sources */,
 				467BD0A6202BEB6000F9334A /* SecondViewController.m in Sources */,
 				467EFD0D2106AD9300EA8A5B /* Study_MVC_Datasource.m in Sources */,
@@ -1950,6 +1980,7 @@
 				46F5EC2F22378DD900F077BB /* RWDummySignInService.m in Sources */,
 				4698E34D2105E2AD0080D788 /* Study_MVC_User_Cell.m in Sources */,
 				467DE1DA20319B7B00D26EFD /* NSURL+url.m in Sources */,
+				46DE21A8223A426100ABA744 /* Study_MVCVSMVVM_MVVM_PersonViewModel.m in Sources */,
 				4619AC54204009DA00BC07D0 /* TYPagerViewLayout.m in Sources */,
 				468EB93220AAE56C003195DE /* Study_GCDUsefulVC.m in Sources */,
 				467A80E72046ACA100258EFA /* LXLaunchMovieVC.m in Sources */,
@@ -1960,6 +1991,7 @@
 				468EB92F20AAB855003195DE /* Study_GCDBaseUseVC.m in Sources */,
 				4698E3442105C49A0080D788 /* Study_MVP_VC.m in Sources */,
 				468689A2202D73C6009E9098 /* UIImage+Extension.m in Sources */,
+				46DE21AB223A474D00ABA744 /* Study_MVCVSMVVM_Person.m in Sources */,
 				46AD50D520440579001066FE /* E_Night_VC.m in Sources */,
 				46BB5480203043DA00DC30DD /* MainTabbarView.m in Sources */,
 				4619AC4E204009DA00BC07D0 /* TYTabPagerBarCell.m in Sources */,

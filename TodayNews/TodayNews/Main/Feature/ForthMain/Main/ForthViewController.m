@@ -36,6 +36,7 @@
 #import "Study_MVC_VC.h"
 #import "HowToUseRAC_VC.h"
 #import "LoginRAC_ViewController.h"
+#import "Study_MVCVSMVVM_ViewController.h"
 
 // Section 11
 #import "Study_Animation_xuliezhen_VC.h"
@@ -90,7 +91,7 @@
     }else if (section == 7) {
         return 6;
     }else if (section == 8) {
-        return 3;
+        return 4;
     }else if (section == 9) {
         return 1;
     }else if (section == 10) {
@@ -221,7 +222,7 @@
         return cell;
     } else if (indexPath.section == 8 && indexPath.row == 1){
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
-        cell.textLabel.text = @"RAC+MVVM登录页面";
+        cell.textLabel.text = @"MVC VS MVVM";
         cell.detailTextLabel.text = @"进入";
         return cell;
     } else if (indexPath.section == 8 && indexPath.row == 2){
@@ -229,7 +230,12 @@
         cell.textLabel.text = @"HowToUseRAC - UITextFeild";
         cell.detailTextLabel.text = @"进入";
         return cell;
-    } else if (indexPath.section == 9 && indexPath.row == 0){
+    } else if (indexPath.section == 8 && indexPath.row == 3){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"RAC+MVVM登录页面";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    }  else if (indexPath.section == 9 && indexPath.row == 0){
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"什么是Blocks";
         cell.detailTextLabel.text = @"进入";
@@ -389,10 +395,13 @@
         Study_MVC_VC * vc = [[Study_MVC_VC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 8 && indexPath.row == 1){
-        LoginRAC_ViewController * vc = [[LoginRAC_ViewController alloc]init];
+        Study_MVCVSMVVM_ViewController * vc = [[Study_MVCVSMVVM_ViewController alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 8 && indexPath.row == 2){
         HowToUseRAC_VC * vc = [[HowToUseRAC_VC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 8 && indexPath.row == 3){
+        LoginRAC_ViewController * vc = [[LoginRAC_ViewController alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 9 && indexPath.row == 0){
         Study_BlockVC * vc = [[Study_BlockVC alloc]init];
