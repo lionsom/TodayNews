@@ -24,13 +24,18 @@
 #import "study_threadSecureVC.h"
 #import "Study_PassValue_A_VC.h"
 #import "Study_AdaptVC.h"
+
+// Section 6
+#import "Study_BlockVC.h"
+
+// Section 7
 #import "Study_InheritVC.h"  // OC继承
 #import "Study_IvarVC.h"     // OC成员变量
 #import "Study_PropertyVC.h"  // Property
 #import "Study_copy_mutableCopy.h"
 #import "Study_Property_copy.h"
 #import "Study_Equality_VC.h"
-#import "Study_BlockVC.h"
+#import "Study_KVC_VC.h"
 
 // Section 8
 #import "Study_MVC_VC.h"
@@ -89,7 +94,7 @@
     }else if (section == 6) {
         return 1;
     }else if (section == 7) {
-        return 6;
+        return 7;
     }else if (section == 8) {
         return 4;
     }else if (section == 9) {
@@ -213,6 +218,11 @@
     } else if (indexPath.section == 7 && indexPath.row == 5){
         cell.imageView.image = [UIImage imageNamed:@"home_list2"];
         cell.textLabel.text = @"对象等同性";
+        cell.detailTextLabel.text = @"进入";
+        return cell;
+    } else if (indexPath.section == 7 && indexPath.row == 6){
+        cell.imageView.image = [UIImage imageNamed:@"home_list2"];
+        cell.textLabel.text = @"KVC";
         cell.detailTextLabel.text = @"进入";
         return cell;
     } else if (indexPath.section == 8 && indexPath.row == 0){
@@ -390,6 +400,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 7 && indexPath.row == 5){
         Study_Equality_VC * vc = [[Study_Equality_VC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 7 && indexPath.row == 6){
+        Study_KVC_VC * vc = [[Study_KVC_VC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 8 && indexPath.row == 0){
         Study_MVC_VC * vc = [[Study_MVC_VC alloc]init];

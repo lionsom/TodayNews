@@ -136,6 +136,9 @@
 		46AD50DE20441272001066FE /* LXNightBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD50DD20441272001066FE /* LXNightBaseButton.m */; };
 		46AD50E120441327001066FE /* LXNightBaseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD50E020441327001066FE /* LXNightBaseImageView.m */; };
 		46AD50E6204419F1001066FE /* UIImage+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD50E5204419F1001066FE /* UIImage+Helpers.m */; };
+		46B82CBC2253458800C9DF15 /* Study_KVC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B82CBB2253458800C9DF15 /* Study_KVC_VC.m */; };
+		46B82CBF225346CD00C9DF15 /* KVCPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B82CBE225346CD00C9DF15 /* KVCPerson.m */; };
+		46B82CC2225346EB00C9DF15 /* KVCStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B82CC1225346EB00C9DF15 /* KVCStudent.m */; };
 		46BAA52C20FC42D50098DAA4 /* Study_PropertyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BAA52B20FC42D50098DAA4 /* Study_PropertyVC.m */; };
 		46BAA52F20FC493F0098DAA4 /* Study_IvarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BAA52E20FC493F0098DAA4 /* Study_IvarVC.m */; };
 		46BAA53420FC498D0098DAA4 /* Study_Ivar_Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BAA53320FC498D0098DAA4 /* Study_Ivar_Student.m */; };
@@ -426,6 +429,12 @@
 		46AD50E020441327001066FE /* LXNightBaseImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXNightBaseImageView.m; sourceTree = "<group>"; };
 		46AD50E4204419F1001066FE /* UIImage+Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Helpers.h"; sourceTree = "<group>"; };
 		46AD50E5204419F1001066FE /* UIImage+Helpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helpers.m"; sourceTree = "<group>"; };
+		46B82CBA2253458800C9DF15 /* Study_KVC_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_KVC_VC.h; sourceTree = "<group>"; };
+		46B82CBB2253458800C9DF15 /* Study_KVC_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_KVC_VC.m; sourceTree = "<group>"; };
+		46B82CBD225346CD00C9DF15 /* KVCPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVCPerson.h; sourceTree = "<group>"; };
+		46B82CBE225346CD00C9DF15 /* KVCPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVCPerson.m; sourceTree = "<group>"; };
+		46B82CC0225346EB00C9DF15 /* KVCStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVCStudent.h; sourceTree = "<group>"; };
+		46B82CC1225346EB00C9DF15 /* KVCStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVCStudent.m; sourceTree = "<group>"; };
 		46BAA52A20FC42D50098DAA4 /* Study_PropertyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_PropertyVC.h; sourceTree = "<group>"; };
 		46BAA52B20FC42D50098DAA4 /* Study_PropertyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study_PropertyVC.m; sourceTree = "<group>"; };
 		46BAA52D20FC493F0098DAA4 /* Study_IvarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study_IvarVC.h; sourceTree = "<group>"; };
@@ -585,6 +594,7 @@
 		466C72CF20521EF40008BAF7 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				46B82CB922533F2E00C9DF15 /* Study_KVC */,
 				467F5C17219D0790007B8B9E /* Study_动画 */,
 				46838CF32193DA0D0081CD0F /* Study_ReactiveCocoa */,
 				463672902134CEBF006EE9D5 /* Study_等同性 */,
@@ -1502,6 +1512,19 @@
 			path = UITabBar;
 			sourceTree = "<group>";
 		};
+		46B82CB922533F2E00C9DF15 /* Study_KVC */ = {
+			isa = PBXGroup;
+			children = (
+				46B82CBA2253458800C9DF15 /* Study_KVC_VC.h */,
+				46B82CBB2253458800C9DF15 /* Study_KVC_VC.m */,
+				46B82CBD225346CD00C9DF15 /* KVCPerson.h */,
+				46B82CBE225346CD00C9DF15 /* KVCPerson.m */,
+				46B82CC0225346EB00C9DF15 /* KVCStudent.h */,
+				46B82CC1225346EB00C9DF15 /* KVCStudent.m */,
+			);
+			path = Study_KVC;
+			sourceTree = "<group>";
+		};
 		46BAA52920FC40630098DAA4 /* Study_Property */ = {
 			isa = PBXGroup;
 			children = (
@@ -1954,6 +1977,7 @@
 				463672932134D9FA006EE9D5 /* Study_Equality_VC.m in Sources */,
 				4698E34A2105E24F0080D788 /* Study_MVC_VC.m in Sources */,
 				4679C29420492A600082D0C3 /* FifthMain_SecondTypeCell.m in Sources */,
+				46B82CBF225346CD00C9DF15 /* KVCPerson.m in Sources */,
 				4679C2892048EE590082D0C3 /* FifthMain_FirstTypeCell.m in Sources */,
 				467BD101202C51D900F9334A /* LoginVC.m in Sources */,
 				467DE1C720318AFF00D26EFD /* YBPopupMenuPath.m in Sources */,
@@ -1993,6 +2017,7 @@
 				468689A2202D73C6009E9098 /* UIImage+Extension.m in Sources */,
 				46DE21AB223A474D00ABA744 /* Study_MVCVSMVVM_Person.m in Sources */,
 				46AD50D520440579001066FE /* E_Night_VC.m in Sources */,
+				46B82CC2225346EB00C9DF15 /* KVCStudent.m in Sources */,
 				46BB5480203043DA00DC30DD /* MainTabbarView.m in Sources */,
 				4619AC4E204009DA00BC07D0 /* TYTabPagerBarCell.m in Sources */,
 				4687DD502032BA1A0041CC06 /* D_Base_VC.m in Sources */,
@@ -2032,6 +2057,7 @@
 				4619AC5B20400AEA00BC07D0 /* Attention_SEC_VC.m in Sources */,
 				467BD0A3202BEB6000F9334A /* FirstViewController.m in Sources */,
 				46BED27821893251002C0612 /* Study_CustomObject_copy_mutableCopy.m in Sources */,
+				46B82CBC2253458800C9DF15 /* Study_KVC_VC.m in Sources */,
 				467A80EA2046AF4C00258EFA /* LXADView.m in Sources */,
 				467DE1C820318AFF00D26EFD /* YBRectConst.m in Sources */,
 				46AD50AC2043AE4A001066FE /* PYTempCollectionViewController.m in Sources */,

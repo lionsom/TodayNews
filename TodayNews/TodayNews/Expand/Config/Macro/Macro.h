@@ -9,6 +9,15 @@
 #ifndef Macro_h
 #define Macro_h
 
+
+//获取系统对象
+#define KApplication        [UIApplication sharedApplication]
+#define KAppWindow          [UIApplication sharedApplication].delegate.window
+#define KAppDelegate        [AppDelegate shareAppDelegate]
+#define KRootViewController [UIApplication sharedApplication].delegate.window.rootViewController
+#define KUserDefaults       [NSUserDefaults standardUserDefaults]
+#define KNotificationCenter [NSNotificationCenter defaultCenter]
+
 // W H
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREENH_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -89,6 +98,20 @@ isLiuHaiPhone = [[UIApplication sharedApplication] delegate].window.safeAreaInse
 #define LXSBPath_Cache [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
 //获取temp
 #define LXSBPath_Temp NSTemporaryDirectory()
+
+
+//--------------判断为空---------------
+//字符串是否为空
+#define KString_Is_Empty(str) ([str isKindOfClass:[NSNull class]] || str == nil || [str length] < 1 ? YES : NO )
+//数组是否为空
+#define KArray_Is_Empty(array) (array == nil || [array isKindOfClass:[NSNull class]] || array.count == 0)
+//字典是否为空
+#define KDict_Is_Empty(dic) (dic == nil || [dic isKindOfClass:[NSNull class]] || dic.allKeys == 0)
+//是否是空对象
+#define KObject_Is_Empty(_object) (_object == nil \
+|| [_object isKindOfClass:[NSNull class]] \
+|| ([_object respondsToSelector:@selector(length)] && [(NSData *)_object length] == 0) \
+|| ([_object respondsToSelector:@selector(count)] && [(NSArray *)_object count] == 0))
 
 
 //--------------MainThread---------------
